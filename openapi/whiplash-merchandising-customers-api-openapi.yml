@@ -1,0 +1,1326 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items customers API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: customers
+  description: Customers are Whiplash clients, not the End Consumer. Most Whiplash resources are owned by a Customer (or belong to resources that are).
+paths:
+  /api/v2/customers:
+    get:
+      operationId: GetApiV2Customers
+      tags:
+      - customers
+      summary: List all customers
+      description: Get all customers
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      - name: fields
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Comma-separated list of fields to include in the response
+      - name: sort
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'A list of sort options (ex: name asc,created_at desc)'
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Page of results to fetch
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Number of results to return per page
+      - name: page_total
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include total count of results
+      - name: page_links
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include prev/next links in response headers
+      responses:
+        '200':
+          description: Get all customers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiV2EntitiesCustomer'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/customers/actions:
+    get:
+      operationId: GetApiV2CustomersActions
+      tags:
+      - customers
+      summary: List actions you can perform
+      description: Get resource actions
+      parameters: []
+      responses:
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/customers/count:
+    get:
+      operationId: GetApiV2CustomersCount
+      tags:
+      - customers
+      summary: Count customers
+      description: Count of all customers
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      responses:
+        '200':
+          description: Count of all customers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCount'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/customers/{id}:
+    get:
+      operationId: GetApiV2CustomersId
+      tags:
+      - customers
+      summary: Retrieve a customer
+      description: Get a customer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Get a customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCustomer'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2CustomersId
+      tags:
+      - customers
+      summary: Update a customer
+      description: Update a customer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Update a customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCustomer'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2CustomersIdRequest'
+components:
+  schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    ApiV2EntitiesCustomer:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the customer id
+        name:
+          type: string
+          description: Customer name.
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the customer creation date and time
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: Customer active?
+        auto_merge_gestation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer auto merge gestation.
+        default_warehouse_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer default warehouse id.
+        eori_number:
+          type:
+          - string
+          - 'null'
+          description: Customer EORI number.
+        estimated_monthly_volume:
+          type:
+          - string
+          - 'null'
+          description: Customer estimated monthly volume.
+        fedex_account:
+          type:
+          - string
+          - 'null'
+          description: Customer FedEx account.
+        from_email:
+          type:
+          - string
+          - 'null'
+          description: Customer from email.
+        incoterm:
+          type: string
+          description: Customer incoterm.
+        instructions:
+          type:
+          - string
+          - 'null'
+          description: Customer instructions.
+        item_scanning_preference:
+          type:
+          - boolean
+          - 'null'
+          description: Customer has item scanning preference?
+        label_format:
+          type:
+          - string
+          - 'null'
+          description: Customer label format.
+        notes:
+          type:
+          - string
+          - 'null'
+          description: Customer notes.
+        notify_originator:
+          type:
+          - boolean
+          - 'null'
+          description: notify originator?
+        notify_originator_inventory:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer notify originator inventory.
+        originator_permissions:
+          type:
+          - boolean
+          - 'null'
+          description: originator permissions?
+        packing_slip_msg:
+          type:
+          - string
+          - 'null'
+          description: Customer packing slip message.
+        packingslip_template:
+          type:
+          - string
+          - 'null'
+          description: Customer packing slip template.
+        request_serial_numbers:
+          type:
+          - boolean
+          - 'null'
+          description: request serial numbers?
+        ship_method_preference:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer shipping method preference.
+        shipping_name:
+          type:
+          - string
+          - 'null'
+          description: Customer shipping name.
+        ups_account:
+          type:
+          - string
+          - 'null'
+          description: Customer UPS account.
+        vat_number:
+          type:
+          - string
+          - 'null'
+          description: Customer VAT number.
+        ein:
+          type:
+          - string
+          - 'null'
+          description: Customer EIN / Tax ID
+        gs1_company_prefix:
+          type:
+          - string
+          - 'null'
+          description: GS1 company prefix for barcodes
+        warehouse_fallback:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer warehouse fallback.
+        payment_hold:
+          type: boolean
+          description: is this account on hold pending a valid payment method?
+        primary_contact:
+          type: string
+          description: The Customers designated primary contact.
+        global_e_guid:
+          type:
+          - string
+          - 'null'
+          description: Customer Global-E GUID.
+        exit_notice:
+          type:
+          - boolean
+          - 'null'
+          description: is this account flagged for exit notice? (admins only)
+        data_mapping_string:
+          type:
+          - string
+          - 'null'
+          description: Data mapping string for this customer. (admins only)
+        whitelisted_warehouses:
+          $ref: '#/components/schemas/ApiV2EntitiesWarehouse'
+        allowed_warehouse_ids:
+          type: array
+          items:
+            type: integer
+            format: int32
+        account_level:
+          type: integer
+          format: int32
+          description: Account level
+        account_level_name:
+          type: string
+          description: Quote, Direct, Enterprise, or Managed
+        activated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the customer activation date and time
+        deactivated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the customer deactivation date and time
+        auto_merge_skus:
+          type:
+          - boolean
+          - 'null'
+          description: auto merge SKUs?
+        partner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer partner id. (admins only)
+        billing_email:
+          type:
+          - string
+          - 'null'
+          description: Customer billing email.
+        billing_contact_name:
+          type:
+          - string
+          - 'null'
+          description: Customer billing contact name.
+        billing_company:
+          type:
+          - string
+          - 'null'
+          description: Customer billing company.
+        billing_phone1:
+          type:
+          - string
+          - 'null'
+          description: Customer phone 1.
+        billing_phone2:
+          type:
+          - string
+          - 'null'
+          description: Customer phone 2.
+        billing_address1:
+          type:
+          - string
+          - 'null'
+          description: Customer billing address line 1.
+        billing_address2:
+          type:
+          - string
+          - 'null'
+          description: Customer billing address line 2.
+        billing_address3:
+          type:
+          - string
+          - 'null'
+          description: Customer billing address line 3.
+        billing_city:
+          type:
+          - string
+          - 'null'
+          description: Customer billing city.
+        billing_state:
+          type:
+          - string
+          - 'null'
+          description: Customer billing state.
+        billing_zip:
+          type:
+          - string
+          - 'null'
+          description: Customer billing zip.
+        billing_country:
+          type:
+          - string
+          - 'null'
+          description: Customer billing country.
+        billing_residential:
+          type:
+          - boolean
+          - 'null'
+          description: Customer billing residential?
+        items_returnable:
+          type:
+          - boolean
+          - 'null'
+          description: items returnable by default?
+        allow_international_returns:
+          type: boolean
+          description: Allow International returns?
+        items_exchangeable:
+          type:
+          - boolean
+          - 'null'
+          description: items exchangeable by default?
+        return_time_limit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Return time limit.
+        return_label_expires_in:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Return label expiration time limit.
+        return_price_restricted:
+          type:
+          - boolean
+          - 'null'
+          description: limit exchange to same value or less?
+        return_sku_match:
+          type:
+          - string
+          - 'null'
+          description: Exchange SKU match policy.
+        rma_display_logo:
+          type:
+          - boolean
+          - 'null'
+          description: display customer logo on returns page?
+        rma_footer_content:
+          type:
+          - string
+          - 'null'
+          description: Return page footer content.
+        return_name:
+          type:
+          - string
+          - 'null'
+          description: Customer return name.
+        return_company:
+          type:
+          - string
+          - 'null'
+          description: Customer return company.
+        return_email:
+          type:
+          - string
+          - 'null'
+          description: Customer return email.
+        return_phone:
+          type:
+          - string
+          - 'null'
+          description: Customer return phone.
+        return_address_1:
+          type:
+          - string
+          - 'null'
+          description: Customer return address line 1.
+        return_address_2:
+          type:
+          - string
+          - 'null'
+          description: Customer return address line 2.
+        return_city:
+          type:
+          - string
+          - 'null'
+          description: Customer return city.
+        return_state:
+          type:
+          - string
+          - 'null'
+          description: Customer return state.
+        return_zip:
+          type:
+          - string
+          - 'null'
+          description: Customer return zip.
+        return_country:
+          type:
+          - string
+          - 'null'
+          description: Customer return country.
+        supports_return_labels:
+          type:
+          - boolean
+          - 'null'
+          description: does the customer support return labels?
+        logo_content_type:
+          type:
+          - string
+          - 'null'
+          description: Customer logo content type.
+        logo_file_name:
+          type:
+          - string
+          - 'null'
+          description: Customer logo file name.
+        logo_file_size:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer logo file size.
+        logo_updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: Customer logo updated at.
+        full_logo_url:
+          type: string
+          description: Customer full logo url.
+        email_confirmation_from:
+          type:
+          - string
+          - 'null'
+          description: Customer email confirmation from.
+        email_confirmation_name:
+          type:
+          - string
+          - 'null'
+          description: Customer email confirmation name.
+        email_confirmation_msg:
+          type:
+          - string
+          - 'null'
+          description: Customer email confirmation message.
+        email_confirmation_preference:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Customer email confirmation preference.
+        email_confirmation_template:
+          type:
+          - string
+          - 'null'
+          description: Customer email confirmation template.
+        low_inventory_threshold:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Quantity where an item in inventory would be considered having low inventory
+        lot_control:
+          type:
+          - boolean
+          - 'null'
+          description: do items for this customer require lot control?
+        expiration_period:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: items that are this many days from expiration will not be allowed to ship
+        ship_strategy:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: 'which locations to pick first: Default, FIFO, FEFO'
+        items_unavailable_on_sellout:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: 'Process Orders setting: Whiplash will automatically turn on Process Orders when an item is received, and turn it off when an item sells. Whiplash will not manage Process Orders. Whiplash will automatically turn on Process Orders only the first time an Item is received. Whiplash will automatically turn on Process Orders when an item is received or adjusted in, and turn it off when an Item sells out.'
+        replenishment_min:
+          type:
+          - string
+          - 'null'
+          description: Minimum number of days worth of stock to keep in forward pick locations
+        replenishment_target:
+          type:
+          - string
+          - 'null'
+          description: Target number of days stock to replenish forward pick locations
+        allow_b_stock_receiving:
+          type:
+          - boolean
+          - 'null'
+          description: Allow "b stock" role for receiving
+        location_default_return_role:
+          type: string
+          description: Default role (i.e. Pickable, Damaged) for returned items
+        location_enable_pending_returns:
+          type: boolean
+          description: Allow "pending" role for returned items
+        location_enable_receiving_into_reserved:
+          type: boolean
+          description: Allow "reserved" role for receiving items
+        receiving_fields:
+          type: array
+          items:
+            type: object
+        project_task_labels:
+          type: array
+          items:
+            type: string
+        dashboard_enable_domo:
+          type: string
+          description: Enable Domo dashboard for this customer
+        dashboard_enable_parcel_insights:
+          type: string
+          description: Enable Parcel Insights for this customer
+        gestation_length:
+          type:
+          - string
+          - 'null'
+          description: Customer gestation length in hours.
+        billing_core:
+          type:
+          - boolean
+          - 'null'
+          description: if false, disables hardcoded billing logic (staff only)
+      additionalProperties: false
+    ApiV2EntitiesWarehouse:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the warehouse id
+        name:
+          type:
+          - string
+          - 'null'
+          description: the warehouse name
+        timezone:
+          type:
+          - string
+          - 'null'
+          description: Warehouse timezone in friendly/legacy format (eg. "Eastern Time (US & Canada)")
+        timezone_raw:
+          type: string
+          description: Warehouse timezone in standard format (eg. "America/New_York")
+        partner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: 'Warehouse partner id '
+        shipping_address_1:
+          type:
+          - string
+          - 'null'
+          description: Warehouse address line 1
+        shipping_address_2:
+          type:
+          - string
+          - 'null'
+          description: Warehouse address line 2
+        shipping_city:
+          type:
+          - string
+          - 'null'
+          description: Warehouse city
+        shipping_state:
+          type:
+          - string
+          - 'null'
+          description: ' Warehouse state or province'
+        shipping_zip:
+          type:
+          - string
+          - 'null'
+          description: Warehouse postal code
+        shipping_country:
+          type:
+          - string
+          - 'null'
+          description: Warehouse country
+        shipping_country_iso2:
+          type:
+          - string
+          - 'null'
+          description: Warehouse country code
+        latitude:
+          type:
+          - string
+          - 'null'
+          description: Warehouse latitude
+        longitude:
+          type:
+          - string
+          - 'null'
+          description: Warehouse longitude
+        slug:
+          type:
+          - string
+          - 'null'
+          description: Warehouse slug
+        default_pick_strategy:
+          type:
+          - string
+          - 'null'
+          description: Paper or Robot scanning by default when batching? (staff only)
+        bin_total_count_max:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Maximum total items per bin (staff only)
+        bin_cubic_volume_max:
+          type:
+          - string
+          - 'null'
+          description: Maximum cubic volume per bin (staff only)
+        number_of_groups:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Number of slots/bins in carts--default maximum number of orders in a batch (staff only)
+        fedex_pickup_time:
+          type: string
+          description: Scheduled FedEx pickup time (staff only)
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: Is the Warehouse active?  (partners only)
+        square_footage:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Warehouse square footage  (partners only)
+        created_at:
+          type: string
+          format: date-time
+          description: the warehouse creation date and time (partners only)
+        updated_at:
+          type: string
+          format: date-time
+          description: the warehouse last update date and time (partners only)
+        ups_shipper_number:
+          type:
+          - string
+          - 'null'
+          description: Warehouse UPS shipping number (partners only)
+        email:
+          type:
+          - string
+          - 'null'
+          description: the warehouse email address (partners only)
+        ups_carrier_facility:
+          type:
+          - string
+          - 'null'
+          description: Warehouse carrier facility (partners only)
+        currency:
+          type:
+          - string
+          - 'null'
+          description: Warehouse currency (partners only)
+        vat:
+          type:
+          - string
+          - 'null'
+          description: Warehouse VAT number (partners only)
+        domestic_return_labels:
+          type:
+          - boolean
+          - 'null'
+          description: Warehouse does domestic return labels?  (partners only)
+        international_return_labels:
+          type:
+          - boolean
+          - 'null'
+          description: Warehouse does intl return labels? (partners only)
+        accepting_new_customers:
+          type:
+          - boolean
+          - 'null'
+          description: Is this Warehouse accepting new customers? (partners only)
+        receiving_hours:
+          type:
+          - string
+          - 'null'
+          description: Warehouse receiving hours (partners only)
+        pickup_hours:
+          type:
+          - string
+          - 'null'
+          description: Warehouse pickup hours (partners only)
+        contact_name:
+          type:
+          - string
+          - 'null'
+          description: Warehouse contact name (partners only)
+        contact_phone:
+          type:
+          - string
+          - 'null'
+          description: Warehouse contact phone (partners only)
+        delivery_appointment_required:
+          type:
+          - boolean
+          - 'null'
+          description: Does this Warehouse have delivery appointment reminders?  (partners only)
+        label_format:
+          type:
+          - string
+          - 'null'
+          description: Warehouse label format (partners only)
+        shipping_label_format:
+          type:
+          - string
+          - 'null'
+          description: Warehouse shipping label format - EPL2 or ZPL (partners only)
+        loading_dock_quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Loading Dock Quantity (partners only)
+        receiving_special_instructions:
+          type:
+          - string
+          - 'null'
+          description: Receiving special instructions (partners only)
+        single_item_batch_size:
+          type:
+          - string
+          - 'null'
+          description: Single Item Batch Size (partners only)
+        packaging_customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Packaging Customer ID (partners only)
+        notes:
+          type:
+          - string
+          - 'null'
+          description: Miscellaneous notes/info (partners only)
+        warehouse_features:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiV2EntitiesWarehouseFeature'
+      additionalProperties: false
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
+    ApiV2EntitiesWarehouseFeature:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the warehouse feature id
+        feature:
+          type: string
+          description: the warehouse feature feature
+        feature_code:
+          type:
+          - string
+          - 'null'
+          description: the code for the warehouse feature
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the warehouse feature creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the warehouse feature last update date and time
+        warehouses:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiV2EntitiesWarehouse'
+      additionalProperties: false
+    PutApiV2CustomersIdRequest:
+      type: object
+      properties:
+        workday_uuid:
+          type: string
+        partner_id:
+          type: integer
+          format: int32
+          description: Customer partner id. (admins only)
+        billing_contact_name:
+          type: string
+          description: Customer billing contact name.
+        name:
+          type: string
+          description: Customer name.
+        active:
+          type: boolean
+          description: Customer active?
+        auto_merge_gestation:
+          type: integer
+          format: int32
+          description: Customer auto merge gestation.
+        default_warehouse_id:
+          type: integer
+          format: int32
+          description: Customer default warehouse id.
+        eori_number:
+          type: string
+          description: Customer EORI number.
+        estimated_monthly_volume:
+          type: string
+          description: Customer estimated monthly volume.
+        fedex_account:
+          type: string
+          description: Customer FedEx account.
+        from_email:
+          type: string
+          description: Customer from email.
+        incoterm:
+          type: string
+          description: Customer incoterm.
+        instructions:
+          type: string
+          description: Customer instructions.
+        item_scanning_preference:
+          type: boolean
+          description: Customer has item scanning preference?
+        label_format:
+          type: string
+          description: Customer label format.
+        notes:
+          type: string
+          description: Customer notes.
+        notify_originator:
+          type: boolean
+          description: notify originator?
+        notify_originator_inventory:
+          type: integer
+          format: int32
+          description: Customer notify originator inventory.
+        originator_permissions:
+          type: boolean
+          description: originator permissions?
+        packing_slip_msg:
+          type: string
+          description: Customer packing slip message.
+        packingslip_template:
+          type: string
+          description: Customer packing slip template.
+        request_serial_numbers:
+          type: boolean
+          description: request serial numbers?
+        ship_method_preference:
+          type: integer
+          format: int32
+          description: Customer shipping method preference.
+        shipping_name:
+          type: string
+          description: Customer shipping name.
+        ups_account:
+          type: string
+          description: Customer UPS account.
+        vat_number:
+          type: string
+          description: Customer VAT number.
+        ein:
+          type: string
+          description: Customer EIN / Tax ID
+        gs1_company_prefix:
+          type: string
+          description: GS1 company prefix for barcodes
+        warehouse_fallback:
+          type: integer
+          format: int32
+          description: Customer warehouse fallback.
+        payment_hold:
+          type: boolean
+          description: is this account on hold pending a valid payment method?
+        primary_contact:
+          type: string
+          description: The Customers designated primary contact.
+        global_e_guid:
+          type: string
+          description: Customer Global-E GUID.
+        exit_notice:
+          type: boolean
+          description: is this account flagged for exit notice? (admins only)
+        data_mapping_string:
+          type: string
+          description: Data mapping string for this customer. (admins only)
+        allowed_warehouse_ids:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: IDs of warehouses this customer may ship from
+        account_level:
+          type: integer
+          format: int32
+          description: Account level
+        auto_merge_skus:
+          type: boolean
+          description: auto merge SKUs?
+        billing_email:
+          type: string
+          description: Customer billing email.
+        billing_company:
+          type: string
+          description: Customer billing company.
+        billing_phone1:
+          type: string
+          description: Customer phone 1.
+        billing_phone2:
+          type: string
+          description: Customer phone 2.
+        billing_address1:
+          type: string
+          description: Customer billing address line 1.
+        billing_address2:
+          type: string
+          description: Customer billing address line 2.
+        billing_address3:
+          type: string
+          description: Customer billing address line 3.
+        billing_city:
+          type: string
+          description: Customer billing city.
+        billing_state:
+          type: string
+          description: Customer billing state.
+        billing_zip:
+          type: string
+          description: Customer billing zip.
+        billing_country:
+          type: string
+          description: Customer billing country.
+        billing_residential:
+          type: boolean
+          description: Customer billing residential?
+        items_returnable:
+          type: boolean
+          description: items returnable by default?
+        allow_international_returns:
+          type: boolean
+          description: Allow International returns?
+        items_exchangeable:
+          type: boolean
+          description: items exchangeable by default?
+        return_time_limit:
+          type: integer
+          format: int32
+          description: Return time limit.
+        return_label_expires_in:
+          type: integer
+          format: int32
+          description: Return label expiration time limit.
+        return_price_restricted:
+          type: boolean
+          description: limit exchange to same value or less?
+        return_sku_match:
+          type: string
+          description: Exchange SKU match policy.
+        rma_display_logo:
+          type: boolean
+          description: display customer logo on returns page?
+        rma_footer_content:
+          type: string
+          description: Return page footer content.
+        return_name:
+          type: string
+          description: Customer return name.
+        return_company:
+          type: string
+          description: Customer return company.
+        return_email:
+          type: string
+          description: Customer return email.
+        return_phone:
+          type: string
+          description: Customer return phone.
+        return_address_1:
+          type: string
+          description: Customer return address line 1.
+        return_address_2:
+          type: string
+          description: Customer return address line 2.
+        return_city:
+          type: string
+          description: Customer return city.
+        return_state:
+          type: string
+          description: Customer return state.
+        return_zip:
+          type: string
+          description: Customer return zip.
+        return_country:
+          type: string
+          description: Customer return country.
+        supports_return_labels:
+          type: boolean
+          description: does the customer support return labels?
+        logo_content_type:
+          type: string
+          description: Customer logo content type.
+        logo_file_name:
+          type: string
+          description: Customer logo file name.
+        logo_file_size:
+          type: integer
+          format: int32
+          description: Customer logo file size.
+        logo_updated_at:
+          type: string
+          format: date-time
+          description: Customer logo updated at.
+        full_logo_url:
+          type: string
+          description: Customer full logo url.
+        email_confirmation_from:
+          type: string
+          description: Customer email confirmation from.
+        email_confirmation_name:
+          type: string
+          description: Customer email confirmation name.
+        email_confirmation_msg:
+          type: string
+          description: Customer email confirmation message.
+        email_confirmation_preference:
+          type: integer
+          format: int32
+          description: Customer email confirmation preference.
+        email_confirmation_template:
+          type: string
+          description: Customer email confirmation template.
+        low_inventory_threshold:
+          type: integer
+          format: int32
+          description: Quantity where an item in inventory would be considered having low inventory
+        lot_control:
+          type: boolean
+          description: do items for this customer require lot control?
+        expiration_period:
+          type: integer
+          format: int32
+          description: items that are this many days from expiration will not be allowed to ship
+        ship_strategy:
+          type: integer
+          format: int32
+          description: 'which locations to pick first: Default, FIFO, FEFO'
+        items_unavailable_on_sellout:
+          type: integer
+          format: int32
+          description: 'Process Orders setting: Whiplash will automatically turn on Process Orders when an item is received, and turn it off when an item sells. Whiplash will not manage Process Orders. Whiplash will automatically turn on Process Orders only the first time an Item is received. Whiplash will automatically turn on Process Orders when an item is received or adjusted in, and turn it off when an Item sells out.'
+        replenishment_min:
+          type: string
+          description: Minimum number of days worth of stock to keep in forward pick locations
+        replenishment_target:
+          type: string
+          description: Target number of days stock to replenish forward pick locations
+        allow_b_stock_receiving:
+          type: boolean
+          description: Allow "b stock" role for receiving
+        location_default_return_role:
+          type: string
+          description: Default role (i.e. Pickable, Damaged) for returned items
+        location_enable_pending_returns:
+          type: boolean
+          description: Allow "pending" role for returned items
+        location_enable_receiving_into_reserved:
+          type: boolean
+          description: Allow "reserved" role for receiving items
+        receiving_fields:
+          type: array
+          items:
+            type: object
+          description: 'JSON array of required and optional receiving fields in the form: {"label": "cases", "required": true}'
+        project_task_labels:
+          type: array
+          items:
+            type: string
+          description: JSON array of allowed labels for customer's project tasks
+        dashboard_enable_domo:
+          type: string
+          description: Enable Domo dashboard for this customer
+        dashboard_enable_parcel_insights:
+          type: string
+          description: Enable Parcel Insights for this customer
+        gestation_length:
+          type: string
+          description: Customer gestation length in hours.
+        billing_core:
+          type: boolean
+          description: if false, disables hardcoded billing logic (staff only)

@@ -1,0 +1,1141 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items order_items API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: order_items
+  description: An OrderItem represents an Item with a quantity in an Order.
+paths:
+  /api/v2/order_items/actions:
+    get:
+      operationId: GetApiV2OrderItemsActions
+      tags:
+      - order_items
+      summary: List actions you can perform
+      description: Get resource actions
+      parameters: []
+      responses:
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/order_items/{id}:
+    get:
+      operationId: GetApiV2OrderItemsId
+      tags:
+      - order_items
+      summary: Retrieve an order item
+      description: Retrieve an order item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Page of results to fetch
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Number of results to return per page
+      - name: page_total
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include total count of results
+      - name: page_links
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include prev/next links in response headers
+      responses:
+        '200':
+          description: Retrieve an order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesOrderItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2OrderItemsId
+      tags:
+      - order_items
+      summary: Update an order item
+      description: Update an order item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Update an order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesOrderItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2OrderItemsIdRequest'
+    delete:
+      operationId: DeleteApiV2OrderItemsId
+      tags:
+      - order_items
+      summary: Destroy an order item
+      description: Destroy an order item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully deleted
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/order_items/{id}/call/{action}:
+    put:
+      operationId: PutApiV2OrderItemsIdCallAction
+      tags:
+      - order_items
+      summary: Perform an action on an order_item
+      description: Perform an action on an order_item
+      parameters:
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Perform an action on an order_item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesOrderItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '405':
+          description: method_not_allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2OrderItemsIdCallActionRequest'
+  /api/v2/order_items/{id}/meta_fields:
+    get:
+      operationId: GetApiV2OrderItemsIdMetaFields
+      tags:
+      - order_items
+      summary: List meta fields
+      description: Get the meta fields for a(n) OrderItem
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: associations
+        in: query
+        required: false
+        schema:
+          type: array
+          description: Include meta fields for associations
+          items:
+            type: string
+      responses:
+        '200':
+          description: Get the meta fields for a(n) OrderItem
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesMetaFields'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2OrderItemsIdMetaFields
+      tags:
+      - order_items
+      summary: Set meta fields
+      description: Update OrderItem meta fields
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully updated
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2OrderItemsIdMetaFieldsRequest'
+  /api/v2/order_items/{id}/separate:
+    put:
+      operationId: PutApiV2OrderItemsIdSeparate
+      tags:
+      - order_items
+      summary: Separate an order item
+      description: Separate an order item into a new order
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Separate an order item into a new order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesOrderItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/order_items/{id}/serial_numbers:
+    get:
+      operationId: GetApiV2OrderItemsIdSerialNumbers
+      tags:
+      - order_items
+      summary: List all serial numbers associated with an order item
+      description: Return an order_items serial numbers
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Return an order_items serial numbers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiV2EntitiesSerialNumber'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/order_items/{id}/wholesale_item:
+    get:
+      operationId: GetApiV2OrderItemsIdWholesaleItem
+      tags:
+      - order_items
+      summary: Retrieve the Wholesale item object for an order item
+      description: get the Wholesale item object for an order item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: get the Wholesale item object for an order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2OrderItemsIdWholesaleItem
+      tags:
+      - order_items
+      summary: Update a wholesale item object
+      description: Update a wholesale item object
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Update a wholesale item object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2OrderItemsIdWholesaleItemRequest'
+components:
+  schemas:
+    ApiV2EntitiesSerialNumber:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the serial number id
+        order_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order_item_id for the serial number
+        shipnotice_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the shipnotice_item_id for the serial number (returns only)
+        text:
+          type:
+          - string
+          - 'null'
+          description: the serial number itself
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: if not null, the DateTime when the serial was deleted
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    PutApiV2OrderItemsIdWholesaleItemRequest:
+      type: object
+      properties:
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type: string
+          description: the line number
+        item_alias:
+          type: string
+          description: the item alias
+        item_color:
+          type: string
+          description: the item color
+        item_size:
+          type: string
+          description: the item size
+        vendor_part_number:
+          type: string
+          description: the vendor part number
+        buyer_part_number:
+          type: string
+          description: the buyer part number
+        consumer_package_code:
+          type: string
+          description: the consumer package code
+        outer_pack_value:
+          type: string
+          description: the outer pack value
+        inner_pack_value:
+          type: string
+          description: the inner pack value
+        size_description:
+          type: string
+          description: the size description
+        color_description:
+          type: string
+          description: the color description
+        upc:
+          type: string
+          description: the UPC
+        description:
+          type: string
+          description: the description
+        style:
+          type: string
+          description: the style
+        ean:
+          type: string
+          description: the EAN
+        alternate_item_number:
+          type: string
+          description: the alternate item number
+        alternate_barcode:
+          type: string
+          description: the alternate barcode
+        alternate_sku:
+          type: string
+          description: the alternate SKU
+        lot:
+          type: string
+          description: the lot
+        ih_category:
+          type: string
+          description: the IH category
+    ApiV2EntitiesOriginator:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the originator id
+        originated_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the object created by the originator
+        originated_type:
+          type:
+          - string
+          - 'null'
+          description: the type of object created by the originator
+        shop_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator shop id
+        shop_domain:
+          type: string
+          description: the originator shop domain
+        provider:
+          type:
+          - string
+          - 'null'
+          description: the originator provider (shopify, magento, bandcamp, etc)
+        original_id:
+          type:
+          - string
+          - 'null'
+          description: the originator original id (from the provider)
+        group_id:
+          type:
+          - string
+          - 'null'
+          description: the originator group id
+        misc:
+          type:
+          - string
+          - 'null'
+          description: miscellaneous info for the originator
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the originator active?
+        integration_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator integration id
+        last_notified_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last notified date and time
+        last_notification_status:
+          type:
+          - string
+          - 'null'
+          description: the originator last notification status
+        last_synced_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last synced date and time
+        distinct_originator_key:
+          type:
+          - string
+          - 'null'
+          description: the originator distinct key
+        created_at:
+          type: string
+          format: date-time
+          description: the originator creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the originator last update date and time
+        application_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the oauth application
+      additionalProperties: false
+    PutApiV2OrderItemsIdRequest:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          format: int32
+          description: the order item order id
+        item_id:
+          type: integer
+          format: int32
+          description: the order item item id
+        package_id:
+          type: integer
+          format: int32
+          description: the order item package id
+        quote_item_id:
+          type: integer
+          format: int32
+          description: the order item quote item id
+        sku:
+          type: string
+          description: the SKU of this item
+        description:
+          type: string
+          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+        quantity:
+          type: integer
+          format: int32
+          description: number of this item in Order
+        price:
+          type: string
+          description: price of this item
+        unshippable:
+          type: boolean
+          description: is this item unshippable?
+        available:
+          type: boolean
+          description: is this item available?
+        packed:
+          type: integer
+          format: int32
+          description: number of items packed
+        packaging:
+          type: boolean
+          description: is this item packaging?
+        wholesale_cost:
+          type: string
+          description: wholesale cost of the item
+        is_bundle:
+          type: boolean
+          description: is this item a bundle?
+        retail_fee:
+          type: string
+          description: retail fee of this item
+        promo:
+          type: boolean
+          description: is this item a promo?
+        returnable:
+          type: boolean
+          description: is this item returnable?
+        currency:
+          type: string
+          description: currency code for this item
+        wholesale_fee:
+          type: string
+          description: wholesale fee of this item
+        hazmat:
+          type: boolean
+          description: (deprecated) is the order item hazmat?
+        misc:
+          type: string
+          description: miscellaneous information about the order item
+        request_serial_number:
+          type: boolean
+          description: does the item require a serial number when shipping?
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        wholesale_item_attributes:
+          type: object
+          properties:
+            order_item_id:
+              type: integer
+              format: int32
+              description: the associated order item id
+            line_no:
+              type: string
+              description: the line number
+            item_alias:
+              type: string
+              description: the item alias
+            item_color:
+              type: string
+              description: the item color
+            item_size:
+              type: string
+              description: the item size
+            vendor_part_number:
+              type: string
+              description: the vendor part number
+            buyer_part_number:
+              type: string
+              description: the buyer part number
+            consumer_package_code:
+              type: string
+              description: the consumer package code
+            outer_pack_value:
+              type: string
+              description: the outer pack value
+            inner_pack_value:
+              type: string
+              description: the inner pack value
+            size_description:
+              type: string
+              description: the size description
+            color_description:
+              type: string
+              description: the color description
+            upc:
+              type: string
+              description: the UPC
+            description:
+              type: string
+              description: the description
+            style:
+              type: string
+              description: the style
+            ean:
+              type: string
+              description: the EAN
+            alternate_item_number:
+              type: string
+              description: the alternate item number
+            alternate_barcode:
+              type: string
+              description: the alternate barcode
+            alternate_sku:
+              type: string
+              description: the alternate SKU
+            lot:
+              type: string
+              description: the lot
+            ih_category:
+              type: string
+              description: the IH category
+    ApiV2EntitiesWholesaleItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the wholesale item id
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type:
+          - string
+          - 'null'
+          description: the line number
+        item_alias:
+          type:
+          - string
+          - 'null'
+          description: the item alias
+        item_color:
+          type:
+          - string
+          - 'null'
+          description: the item color
+        item_size:
+          type:
+          - string
+          - 'null'
+          description: the item size
+        vendor_part_number:
+          type:
+          - string
+          - 'null'
+          description: the vendor part number
+        buyer_part_number:
+          type:
+          - string
+          - 'null'
+          description: the buyer part number
+        consumer_package_code:
+          type:
+          - string
+          - 'null'
+          description: the consumer package code
+        outer_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the outer pack value
+        inner_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the inner pack value
+        size_description:
+          type:
+          - string
+          - 'null'
+          description: the size description
+        color_description:
+          type:
+          - string
+          - 'null'
+          description: the color description
+        upc:
+          type:
+          - string
+          - 'null'
+          description: the UPC
+        description:
+          type:
+          - string
+          - 'null'
+          description: the description
+        style:
+          type:
+          - string
+          - 'null'
+          description: the style
+        ean:
+          type:
+          - string
+          - 'null'
+          description: the EAN
+        alternate_item_number:
+          type:
+          - string
+          - 'null'
+          description: the alternate item number
+        alternate_barcode:
+          type:
+          - string
+          - 'null'
+          description: the alternate barcode
+        alternate_sku:
+          type:
+          - string
+          - 'null'
+          description: the alternate SKU
+        lot:
+          type:
+          - string
+          - 'null'
+          description: the lot
+        ih_category:
+          type:
+          - string
+          - 'null'
+          description: the IH category
+        created_at:
+          type: string
+          format: date-time
+          description: the wholesale item creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the wholesale item last update date and time
+      additionalProperties: false
+    ApiSharedEntitiesMetaFields:
+      type: object
+      title: Shared
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+      additionalProperties: false
+    PutApiV2OrderItemsIdCallActionRequest:
+      type: object
+      properties:
+        action:
+          type: string
+        args:
+          type: object
+          description: Method params
+    ApiV2EntitiesOrderItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the order item id
+        order_id:
+          type: integer
+          format: int32
+          description: the order item order id
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item customer id
+        item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item item id
+        package_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item package id
+        quote_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item quote item id
+        sku:
+          type:
+          - string
+          - 'null'
+          description: the SKU of this item
+        description:
+          type:
+          - string
+          - 'null'
+          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+        quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: number of this item in Order
+        price:
+          type:
+          - string
+          - 'null'
+          description: price of this item
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the order item creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the order item last update date and time
+        unshippable:
+          type:
+          - boolean
+          - 'null'
+          description: is this item unshippable?
+        available:
+          type:
+          - boolean
+          - 'null'
+          description: is this item available?
+        packed:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: number of items packed
+        packaging:
+          type:
+          - boolean
+          - 'null'
+          description: is this item packaging?
+        wholesale_cost:
+          type:
+          - string
+          - 'null'
+          description: wholesale cost of the item
+        is_bundle:
+          type:
+          - boolean
+          - 'null'
+          description: is this item a bundle?
+        retail_fee:
+          type:
+          - string
+          - 'null'
+          description: retail fee of this item
+        promo:
+          type:
+          - boolean
+          - 'null'
+          description: is this item a promo?
+        returnable:
+          type:
+          - boolean
+          - 'null'
+          description: is this item returnable?
+        currency:
+          type:
+          - string
+          - 'null'
+          description: currency code for this item
+        wholesale_fee:
+          type:
+          - string
+          - 'null'
+          description: wholesale fee of this item
+        hazmat:
+          type: boolean
+          description: (deprecated) is the order item hazmat?
+        misc:
+          type:
+          - string
+          - 'null'
+          description: miscellaneous information about the order item
+        request_serial_number:
+          type:
+          - boolean
+          - 'null'
+          description: does the item require a serial number when shipping?
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        originator:
+          $ref: '#/components/schemas/ApiV2EntitiesOriginator'
+        wholesale_item:
+          $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
+      additionalProperties: false
+    PutApiV2OrderItemsIdMetaFieldsRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations

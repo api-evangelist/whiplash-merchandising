@@ -1,0 +1,346 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items documents API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: documents
+  description: Documents are imported files and exported reports. We store a record in your account of every file you import, as well as every report you've run, so they're easy to search and access.
+paths:
+  /api/v2/documents:
+    get:
+      operationId: GetApiV2Documents
+      tags:
+      - documents
+      summary: List all documents
+      description: Get all documents
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      - name: fields
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Comma-separated list of fields to include in the response
+      - name: sort
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'A list of sort options (ex: name asc,created_at desc)'
+      - name: tagged_with
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'A comma separated list of tags to search on (ex: "account transaction,AccountExporters::Invoice").'
+      responses:
+        '200':
+          description: Get all documents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiV2EntitiesDocument'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    post:
+      operationId: PostApiV2Documents
+      tags:
+      - documents
+      summary: Create a document
+      description: Create a document
+      parameters: []
+      responses:
+        '201':
+          description: Create a document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesDocument'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '409':
+          description: conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiV2DocumentsRequest'
+  /api/v2/documents/actions:
+    get:
+      operationId: GetApiV2DocumentsActions
+      tags:
+      - documents
+      summary: List actions you can perform
+      description: Get resource actions
+      parameters: []
+      responses:
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/documents/{id}:
+    get:
+      operationId: GetApiV2DocumentsId
+      tags:
+      - documents
+      summary: Retrieve a document
+      description: Get a document
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Get a document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesDocument'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    delete:
+      operationId: DeleteApiV2DocumentsId
+      tags:
+      - documents
+      summary: Destroy an document
+      description: Destroy an document
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully deleted
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+components:
+  schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    PostApiV2DocumentsRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          description: the document file url
+        partner_id:
+          type: integer
+          format: int32
+          description: the document partner id
+        owner_id:
+          type: integer
+          format: int32
+          description: the document owners id
+        owner_type:
+          type: string
+          description: the document owner type
+        customer_name:
+          type: string
+          description: associated customer name
+        partner_name:
+          type: string
+          description: associated partner name
+        user_name:
+          type: string
+          description: associated user name
+        signed_url:
+          type: string
+          description: the document pre-signed url
+        keyword_list:
+          type: string
+          description: Comma separated list of keyword tags
+        file_name:
+          type: string
+        message_list:
+          type: string
+          description: Comma separated list of message tags
+        context_list:
+          type: string
+          description: Comma separated list of context tags
+        resource_type_list:
+          type: string
+          description: Comma separated list resource_type tags
+    ApiV2EntitiesDocument:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the document id
+        url:
+          type: string
+          description: the document file url
+        user_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the document user id
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the document customer id
+        partner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the document partner id
+        owner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the document owners id
+        owner_type:
+          type:
+          - string
+          - 'null'
+          description: the document owner type
+        created_at:
+          type: string
+          format: date-time
+          description: the document creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the document last update date and time
+        keyword_list:
+          type: array
+          items:
+            type: string
+        message_list:
+          type: array
+          items:
+            type: string
+        context_list:
+          type: array
+          items:
+            type: string
+        resource_type_list:
+          type: array
+          items:
+            type: string
+        customer_name:
+          type: string
+          description: associated customer name
+        partner_name:
+          type: string
+          description: associated partner name
+        user_name:
+          type: string
+          description: associated user name
+        signed_url:
+          type: string
+          description: the document pre-signed url
+      additionalProperties: false

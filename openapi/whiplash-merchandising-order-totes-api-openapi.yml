@@ -1,0 +1,127 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items order_totes API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: order_totes
+  description: Order picking container management.
+paths:
+  /api/v2/order_totes/{code}/order_items/count:
+    get:
+      operationId: GetApiV2OrderTotesCodeOrderItemsCount
+      tags:
+      - order_totes
+      summary: Count order items for an order tote
+      description: Returns count of order items for a given order tote
+      parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      responses:
+        '200':
+          description: Returns count of order items for a given order tote
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCount'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/order_totes/{code}/orders/count:
+    get:
+      operationId: GetApiV2OrderTotesCodeOrdersCount
+      tags:
+      - order_totes
+      summary: Count orders for a tote
+      description: Returns count of orders for a given tote
+      parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      responses:
+        '200':
+          description: Returns count of orders for a given tote
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCount'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+components:
+  schemas:
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false

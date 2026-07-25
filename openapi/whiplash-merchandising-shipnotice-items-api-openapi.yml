@@ -1,0 +1,1103 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items shipnotice_items API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: shipnotice_items
+  description: Similar to an OrderItem, ShipnoticeItem represents an Item with a quantity in a Shipnotice. quantity refers to the quantity expected to arrive, and the quantity actually received is quantity_good.
+paths:
+  /api/v2/shipnotice_items/actions:
+    get:
+      operationId: GetApiV2ShipnoticeItemsActions
+      tags:
+      - shipnotice_items
+      summary: List actions you can perform
+      description: Get resource actions
+      parameters: []
+      responses:
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/shipnotice_items/count:
+    get:
+      operationId: GetApiV2ShipnoticeItemsCount
+      tags:
+      - shipnotice_items
+      summary: Count ship notice items
+      description: Returns count of shipnotice items
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      responses:
+        '200':
+          description: Returns count of shipnotice items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCount'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/shipnotice_items/{id}:
+    get:
+      operationId: GetApiV2ShipnoticeItemsId
+      tags:
+      - shipnotice_items
+      summary: Retrieve a ship notice item
+      description: Get a shipnotice item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Get a shipnotice item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesShipnoticeItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2ShipnoticeItemsId
+      tags:
+      - shipnotice_items
+      summary: Update a ship notice item
+      description: Update a shipnotice item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Update a shipnotice item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesShipnoticeItem'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2ShipnoticeItemsIdRequest'
+    delete:
+      operationId: DeleteApiV2ShipnoticeItemsId
+      tags:
+      - shipnotice_items
+      summary: Destroy a shipnotice item
+      description: Destroy a shipnotice item
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully deleted
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/shipnotice_items/{id}/meta_fields:
+    get:
+      operationId: GetApiV2ShipnoticeItemsIdMetaFields
+      tags:
+      - shipnotice_items
+      summary: List meta fields
+      description: Get the meta fields for a(n) ShipnoticeItem
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: associations
+        in: query
+        required: false
+        schema:
+          type: array
+          description: Include meta fields for associations
+          items:
+            type: string
+      responses:
+        '200':
+          description: Get the meta fields for a(n) ShipnoticeItem
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesMetaFields'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2ShipnoticeItemsIdMetaFields
+      tags:
+      - shipnotice_items
+      summary: Set meta fields
+      description: Update ShipnoticeItem meta fields
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully updated
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2ShipnoticeItemsIdMetaFieldsRequest'
+components:
+  schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    PutApiV2ShipnoticeItemsIdMetaFieldsRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
+    ApiSharedEntitiesMetaFields:
+      type: object
+      title: Shared
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+      additionalProperties: false
+    ApiV2EntitiesLot:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the location id
+        number:
+          type:
+          - string
+          - 'null'
+          description: Lot number
+        expires_on:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: When merchandise in the lot expires
+        shipnotice_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Associated Ship Notice Item
+        created_at:
+          type: string
+          format: date-time
+          description: the lot creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the lot last update date and time
+      additionalProperties: false
+    ApiV2EntitiesItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the item id
+        sku:
+          type:
+          - string
+          - 'null'
+          description: the item SKU number
+        title:
+          type:
+          - string
+          - 'null'
+          description: the item title
+        description:
+          type:
+          - string
+          - 'null'
+          description: the item description
+        full_description:
+          type: string
+          description: the full item description
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the date and time the item was created
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the date and time the item was last updated
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer the item belongs to
+        quantity:
+          type: integer
+          format: int32
+          description: the available quantity of the item
+        weight:
+          type:
+          - string
+          - 'null'
+          description: the weight of the item (in pounds)
+        available:
+          type:
+          - boolean
+          - 'null'
+          description: is the item available?
+        image_originator_url:
+          type:
+          - string
+          - 'null'
+          description: the originator url for the item image
+        vendor:
+          type:
+          - string
+          - 'null'
+          description: the item vendor
+        scancode:
+          type:
+          - string
+          - 'null'
+          description: the item scancode
+        price:
+          type:
+          - string
+          - 'null'
+          description: the item price
+        media_mail:
+          type:
+          - boolean
+          - 'null'
+          description: is the item eligible for media mail?
+        packaging:
+          type:
+          - boolean
+          - 'null'
+          description: is the item packaging?
+        length:
+          type:
+          - string
+          - 'null'
+          description: the item length (in inches)
+        width:
+          type:
+          - string
+          - 'null'
+          description: the item width (in inches)
+        height:
+          type:
+          - string
+          - 'null'
+          description: the item height (in inches)
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the item active?
+        wholesale_cost:
+          type:
+          - string
+          - 'null'
+          description: the wholesale cost of the item
+        is_bundle:
+          type:
+          - boolean
+          - 'null'
+          description: is the item a bundle?
+        packaging_type:
+          type:
+          - string
+          - 'null'
+          description: the item packaging type
+          enum:
+          - WhiplashBag
+          - WhiplashBox
+          - WhiplashBubbleMailer
+          - WhiplashFill
+          - WhiplashFlat
+          - WhiplashTube
+          - WhiplashNoPackaging
+          - WhiplashPallet
+          - Card
+          - Letter
+          - Flat
+          - Parcel
+          - LargeParcel
+          - IrregularParcel
+          - FlatRateEnvelope
+          - FlatRateLegalEnvelope
+          - FlatRatePaddedEnvelope
+          - FlatRateGiftCardEnvelope
+          - FlatRateWindowEnvelope
+          - FlatRateCardboardEnvelope
+          - SmallFlatRateEnvelope
+          - SmallFlatRateBox
+          - MediumFlatRateBox
+          - LargeFlatRateBox
+          - RegionalRateBoxA
+          - RegionalRateBoxB
+          - RegionalRateBoxC
+          - LargeFlatRateBoardGameBox
+          - UPSLetter
+          - UPSExpressBox
+          - UPS25kgBox
+          - UPS10kgBox
+          - Tube
+          - Pak
+          - Pallet
+          - SmallExpressBox
+          - MediumExpressBox
+          - LargeExpressBox
+          - FedExEnvelope
+          - FedExBox
+          - FedExPak
+          - FedExTube
+          - FedEx10kgBox
+          - FedEx25kgBox
+          - BPM
+          - LargeLetter
+          - SmallParcel
+          - MediumParcel
+        promo:
+          type:
+          - boolean
+          - 'null'
+          description: is the item a promo?
+        street_date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the item street date
+        category:
+          type:
+          - string
+          - 'null'
+          description: the item category
+        include_inbound_in_published:
+          type:
+          - boolean
+          - 'null'
+          description: include inbound items in published?
+        returnable:
+          type:
+          - boolean
+          - 'null'
+          description: is the item returnable?
+        return_sku_match:
+          type:
+          - string
+          - 'null'
+          description: the item return SKU match
+        return_price_restricted:
+          type:
+          - boolean
+          - 'null'
+          description: is the item return price restricted?
+        request_serial_number:
+          type:
+          - boolean
+          - 'null'
+          description: does the item require a serial number when shipping?
+        currency:
+          type:
+          - string
+          - 'null'
+          description: the item currency
+        tariff_number:
+          type:
+          - string
+          - 'null'
+          description: the item harmonized tariff number (for international shipping)
+        notify_originator_inventory:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: notify originator inventory?
+        name:
+          type: string
+          description: the item name and description, formatted nicely
+        nmfc_code:
+          type:
+          - string
+          - 'null'
+          description: the item  National Motor Freight Classification code,
+        nmfc_class:
+          type:
+          - string
+          - 'null'
+          description: the item National Motor Freight Classification class code
+        commodity_description:
+          type:
+          - string
+          - 'null'
+          description: the item commodity description
+        image_url:
+          type: string
+          description: the item image url
+        hazmat:
+          type: boolean
+          description: 'hazmat true/false flag in the UI is derived from the hazmat_type when only the type is provided\
+
+            error results when the hazmat flag set to false with a hazmat_type\
+
+            error results when the hazmat flag set to true without a hazmat_type\
+
+            (deprecated) is the item hazmat?'
+        hazmat_type:
+          type:
+          - string
+          - 'null'
+          description: hazmat class
+          enum:
+          - lithium
+          - ormd
+          - lighters
+        misc:
+          type:
+          - string
+          - 'null'
+          description: miscellaneous information about the item
+        ean:
+          type:
+          - string
+          - 'null'
+          description: the EAN number for the item
+        lot_control:
+          type:
+          - boolean
+          - 'null'
+          description: does this item require lot control?
+        expiration_period:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: items that are this many days from expiration will not be allowed to ship
+        ship_strategy:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: 'which locations to pick first: Default, FIFO, FEFO'
+        velocity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Average number of units expected to sell in a day
+        case_quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: How many CASES to a carton?
+        origin_country:
+          type:
+          - string
+          - 'null'
+          description: The country of origin for this item (as an iso2 country code)
+          enum:
+          - AF
+          - AX
+          - AL
+          - DZ
+          - AS
+          - AD
+          - AO
+          - AI
+          - AQ
+          - AG
+          - AR
+          - AM
+          - AW
+          - AU
+          - AT
+          - AZ
+          - BS
+          - BH
+          - BD
+          - BB
+          - BY
+          - BE
+          - BZ
+          - BJ
+          - BM
+          - BT
+          - BO
+          - BQ
+          - BA
+          - BW
+          - BV
+          - BR
+          - IO
+          - BN
+          - BG
+          - BF
+          - BI
+          - KH
+          - CM
+          - CA
+          - CV
+          - KY
+          - CF
+          - TD
+          - CL
+          - CN
+          - CX
+          - CC
+          - CO
+          - KM
+          - CG
+          - CD
+          - CK
+          - CR
+          - CI
+          - HR
+          - CU
+          - CW
+          - CY
+          - CZ
+          - DK
+          - DJ
+          - DM
+          - DO
+          - EC
+          - EG
+          - SV
+          - GQ
+          - ER
+          - EE
+          - ET
+          - FK
+          - FO
+          - FJ
+          - FI
+          - FR
+          - GF
+          - PF
+          - TF
+          - GA
+          - GM
+          - GE
+          - DE
+          - GH
+          - GI
+          - GR
+          - GL
+          - GD
+          - GP
+          - GU
+          - GT
+          - GG
+          - GN
+          - GW
+          - GY
+          - HT
+          - HM
+          - VA
+          - HN
+          - HK
+          - HU
+          - IS
+          - IN
+          - ID
+          - IR
+          - IQ
+          - IE
+          - IM
+          - IL
+          - IT
+          - JM
+          - JP
+          - JE
+          - JO
+          - KZ
+          - KE
+          - KI
+          - KP
+          - KR
+          - XK
+          - KW
+          - KG
+          - LA
+          - LV
+          - LB
+          - LS
+          - LR
+          - LY
+          - LI
+          - LT
+          - LU
+          - MO
+          - MK
+          - MG
+          - MW
+          - MY
+          - MV
+          - ML
+          - MT
+          - MH
+          - MQ
+          - MR
+          - MU
+          - YT
+          - MX
+          - FM
+          - MD
+          - MC
+          - MN
+          - ME
+          - MS
+          - MA
+          - MZ
+          - MM
+          - NA
+          - NR
+          - NP
+          - NL
+          - NC
+          - NZ
+          - NI
+          - NE
+          - NG
+          - NU
+          - NF
+          - MP
+          - 'NO'
+          - PS
+          - OM
+          - PK
+          - PW
+          - PA
+          - PG
+          - PY
+          - PE
+          - PH
+          - PN
+          - PL
+          - PT
+          - PR
+          - QA
+          - RE
+          - RO
+          - RU
+          - RW
+          - BL
+          - SH
+          - KN
+          - LC
+          - MF
+          - PM
+          - VC
+          - WS
+          - SM
+          - ST
+          - SA
+          - SN
+          - RS
+          - SC
+          - SL
+          - SG
+          - SX
+          - SK
+          - SI
+          - SB
+          - SO
+          - ZA
+          - GS
+          - SS
+          - ES
+          - LK
+          - SD
+          - SR
+          - SJ
+          - SZ
+          - SE
+          - CH
+          - SY
+          - TW
+          - TJ
+          - TZ
+          - TH
+          - TL
+          - TG
+          - TK
+          - TO
+          - TT
+          - TN
+          - TR
+          - TM
+          - TC
+          - TV
+          - UG
+          - UA
+          - AE
+          - GB
+          - US
+          - UM
+          - UY
+          - UZ
+          - VU
+          - VE
+          - VN
+          - VG
+          - VI
+          - WF
+          - EH
+          - YE
+          - ZM
+          - ZW
+        alcohol:
+          type: boolean
+          description: Does this order contain alcohol?
+        shippable_container:
+          type:
+          - boolean
+          - 'null'
+          description: Is this item a shippable container?
+        goh:
+          type:
+          - boolean
+          - 'null'
+          description: Garment on hanger?
+        label_format:
+          type:
+          - string
+          - 'null'
+          description: label format
+        replenishment_min:
+          type:
+          - string
+          - 'null'
+          description: Minimum number of days worth of stock to keep in forward pick locations
+        replenishment_target:
+          type:
+          - string
+          - 'null'
+          description: Target number of days stock to replenish forward pick locations
+        low_inventory_threshold:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the item quantity where this item would be considered having low inventory
+        published_quantity:
+          type: integer
+          format: int32
+          description: item quantity, inluding inbound items
+      additionalProperties: false
+    ApiV2EntitiesShipnoticeItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the shipnotice item id
+        shipnotice_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the ID of the shipnotice that contains this shipnotice_item
+        item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the shipnotice item item id
+        quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the number of this shipnotice item in the shipnotice
+        quantity_good:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: how many of this item arrived in acceptable condition
+        quantity_damaged:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: how many of this item arrived in damaged condition
+        description:
+          type:
+          - string
+          - 'null'
+          description: description of the item
+        extended_description:
+          type:
+          - string
+          - 'null'
+          description: an extended description of the item
+        include_in_published:
+          type:
+          - boolean
+          - 'null'
+          description: include this item in published amount?
+        return_action:
+          type:
+          - string
+          - 'null'
+          description: 'action to perform on item return '
+        purchase_order_number:
+          type: string
+          description: the purchase order number associated with the shipnotice item
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the shipnotice item creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the shipnotice item last update date and time
+        item:
+          $ref: '#/components/schemas/ApiV2EntitiesItem'
+        lot:
+          $ref: '#/components/schemas/ApiV2EntitiesLot'
+        item_image_url:
+          type: string
+          description: item image url
+        item_scancode:
+          type: string
+          description: item scancode
+        item_sku:
+          type: string
+          description: item sku
+        item_title:
+          type: string
+          description: item title
+        item_lot_control:
+          type: boolean
+          description: item lot control
+        item_currency:
+          type: string
+          description: item currency
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        unit_cost:
+          type:
+          - string
+          - 'null'
+          description: unit cost for this shipnotice item
+        warehouse_id:
+          type: integer
+          format: int32
+          description: the ID of the warehouse that is receiving this shipnotice item
+        unallocated:
+          type: integer
+          format: int32
+          description: the quantity that has been received good, but not assigned to a location
+        location_role:
+          type: string
+          description: 'the location role into which the item is received. options: pickable (default), damaged, pending, backstock (staff only)'
+      additionalProperties: false
+    PutApiV2ShipnoticeItemsIdRequest:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+          description: the number of this shipnotice item in the shipnotice
+        description:
+          type: string
+          description: description of the item
+        extended_description:
+          type: string
+          description: an extended description of the item
+        include_in_published:
+          type: boolean
+          description: include this item in published amount?
+        purchase_order_number:
+          type: string
+          description: the purchase order number associated with the shipnotice item
+        location_role:
+          type: string
+          description: 'the location role into which the item is received. options: pickable (default), damaged, pending, backstock (staff only)'
+        unit_cost:
+          type: number
+          format: float
+          description: Unit cost per item

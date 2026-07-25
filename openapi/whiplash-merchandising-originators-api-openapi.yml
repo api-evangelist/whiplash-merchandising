@@ -1,0 +1,212 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items originators API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: originators
+  description: 'Originators are e-commerce, API, or ERP representations of an Item, Order, OrderItem, ConsumerReturn, Shipnotice, or ShipnoticeItem. They contain your system''s ID and, optionally, details.
+
+    You can use your own ID to retrieve, update, and destroy resources directly.'
+paths:
+  /api/v2/originators:
+    get:
+      operationId: GetApiV2Originators
+      tags:
+      - originators
+      summary: List originators
+      description: Get a list of originators
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      - name: sort
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'A list of sort options (ex: name asc,created_at desc)'
+      - name: originated_type
+        in: query
+        required: true
+        schema:
+          type: string
+          description: which resource originators you want
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Page of results to fetch
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Number of results to return per page
+      - name: page_total
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include total count of results
+      - name: page_links
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include prev/next links in response headers
+      responses:
+        '200':
+          description: Get a list of originators
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiV2EntitiesOriginator'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+components:
+  schemas:
+    ApiV2EntitiesOriginator:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the originator id
+        originated_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the object created by the originator
+        originated_type:
+          type:
+          - string
+          - 'null'
+          description: the type of object created by the originator
+        shop_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator shop id
+        shop_domain:
+          type: string
+          description: the originator shop domain
+        provider:
+          type:
+          - string
+          - 'null'
+          description: the originator provider (shopify, magento, bandcamp, etc)
+        original_id:
+          type:
+          - string
+          - 'null'
+          description: the originator original id (from the provider)
+        group_id:
+          type:
+          - string
+          - 'null'
+          description: the originator group id
+        misc:
+          type:
+          - string
+          - 'null'
+          description: miscellaneous info for the originator
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the originator active?
+        integration_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator integration id
+        last_notified_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last notified date and time
+        last_notification_status:
+          type:
+          - string
+          - 'null'
+          description: the originator last notification status
+        last_synced_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last synced date and time
+        distinct_originator_key:
+          type:
+          - string
+          - 'null'
+          description: the originator distinct key
+        created_at:
+          type: string
+          format: date-time
+          description: the originator creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the originator last update date and time
+        application_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the oauth application
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false

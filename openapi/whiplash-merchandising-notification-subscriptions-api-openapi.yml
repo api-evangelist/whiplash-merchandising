@@ -1,0 +1,563 @@
+openapi: 3.1.0
+info:
+  version: '2.0'
+  title: Rydership bundle_items notification_subscriptions API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+
+    <br>
+
+    <a href="api.v2.html">V2 documentation</a>
+
+    <br>
+
+    <a href="api.v2-1.html">V2.1 documentation</a>
+
+    '
+  contact:
+    name: Rydership Development Team
+    email: tech@whiplash.com
+    url: https://www.getwhiplash.com
+  x-logo:
+    url: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
+    backgroundColor: '#FFFFFF'
+    altText: RyderShip
+servers:
+- url: ''
+  description: Base Path
+tags:
+- name: notification_subscriptions
+  description: User notification preferences and subscriptions.
+paths:
+  /api/v2/notification_subscriptions:
+    get:
+      operationId: GetApiV2NotificationSubscriptions
+      tags:
+      - notification_subscriptions
+      summary: List all notification subscriptions
+      description: Get a list of notification subscriptions
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      - name: fields
+        in: query
+        required: false
+        schema:
+          type: string
+          description: Comma-separated list of fields to include in the response
+      - name: sort
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'A list of sort options (ex: name asc,created_at desc)'
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Page of results to fetch
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          description: Number of results to return per page
+      - name: page_total
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include total count of results
+      - name: page_links
+        in: query
+        required: false
+        schema:
+          type: boolean
+          description: Include prev/next links in response headers
+      responses:
+        '200':
+          description: Get a list of notification subscriptions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiV2EntitiesNotificationSubscription'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    post:
+      operationId: PostApiV2NotificationSubscriptions
+      tags:
+      - notification_subscriptions
+      summary: Create a notification subscription
+      description: Create a notification subscription
+      parameters: []
+      responses:
+        '201':
+          description: Create a notification subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesNotificationSubscription'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '409':
+          description: conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiV2NotificationSubscriptionsRequest'
+  /api/v2/notification_subscriptions/count:
+    get:
+      operationId: GetApiV2NotificationSubscriptionsCount
+      tags:
+      - notification_subscriptions
+      summary: Count notification subscriptions
+      description: Get a count of notification subscriptions
+      parameters:
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          description: 'JSON search string like {"attribute_eq": "Term"}'
+      responses:
+        '200':
+          description: Get a count of notification subscriptions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesCount'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/notification_subscriptions/{id}:
+    get:
+      operationId: GetApiV2NotificationSubscriptionsId
+      tags:
+      - notification_subscriptions
+      summary: Retrieve a notification subscription
+      description: Get a notification subscription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Get a notification subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesNotificationSubscription'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+    put:
+      operationId: PutApiV2NotificationSubscriptionsId
+      tags:
+      - notification_subscriptions
+      summary: Update a notification subscription
+      description: Update a notification subscription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Update a notification subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesNotificationSubscription'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV2NotificationSubscriptionsIdRequest'
+    delete:
+      operationId: DeleteApiV2NotificationSubscriptionsId
+      tags:
+      - notification_subscriptions
+      summary: Delete a notification subscription
+      description: Delete a notification subscription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Successfully deleted
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+  /api/v2/notification_subscriptions/{id}/test:
+    get:
+      operationId: GetApiV2NotificationSubscriptionsIdTest
+      tags:
+      - notification_subscriptions
+      summary: Test a notification subscription
+      description: Test a notification subscription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Test a notification subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiV2EntitiesNotificationSubscription'
+              examples: null
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+        '403':
+          description: forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSharedEntitiesApiError'
+components:
+  schemas:
+    PostApiV2NotificationSubscriptionsRequest:
+      type: object
+      properties:
+        notification_type:
+          type: string
+          description: the type of notification to send the subscriber
+        notification_event_id:
+          type: integer
+          format: int32
+          description: the id of the notification event this subscription is subscribed to
+        endpoint:
+          type: string
+          description: the URL the subscription will hit for Slack and Webhook types
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer who owns the subscription
+        user_id:
+          type: integer
+          format: int32
+          description: the id of the intended recipient
+        active:
+          type: boolean
+          description: is the notification subscription active?
+        version:
+          type: integer
+          format: int32
+          description: whether the payload will match the v1 or v2 API
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    ApiV2EntitiesUser:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the user id
+        email:
+          type: string
+          description: the user email address
+        sign_in_count:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the user sign in count
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the user creation date and time
+        first_name:
+          type:
+          - string
+          - 'null'
+          description: first name of the user
+        last_name:
+          type:
+          - string
+          - 'null'
+          description: last name of the user
+        full_name:
+          type: string
+          description: full name or email of the user
+        role:
+          type:
+          - string
+          - 'null'
+          description: role of the user
+          enum:
+          - admin
+          - manager
+          - staff
+          - customer
+          - partner
+        locale:
+          type:
+          - string
+          - 'null'
+          description: locale for language settings
+          enum:
+          - en
+          - es
+        warehouse_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: warehouse_id of the user
+        partner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: partner_id of the user
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the user active?
+        current_sign_in_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: when the user logged in
+        current_sign_in_expires_at:
+          type: string
+          format: date-time
+          description: when the user session expires
+        customer_ids:
+          type: array
+          items:
+            type: integer
+            format: int32
+        create_email:
+          type: boolean
+          description: auto create a whiplash email for this user? (staff only)
+        skip_confirmation:
+          type: boolean
+          description: skip sending a confirmation email for this user? (staff only)
+      additionalProperties: false
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
+    ApiV2EntitiesNotificationSubscription:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the notification subscription id
+        notification_event_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the notification event this subscription is subscribed to
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the customer who owns the subscription
+        user_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the intended recipient
+        notification_type:
+          type:
+          - string
+          - 'null'
+          description: the type of notification to send the subscriber
+        endpoint:
+          type:
+          - string
+          - 'null'
+          description: the URL the subscription will hit for Slack and Webhook types
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the notification subscription active?
+        version:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: whether the payload will match the v1 or v2 API
+        created_at:
+          type: string
+          format: date-time
+          description: the notification subscription creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the notification subscription last update date and time
+        discarded_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the notification subscription discarded date and time
+        user:
+          $ref: '#/components/schemas/ApiV2EntitiesUser'
+      additionalProperties: false
+    PutApiV2NotificationSubscriptionsIdRequest:
+      type: object
+      properties:
+        notification_event_id:
+          type: integer
+          format: int32
+          description: the id of the notification event this subscription is subscribed to
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer who owns the subscription
+        user_id:
+          type: integer
+          format: int32
+          description: the id of the intended recipient
+        notification_type:
+          type: string
+          description: the type of notification to send the subscriber
+        endpoint:
+          type: string
+          description: the URL the subscription will hit for Slack and Webhook types
+        active:
+          type: boolean
+          description: is the notification subscription active?
+        version:
+          type: integer
+          format: int32
+          description: whether the payload will match the v1 or v2 API
+        discarded_at:
+          type: string
+          format: date-time
+          description: the notification subscription discarded date and time
