@@ -1,0 +1,28 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Rydership API V2 (Whiplash)
+  version: 1.0.0
+extends: openapi/whiplash-merchandising-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: whiplash-merchandising
+    x-apievangelist-access: invite-only
+    x-apievangelist-base-url: https://www.getwhiplash.com/api/v2
+- target: $.servers
+  update:
+  - url: https://www.getwhiplash.com/api/v2
+    description: Rydership V2 production base URL (derived; original servers[] was empty)
+- target: $.components.securitySchemes
+  update:
+    OAuth2:
+      type: oauth2
+      description: >-
+        Derived from the live RFC 8414 authorization server metadata at
+        /.well-known/oauth-authorization-server. The published spec declares no
+        securitySchemes despite every operation requiring authorization.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.getwhiplash.com/oauth/authorize
+          tokenUrl: https://www.getwhiplash.com/oauth/token
+          scopes: {}

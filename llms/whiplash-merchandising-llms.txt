@@ -1,0 +1,38 @@
+# Whiplash Merchandising (Ryder E-commerce by Whiplash)
+
+> Whiplash is an order-fulfillment and third-party logistics (3PL) platform for direct-to-consumer and ecommerce brands, offering pick-pack-ship, warehousing, inventory management, kitting, omnichannel order routing, and returns. It exposes the Rydership V2 REST API (formerly the Whiplash API) for programmatic fulfillment operations. Founded 2011, backed by 500 Global, acquired by Ryder System in 2021. API access is invite-only.
+
+## APIs
+
+- [Rydership API V2 developer portal](https://developers.getwhiplash.com): REST API reference (OpenAPI 3.1.0, 94 paths / 133 operations). Base URL https://www.getwhiplash.com/api/v2.
+
+## Specs
+
+- [OpenAPI (harvested)](openapi/whiplash-merchandising-openapi-original.json): Rydership API V2, OpenAPI 3.1.0.
+- [OpenAPI Overlay](overlays/whiplash-merchandising-openapi-overlay.yaml): API Evangelist enhancements (servers, OAuth2 scheme).
+
+## Authentication
+
+- OAuth 2.0 authorization_code + refresh_token, PKCE S256. Endpoints: authorize https://www.getwhiplash.com/oauth/authorize, token https://www.getwhiplash.com/oauth/token, dynamic registration https://www.getwhiplash.com/oauth/register.
+- [Authorization server metadata (RFC 8414)](well-known/whiplash-merchandising-oauth-authorization-server.json)
+- [Authentication profile](authentication/whiplash-merchandising-authentication.yml)
+
+## Core resources
+
+- orders, order_items, items (SKUs), shipnotices (inbound shipments), consumer_returns, customers, documents, bundle_items, packages, notification_subscriptions (webhooks), notification_events.
+
+## Artifacts
+
+- [Conventions](conventions/whiplash-merchandising-conventions.yml): page/per_page pagination, `fields` sparse fields, `associations` expansion, `meta_fields` metadata, no idempotency.
+- [Error catalog](errors/whiplash-merchandising-problem-types.yml): {message} envelope; 401/403/405/409/422.
+- [Data model](data-model/whiplash-merchandising-data-model.yml): entity-relationship graph.
+- [Webhooks](asyncapi/whiplash-merchandising-notifications-webhooks.yml): notification subscription/event model.
+- [Lifecycle](lifecycle/whiplash-merchandising-lifecycle.yml): URI-path v2 versioning; status page.
+- [Packages / SDKs](packages/whiplash-merchandising-packages.yml): @whiplashmerch/whiplash-api-client (npm), whiplash-app (RubyGem).
+
+## Docs
+
+- [Developer portal](https://developers.getwhiplash.com)
+- [Support / Help Center](https://help.whiplash.com/hc/en-us)
+- [Status page](https://status.getwhiplash.com)
+- [GitHub organization](https://github.com/whiplashmerch)

@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/whiplash-merchandising-openapi-original.json, https://developers.getwhiplash.com
+authentication:
+  style: oauth2-bearer
+  flow: authorizationCode
+  ref: authentication/whiplash-merchandising-authentication.yml
+base_url: https://www.getwhiplash.com/api/v2
+pagination:
+  style: page-number
+  params:
+    page: page
+    page_size: per_page
+  response_controls:
+    page_total: page_total   # include total-count metadata
+    page_links: page_links   # include RFC 5988-style link controls
+  cursor: false
+sparse_fields:
+  param: fields
+  note: Comma-separated field selection on list/retrieve operations.
+filtering:
+  search_param: search
+  sort_param: sort
+  tagged_with_param: tagged_with
+expansion:
+  param: associations
+  note: Request related associations to be embedded in the response.
+metadata:
+  mechanism: meta_fields
+  note: Most resources expose /{id}/meta_fields (GET list, PUT set) for custom key/value metadata.
+bulk:
+  note: orders, ship notices, and consumer_returns support /bulk create endpoints.
+actions:
+  note: Resources expose /actions discovery and /{id}/call/{action} (or perform-action) endpoints for state transitions.
+idempotency:
+  supported: false
+  note: No Idempotency-Key header or idempotency contract documented. (No Idempotency pointer emitted.)
+rate_limiting:
+  signaled: false
+  note: No rate-limit headers documented in the spec.
+error_envelope:
+  ref: errors/whiplash-merchandising-problem-types.yml
+  shape: '{ "message": "<error message>" }'
+versioning:
+  ref: lifecycle/whiplash-merchandising-lifecycle.yml
+  scheme: uri-path
+  current: v2

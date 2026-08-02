@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/whiplash-merchandising-openapi-original.json, https://www.getwhiplash.com/.well-known/oauth-authorization-server
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: Published OpenAPI 3.1.0 document (Rydership API V2).
+- id: oauth2
+  conforms: true
+  evidence: RFC 8414 authorization server metadata; authorization_code + refresh_token grants.
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: rfc8414-as-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200.
+- id: oauth2-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint https://www.getwhiplash.com/oauth/register advertised.
+- id: rest-json
+  conforms: true
+  evidence: JSON request/response bodies over REST resources under /api/v2.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses use a plain {message} envelope, not application/problem+json.
+- id: pagination
+  conforms: true
+  evidence: page / per_page / page_total / page_links query parameters across list operations.
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key header or idempotency contract in the spec or docs.

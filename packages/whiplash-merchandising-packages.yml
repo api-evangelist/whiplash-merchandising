@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: npm registry, RubyGems.org
+packages:
+- language: javascript
+  registry: npm
+  name: "@whiplashmerch/whiplash-api-client"
+  url: https://www.npmjs.com/package/@whiplashmerch/whiplash-api-client
+  install: npm install @whiplashmerch/whiplash-api-client
+  version: 3.2.31
+  official: true
+  note: First-party JavaScript client for the Whiplash/Rydership API (org-scoped to @whiplashmerch).
+- language: ruby
+  registry: rubygems
+  name: whiplash-app
+  url: https://rubygems.org/gems/whiplash-app
+  install: gem install whiplash-app
+  version: 0.10.2
+  source: https://github.com/whiplashmerch/whiplash-app
+  official: true
+  note: First-party Ruby gem providing connectivity to the Whiplash API.
+community_packages:
+- language: ruby
+  registry: rubygems
+  name: whiplash_api
+  url: https://rubygems.org/gems/whiplash_api
+  source: https://github.com/ideaoforder/whiplash_api
+  official: false
+- language: ruby
+  registry: rubygems
+  name: omniauth-whiplash
+  url: https://rubygems.org/gems/omniauth-whiplash
+  source: https://github.com/ideaoforder/omniauth-whiplash
+  official: false
+- language: javascript
+  registry: npm
+  name: project-whiplash
+  url: https://www.npmjs.com/package/project-whiplash
+  source: https://github.com/etano/whiplash-nodejs
+  official: false

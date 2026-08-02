@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.getwhiplash.com, https://status.getwhiplash.com
+versioning:
+  scheme: uri-path
+  current: v2
+  path_prefix: /api/v2
+  notes: >-
+    Rydership V2 is the current published REST API. The info block references
+    legacy "V2 documentation" (api.v2.html) and "V2.1 documentation"
+    (api.v2-1.html) static docs.
+status_page: https://status.getwhiplash.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+access: invite-only
+deprecated_operations: []

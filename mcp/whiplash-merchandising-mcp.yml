@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/whiplash-merchandising-openapi-original.json
+notes: >-
+  No official hosted/remote MCP server was found for Whiplash / Rydership.
+  This is a candidate tool surface derived from core Rydership V2 operations,
+  one tool per operationId. Auth is OAuth 2.0 authorization_code (invite-only).
+server:
+  name: whiplash-rydership
+  transport: http
+tools:
+- name: list_orders
+  description: List all orders
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2Orders
+- name: create_order
+  description: Create an order
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PostApiV2Orders
+- name: get_order
+  description: Retrieve an order
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2OrdersId
+- name: update_order
+  description: Update an order
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PutApiV2OrdersId
+- name: perform_order_action
+  description: Perform an action on an order
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PutApiV2OrdersIdCallAction
+- name: list_items
+  description: List all items (SKUs)
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2Items
+- name: create_item
+  description: Create an item
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PostApiV2Items
+- name: get_item_warehouse_quantities
+  description: Item stock by warehouse
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2ItemsIdWarehouseQuantities
+- name: list_ship_notices
+  description: List all ship notices (inbound shipments)
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2Shipnotices
+- name: create_ship_notice
+  description: Create a ship notice
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PostApiV2Shipnotices
+- name: list_consumer_returns
+  description: List all consumer returns
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2ConsumerReturns
+- name: create_consumer_return
+  description: Create a consumer return
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PostApiV2ConsumerReturns
+- name: list_customers
+  description: List all customers
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2Customers
+- name: create_notification_subscription
+  description: Create a webhook notification subscription
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#PostApiV2NotificationSubscriptions
+- name: list_notification_events
+  description: List all notification events (webhook event catalog)
+  source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2NotificationEvents

@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/whiplash-merchandising-openapi-original.json, https://developers.getwhiplash.com
+spec_type: Webhooks
+summary: >-
+  The Rydership V2 API delivers webhooks via notification subscriptions. A
+  merchant registers a subscription (endpoint URL + notification event) and
+  Whiplash POSTs notification events to that endpoint as fulfillment state
+  changes. No AsyncAPI document is published; this captures the webhook surface.
+delivery:
+  mechanism: http-post
+  registration: notification_subscriptions resource
+  test: GET /api/v2/notification_subscriptions/{id}/test
+subscription_model:
+  resource: notification_subscriptions
+  fields:
+  - notification_event_id   # which event to subscribe to
+  - customer_id
+  - user_id
+  - notification_type
+  - endpoint                # destination URL
+  - active
+  - version
+event_model:
+  resource: notification_events
+  catalog_endpoint: GET /api/v2/notification_events
+  fields:
+  - id
+  - name
+  - humanized_name
+  - resource_type          # the domain object the event concerns (order, item, shipment, ...)
+  - resource_message
+  - requires_subscription
+  - description
+  note: >-
+    The concrete event catalog (event names) is served dynamically at
+    /api/v2/notification_events and is not enumerated in the static spec.
+operations:
+  list_subscriptions: GetApiV2NotificationSubscriptions
+  create_subscription: PostApiV2NotificationSubscriptions
+  get_subscription: GetApiV2NotificationSubscriptionsId
+  update_subscription: PutApiV2NotificationSubscriptionsId
+  delete_subscription: DeleteApiV2NotificationSubscriptionsId
+  test_subscription: GetApiV2NotificationSubscriptionsIdTest
+  list_events: GetApiV2NotificationEvents
+  get_event: GetApiV2NotificationEventsId

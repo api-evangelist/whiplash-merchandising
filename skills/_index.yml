@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/whiplash-merchandising-openapi-original.json
+skills:
+- file: whiplash-merchandising-create-and-fulfill-order.md
+  name: Create and fulfill an order
+  api: openapi/whiplash-merchandising-openapi-original.json
+  operations: [PostApiV2Orders, PostApiV2OrdersIdOrderItems, GetApiV2OrdersId, PutApiV2OrdersIdCallAction, GetApiV2OrdersIdShippingDocuments]
+- file: whiplash-merchandising-manage-inventory.md
+  name: Manage inventory and inbound shipments
+  api: openapi/whiplash-merchandising-openapi-original.json
+  operations: [PostApiV2Items, GetApiV2Items, GetApiV2ItemsIdWarehouseQuantities, PostApiV2Shipnotices, GetApiV2ItemsIdTransactions]
+- file: whiplash-merchandising-process-consumer-return.md
+  name: Process a consumer return
+  api: openapi/whiplash-merchandising-openapi-original.json
+  operations: [GetApiV2Orders, PostApiV2ConsumerReturns, GetApiV2ConsumerReturnsId, PutApiV2ConsumerReturnsId]
+- file: whiplash-merchandising-subscribe-webhooks.md
+  name: Subscribe to fulfillment webhooks
+  api: openapi/whiplash-merchandising-openapi-original.json
+  operations: [GetApiV2NotificationEvents, PostApiV2NotificationSubscriptions, GetApiV2NotificationSubscriptionsIdTest, DeleteApiV2NotificationSubscriptionsId]

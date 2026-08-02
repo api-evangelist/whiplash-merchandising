@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/whiplash-merchandising-openapi-original.json
+format: plain-message
+envelope:
+  schema: ApiSharedEntitiesApiError
+  shape: '{ "message": "<error message>" }'
+  note: >-
+    The Rydership V2 API returns a simple JSON object with a single "message"
+    field on error, not RFC 9457 problem+json.
+problems:
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid OAuth 2.0 access token.
+  remediation: Obtain an access token via the authorization_code flow at /oauth/token; include it on the request.
+  occurrences: 133
+- status: 403
+  title: Forbidden
+  meaning: Authenticated but not permitted to access the resource (scope/role or customer ownership).
+  remediation: Confirm the token's account has access to the target resource.
+  occurrences: 133
+- status: 405
+  title: Method Not Allowed
+  meaning: HTTP method not supported on this resource.
+  occurrences: 3
+- status: 409
+  title: Conflict
+  meaning: The request conflicts with the current state of the resource (e.g. an already-processed order or duplicate).
+  remediation: Re-fetch the resource and reconcile state before retrying.
+  occurrences: 17
+- status: 422
+  title: Unprocessable Entity
+  meaning: Validation failed for the submitted payload.
+  remediation: Inspect the message field and correct the offending fields.
+  occurrences: 53

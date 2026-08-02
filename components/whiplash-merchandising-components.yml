@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: npm registry
+components:
+- family: Whiplash UI
+  kind: react-component-library
+  packages:
+  - name: whiplash-ui-library
+    registry: npm
+    url: https://www.npmjs.com/package/whiplash-ui-library
+    version: 1.5.1
+    source: https://github.com/whiplashmerch/whiplash-ui-library
+    official: true
+    note: First-party React component library published by the whiplashmerch org.
+  - name: whiplash-ui
+    registry: npm
+    url: https://www.npmjs.com/package/whiplash-ui
+    source: https://github.com/whiplashmerch/whiplash-ui
+    official: true
+    note: UI assets for the Whiplash Merch application.
+notes: >-
+  These are the merchant-facing UI building blocks used by the Whiplash
+  application; distinct from the server-side API SDKs in packages/.

@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/whiplash-merchandising-openapi-original.json
+notes: >-
+  Entity-relationship graph derived from the Rydership V2 OpenAPI schema
+  id-reference fields (ApiV2Entities* schemas). Relationships inferred from
+  *_id foreign-key fields.
+entities:
+- name: Order
+  relationships:
+  - {type: belongs_to, target: Customer, via: customer_id}
+  - {type: belongs_to, target: Warehouse, via: warehouse_id}
+  - {type: belongs_to, target: ShippingMethod, via: shipping_method_id}
+  - {type: belongs_to, target: OrderBatch, via: order_batch_id}
+  - {type: belongs_to, target: Quote, via: quote_id}
+  - {type: belongs_to, target: CarrierAccount, via: carrier_account_id}
+  - {type: has_many, target: OrderItem, via: order_id}
+  - {type: has_many, target: Package, via: order_id}
+- name: OrderItem
+  relationships:
+  - {type: belongs_to, target: Order, via: order_id}
+  - {type: belongs_to, target: Item, via: item_id}
+  - {type: belongs_to, target: Customer, via: customer_id}
+  - {type: belongs_to, target: Package, via: package_id}
+  - {type: has_one, target: WholesaleItem, via: order_item_id}
+  - {type: has_many, target: SerialNumber, via: order_item_id}
+- name: Item
+  relationships:
+  - {type: has_many, target: BundleItem, via: item_id}
+  - {type: has_many, target: Originator, via: item_id}
+  - {type: has_many, target: Scancode, via: item_id}
+- name: BundleItem
+  relationships:
+  - {type: belongs_to, target: Item, via: item_id}
+  - {type: belongs_to, target: Item, via: parent_item_id}
+  - {type: belongs_to, target: Bundle, via: bundle_id}
+- name: ConsumerReturn
+  relationships:
+  - {type: belongs_to, target: Order, via: order_id}
+  - {type: belongs_to, target: Customer, via: customer_id}
+  - {type: belongs_to, target: Warehouse, via: warehouse_id}
+  - {type: belongs_to, target: Order, via: exchange_order_id}
+  - {type: has_many, target: ReturnItem, via: consumer_return_id}
+- name: ReturnItem
+  relationships:
+  - {type: belongs_to, target: Item, via: item_id}
+  - {type: belongs_to, target: OrderItem, via: order_item_id}
+- name: Package
+  relationships:
+  - {type: belongs_to, target: Order, via: order_id}
+  - {type: belongs_to, target: Shipment, via: shipment_id}
+  - {type: belongs_to, target: Manifest, via: manifest_id}
+  - {type: belongs_to, target: Batch, via: batch_id}
+- name: Customer
+  relationships:
+  - {type: belongs_to, target: Warehouse, via: default_warehouse_id}
+- name: NotificationSubscription
+  relationships:
+  - {type: belongs_to, target: NotificationEvent, via: notification_event_id}
+  - {type: belongs_to, target: Customer, via: customer_id}
+- name: Shipnotice
+  relationships:
+  - {type: has_many, target: ShipnoticeItem, via: shipnotice_id}

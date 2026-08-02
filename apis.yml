@@ -1,26 +1,437 @@
 aid: whiplash-merchandising
 name: Whiplash Merchandising
-description: Whiplash Merchandising is a company surfaced as a portfolio company of 500-global and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Whiplash (now Ryder E-commerce by Whiplash) is an order-fulfillment and
+  third-party logistics (3PL) platform for direct-to-consumer and ecommerce
+  brands. It runs a network of fulfillment centers offering pick-pack-ship,
+  warehousing, inventory management, kitting, omnichannel order routing, and
+  returns processing. The company exposes the Rydership V2 REST API (formerly
+  the Whiplash API) so merchants and platforms can programmatically manage
+  items, orders, order items, shipments (ship notices), consumer returns,
+  customers, documents, and webhook notification subscriptions across the
+  fulfillment lifecycle. Whiplash was founded in 2011, backed by 500 Global,
+  and acquired by Ryder System in 2021.
 url: https://raw.githubusercontent.com/api-evangelist/whiplash-merchandising/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
+x-tier: profiled
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://wl-s3-assets.s3.amazonaws.com/rydership/RyderShip-horizontal-safe-padding.svg
 tags:
 - Company
-apis: []
+- Fulfillment
+- Logistics
+- Ecommerce
+- Shipping
+- Warehousing
+- Inventory
+- 3PL
+- Order Management
+- Returns
+- Supply Chain
+apis:
+- aid: whiplash-merchandising:whiplash-merchandising-bundle-items-api
+  name: Whiplash Merchandising bundle_items API
+  description: >-
+    Bundle Items are components that make up a bundle, defining the quantity and relationship of items
+    within product bundles.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - bundle_items
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-bundle-items-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-consumer-returns-api
+  name: Whiplash Merchandising consumer_returns API
+  description: >-
+    A ConsumerReturn represents goods coming back from an end consumer. It is a special form of Shipnotice,
+    and is processed in much the same way.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - consumer_returns
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-consumer-returns-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-customers-api
+  name: Whiplash Merchandising customers API
+  description: >-
+    Customers are Whiplash clients, not the End Consumer. Most Whiplash resources are owned by a Customer
+    (or belong to resources that are).
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - customers
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-customers-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-documents-api
+  name: Whiplash Merchandising documents API
+  description: >-
+    Documents are imported files and exported reports. We store a record in your account of every file
+    you import, as well as every report you've run, so they're easy to search and access.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - documents
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-documents-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-items-api
+  name: Whiplash Merchandising items API
+  description: >-
+    Items are probably the most fundamental entity in the Whiplash system. An item is simply a 'shippable
+    unit'. So, it's not a Whiplash T-Shirt; it's a Small Whiplash T-Shirt, for instance.
+
+    Most commerce platforms model Products. Typically, however, a Product (e.g. a T-Shirt) has variations
+    (named variously, Variants, ProductOptions, OptionSets, etc). An Item maps to the Variant/Option,
+    not the Product.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - items
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-items-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-load-scacs-api
+  name: Whiplash Merchandising load_scacs API
+  description: The load_scacs API from Whiplash Merchandising — 2 operation(s) for load_scacs.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - load_scacs
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-load-scacs-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-notification-events-api
+  name: Whiplash Merchandising notification_events API
+  description: System event definitions for notifications.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - notification_events
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-notification-events-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-notification-subscriptions-api
+  name: Whiplash Merchandising notification_subscriptions API
+  description: User notification preferences and subscriptions.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - notification_subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-notification-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-order-documents-api
+  name: Whiplash Merchandising order_documents API
+  description: Order-related documentation and paperwork.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - order_documents
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-order-documents-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-order-items-api
+  name: Whiplash Merchandising order_items API
+  description: An OrderItem represents an Item with a quantity in an Order.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - order_items
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-order-items-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-order-totes-api
+  name: Whiplash Merchandising order_totes API
+  description: Order picking container management.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - order_totes
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-order-totes-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-orders-api
+  name: Whiplash Merchandising orders API
+  description: >-
+    Orders are end consumer requests for Items. An Order is comprised of OrderItems.
+
+    Orders represent outgoing stock.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - orders
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-originators-api
+  name: Whiplash Merchandising originators API
+  description: >-
+    Originators are e-commerce, API, or ERP representations of an Item, Order, OrderItem, ConsumerReturn,
+    Shipnotice, or ShipnoticeItem. They contain your system's ID and, optionally, details.
+
+    You can use your own ID to retrieve, update, and destroy resources directly.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - originators
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-originators-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-packages-api
+  name: Whiplash Merchandising packages API
+  description: Shipment package details and tracking.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - packages
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-packages-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-projects-api
+  name: Whiplash Merchandising projects API
+  description: Project management and organization.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - projects
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-projects-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-scancodes-api
+  name: Whiplash Merchandising scancodes API
+  description: Barcode management and processing.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - scancodes
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-scancodes-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-shipnotice-items-api
+  name: Whiplash Merchandising shipnotice_items API
+  description: >-
+    Similar to an OrderItem, ShipnoticeItem represents an Item with a quantity in a Shipnotice. quantity
+    refers to the quantity expected to arrive, and the quantity actually received is quantity_good.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - shipnotice_items
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-shipnotice-items-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-shipnotices-api
+  name: Whiplash Merchandising shipnotices API
+  description: >-
+    A Shipnotice is the opposite of an order, and are notifications by the client of inventory that is
+    expected to arrive at a warehouse.
+
+    Shipnotices represent incoming stock.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - shipnotices
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-shipnotices-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-simulate-api
+  name: Whiplash Merchandising simulate API
+  description: >-
+    (Sandbox Only) Simulate Order and Ship Notice processing, since these are staff-only operations.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - simulate
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-simulate-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-templates-api
+  name: Whiplash Merchandising templates API
+  description: Templates allow you to customize packing slips, email confirmations, order inserts, etc.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - templates
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-templates-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
+- aid: whiplash-merchandising:whiplash-merchandising-wholesale-items-api
+  name: Whiplash Merchandising wholesale_items API
+  description: >-
+    The wholesale_items API from Whiplash Merchandising — 2 operation(s) for wholesale_items.
+  humanURL: https://developers.getwhiplash.com
+  baseURL: https://www.getwhiplash.com/api/v2
+  tags:
+  - wholesale_items
+  properties:
+  - type: OpenAPI
+    url: openapi/whiplash-merchandising-wholesale-items-api-openapi.yml
+  - type: Documentation
+    url: https://developers.getwhiplash.com
+  - type: APIReference
+    url: https://developers.getwhiplash.com
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/whiplash-merchandising-domain-security.yml
 - type: Website
-  url: https://whiplashmerch.com
+  url: https://whiplash.com
+- type: DeveloperPortal
+  url: https://developers.getwhiplash.com
+- type: Documentation
+  url: https://developers.getwhiplash.com
+- type: APIReference
+  url: https://developers.getwhiplash.com
+- type: Support
+  url: https://help.whiplash.com/hc/en-us
+- type: StatusPage
+  url: https://status.getwhiplash.com
+- type: Login
+  url: https://www.getwhiplash.com/login
+- type: Pricing
+  url: https://whiplash.com/
+- type: PrivacyPolicy
+  url: https://www.ryder.com/en-us/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/whiplashmerch
+- type: Authentication
+  url: authentication/whiplash-merchandising-authentication.yml
+- type: OAuthAuthorizationServer
+  url: well-known/whiplash-merchandising-oauth-authorization-server.json
+- type: WellKnown
+  url: well-known/whiplash-merchandising-well-known.yml
+- type: Packages
+  url: packages/whiplash-merchandising-packages.yml
+- type: SDKs
+  url: packages/whiplash-merchandising-packages.yml
+- type: Components
+  url: components/whiplash-merchandising-components.yml
+- type: MCPServer
+  url: mcp/whiplash-merchandising-mcp.yml
+- type: LLMsTxt
+  url: llms/whiplash-merchandising-llms.txt
+- type: Overlay
+  url: overlays/whiplash-merchandising-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/whiplash-merchandising-conformance.yml
+- type: ErrorCatalog
+  url: errors/whiplash-merchandising-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/whiplash-merchandising-lifecycle.yml
+- type: Conventions
+  url: conventions/whiplash-merchandising-conventions.yml
+- type: DataModel
+  url: data-model/whiplash-merchandising-data-model.yml
+- type: Webhooks
+  url: asyncapi/whiplash-merchandising-notifications-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 21
+  pass: local-v1
