@@ -1,0 +1,986 @@
+{
+  "item": [
+    {
+      "id": "e043f96f-856b-4641-a6c4-9a41c05d9912",
+      "name": "wholesale_items",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "703caffa-62aa-49e0-81cb-ac60b79b4b00",
+          "name": "List all wholesale item objects",
+          "request": {
+            "name": "List all wholesale item objects",
+            "description": {
+              "content": "Returns all wholesale item objects",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "wholesale_items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_total",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_links",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bef202ad-c494-4c64-93a7-75579bc2cedc",
+              "name": "Returns all wholesale item objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9063,\n    \"order_item_id\": 978,\n    \"line_no\": \"string\",\n    \"item_alias\": \"string\",\n    \"item_color\": \"string\",\n    \"item_size\": \"string\",\n    \"vendor_part_number\": \"string\",\n    \"buyer_part_number\": \"string\",\n    \"consumer_package_code\": \"string\",\n    \"outer_pack_value\": \"string\",\n    \"inner_pack_value\": \"string\",\n    \"size_description\": \"string\",\n    \"color_description\": \"string\",\n    \"upc\": \"string\",\n    \"description\": \"string\",\n    \"style\": \"string\",\n    \"ean\": \"string\",\n    \"alternate_item_number\": \"string\",\n    \"alternate_barcode\": \"string\",\n    \"alternate_sku\": \"string\",\n    \"lot\": \"string\",\n    \"ih_category\": \"string\",\n    \"created_at\": \"1989-07-31T15:11:21.691Z\",\n    \"updated_at\": \"1973-08-04T21:59:11.899Z\"\n  },\n  {\n    \"id\": 8776,\n    \"order_item_id\": 4810,\n    \"line_no\": \"string\",\n    \"item_alias\": \"string\",\n    \"item_color\": \"string\",\n    \"item_size\": \"string\",\n    \"vendor_part_number\": \"string\",\n    \"buyer_part_number\": \"string\",\n    \"consumer_package_code\": \"string\",\n    \"outer_pack_value\": \"string\",\n    \"inner_pack_value\": \"string\",\n    \"size_description\": \"string\",\n    \"color_description\": \"string\",\n    \"upc\": \"string\",\n    \"description\": \"string\",\n    \"style\": \"string\",\n    \"ean\": \"string\",\n    \"alternate_item_number\": \"string\",\n    \"alternate_barcode\": \"string\",\n    \"alternate_sku\": \"string\",\n    \"lot\": \"string\",\n    \"ih_category\": \"string\",\n    \"created_at\": \"2021-10-04T17:13:42.811Z\",\n    \"updated_at\": \"1997-02-06T05:19:57.318Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf226a8e-b42b-4a2f-a71c-08abba6a7dc1",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34b31f92-e58b-424b-aade-b906e7cf188f",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b63f419b-7cd0-4a91-824d-bd909cbb220a",
+          "name": "Retrieve a Wholesale item object",
+          "request": {
+            "name": "Retrieve a Wholesale item object",
+            "description": {
+              "content": "get a Wholesale item object",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "wholesale_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3760060-793f-4b72-8f60-f4645f522136",
+              "name": "get a Wholesale item object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7908,\n  \"order_item_id\": 6955,\n  \"line_no\": \"string\",\n  \"item_alias\": \"string\",\n  \"item_color\": \"string\",\n  \"item_size\": \"string\",\n  \"vendor_part_number\": \"string\",\n  \"buyer_part_number\": \"string\",\n  \"consumer_package_code\": \"string\",\n  \"outer_pack_value\": \"string\",\n  \"inner_pack_value\": \"string\",\n  \"size_description\": \"string\",\n  \"color_description\": \"string\",\n  \"upc\": \"string\",\n  \"description\": \"string\",\n  \"style\": \"string\",\n  \"ean\": \"string\",\n  \"alternate_item_number\": \"string\",\n  \"alternate_barcode\": \"string\",\n  \"alternate_sku\": \"string\",\n  \"lot\": \"string\",\n  \"ih_category\": \"string\",\n  \"created_at\": \"1969-02-13T13:10:17.593Z\",\n  \"updated_at\": \"1999-02-28T06:09:13.442Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b00932a4-1f05-4b5c-a8ef-8c1bbbb77eac",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0053991-a300-45ac-94f7-2903e3b6ee45",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e2c7532-701c-4bb6-b88e-8d44bb86a5ca",
+          "name": "Update a wholesale item object",
+          "request": {
+            "name": "Update a wholesale item object",
+            "description": {
+              "content": "Update a wholesale item object",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "wholesale_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_item_id\": \"<integer>\",\n  \"line_no\": \"<string>\",\n  \"item_alias\": \"<string>\",\n  \"item_color\": \"<string>\",\n  \"item_size\": \"<string>\",\n  \"vendor_part_number\": \"<string>\",\n  \"buyer_part_number\": \"<string>\",\n  \"consumer_package_code\": \"<string>\",\n  \"outer_pack_value\": \"<string>\",\n  \"inner_pack_value\": \"<string>\",\n  \"size_description\": \"<string>\",\n  \"color_description\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"description\": \"<string>\",\n  \"style\": \"<string>\",\n  \"ean\": \"<string>\",\n  \"alternate_item_number\": \"<string>\",\n  \"alternate_barcode\": \"<string>\",\n  \"alternate_sku\": \"<string>\",\n  \"lot\": \"<string>\",\n  \"ih_category\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc25bd99-078a-4972-b17f-0b221312424f",
+              "name": "Update a wholesale item object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_item_id\": \"<integer>\",\n  \"line_no\": \"<string>\",\n  \"item_alias\": \"<string>\",\n  \"item_color\": \"<string>\",\n  \"item_size\": \"<string>\",\n  \"vendor_part_number\": \"<string>\",\n  \"buyer_part_number\": \"<string>\",\n  \"consumer_package_code\": \"<string>\",\n  \"outer_pack_value\": \"<string>\",\n  \"inner_pack_value\": \"<string>\",\n  \"size_description\": \"<string>\",\n  \"color_description\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"description\": \"<string>\",\n  \"style\": \"<string>\",\n  \"ean\": \"<string>\",\n  \"alternate_item_number\": \"<string>\",\n  \"alternate_barcode\": \"<string>\",\n  \"alternate_sku\": \"<string>\",\n  \"lot\": \"<string>\",\n  \"ih_category\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7908,\n  \"order_item_id\": 6955,\n  \"line_no\": \"string\",\n  \"item_alias\": \"string\",\n  \"item_color\": \"string\",\n  \"item_size\": \"string\",\n  \"vendor_part_number\": \"string\",\n  \"buyer_part_number\": \"string\",\n  \"consumer_package_code\": \"string\",\n  \"outer_pack_value\": \"string\",\n  \"inner_pack_value\": \"string\",\n  \"size_description\": \"string\",\n  \"color_description\": \"string\",\n  \"upc\": \"string\",\n  \"description\": \"string\",\n  \"style\": \"string\",\n  \"ean\": \"string\",\n  \"alternate_item_number\": \"string\",\n  \"alternate_barcode\": \"string\",\n  \"alternate_sku\": \"string\",\n  \"lot\": \"string\",\n  \"ih_category\": \"string\",\n  \"created_at\": \"1969-02-13T13:10:17.593Z\",\n  \"updated_at\": \"1999-02-28T06:09:13.442Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2cb5fb72-ce0d-4392-af76-38346a6d14ba",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_item_id\": \"<integer>\",\n  \"line_no\": \"<string>\",\n  \"item_alias\": \"<string>\",\n  \"item_color\": \"<string>\",\n  \"item_size\": \"<string>\",\n  \"vendor_part_number\": \"<string>\",\n  \"buyer_part_number\": \"<string>\",\n  \"consumer_package_code\": \"<string>\",\n  \"outer_pack_value\": \"<string>\",\n  \"inner_pack_value\": \"<string>\",\n  \"size_description\": \"<string>\",\n  \"color_description\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"description\": \"<string>\",\n  \"style\": \"<string>\",\n  \"ean\": \"<string>\",\n  \"alternate_item_number\": \"<string>\",\n  \"alternate_barcode\": \"<string>\",\n  \"alternate_sku\": \"<string>\",\n  \"lot\": \"<string>\",\n  \"ih_category\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89772ece-da48-4277-b4db-f7019d0e99d6",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_item_id\": \"<integer>\",\n  \"line_no\": \"<string>\",\n  \"item_alias\": \"<string>\",\n  \"item_color\": \"<string>\",\n  \"item_size\": \"<string>\",\n  \"vendor_part_number\": \"<string>\",\n  \"buyer_part_number\": \"<string>\",\n  \"consumer_package_code\": \"<string>\",\n  \"outer_pack_value\": \"<string>\",\n  \"inner_pack_value\": \"<string>\",\n  \"size_description\": \"<string>\",\n  \"color_description\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"description\": \"<string>\",\n  \"style\": \"<string>\",\n  \"ean\": \"<string>\",\n  \"alternate_item_number\": \"<string>\",\n  \"alternate_barcode\": \"<string>\",\n  \"alternate_sku\": \"<string>\",\n  \"lot\": \"<string>\",\n  \"ih_category\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7c59012-5f09-4948-aa13-59da851ccefd",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_item_id\": \"<integer>\",\n  \"line_no\": \"<string>\",\n  \"item_alias\": \"<string>\",\n  \"item_color\": \"<string>\",\n  \"item_size\": \"<string>\",\n  \"vendor_part_number\": \"<string>\",\n  \"buyer_part_number\": \"<string>\",\n  \"consumer_package_code\": \"<string>\",\n  \"outer_pack_value\": \"<string>\",\n  \"inner_pack_value\": \"<string>\",\n  \"size_description\": \"<string>\",\n  \"color_description\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"description\": \"<string>\",\n  \"style\": \"<string>\",\n  \"ean\": \"<string>\",\n  \"alternate_item_number\": \"<string>\",\n  \"alternate_barcode\": \"<string>\",\n  \"alternate_sku\": \"<string>\",\n  \"lot\": \"<string>\",\n  \"ih_category\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07a08ba0-a352-4a4d-b5ff-8f393240c106",
+          "name": "Delete a wholesale item object",
+          "request": {
+            "name": "Delete a wholesale item object",
+            "description": {
+              "content": "Delete a wholesale item object",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "wholesale_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4412c0e7-dcbf-4f58-b0c0-d9311daf429d",
+              "name": "Successfully deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d6ccda9f-9c14-42c6-a123-45b44f756b06",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7b8c3b0-5c06-4925-b03e-234404e6b164",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "93c7cb60-1e34-45e6-a2a9-59dbc308e466",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "wholesale_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b532d730-2e77-44ac-9e14-1f81fd6d9d3c",
+    "name": "Rydership bundle_items wholesale_items API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

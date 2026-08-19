@@ -1,0 +1,654 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items orders API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a list of orders"
+        },
+        {
+          "info": {
+            "name": "Create an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order"
+        },
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Create orders in bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/orders/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create orders in bulk"
+        },
+        {
+          "info": {
+            "name": "Count orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of orders"
+        },
+        {
+          "info": {
+            "name": "Retrieve an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an order"
+        },
+        {
+          "info": {
+            "name": "Update an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an order"
+        },
+        {
+          "info": {
+            "name": "Perform an action on an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/orders/:id/call/:action",
+            "params": [
+              {
+                "name": "action",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Perform an action on an order"
+        },
+        {
+          "info": {
+            "name": "Retrieve the CustomsInfo object for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/customs_info",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get the CustomsInfo object for an order"
+        },
+        {
+          "info": {
+            "name": "Retrieve the history for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the order history"
+        },
+        {
+          "info": {
+            "name": "Count order's events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/events/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of order's events"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) Order"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/orders/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Order meta fields"
+        },
+        {
+          "info": {
+            "name": "List all order documents for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/order_documents",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all order documents for an order"
+        },
+        {
+          "info": {
+            "name": "Create an order document for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/orders/:id/order_documents",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order document for an order"
+        },
+        {
+          "info": {
+            "name": "Count all order documents for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/order_documents/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve count of all order documents for an order"
+        },
+        {
+          "info": {
+            "name": "List all order items for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/order_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all order items for an order"
+        },
+        {
+          "info": {
+            "name": "Create an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/orders/:id/order_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order item"
+        },
+        {
+          "info": {
+            "name": "Count order items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/order_items/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of order items"
+        },
+        {
+          "info": {
+            "name": "List all serial numbers associated with an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/serial_numbers",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the serial numbers for an order"
+        },
+        {
+          "info": {
+            "name": "List shipping documents for a order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/shipping_documents",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all shipping documents for a order"
+        },
+        {
+          "info": {
+            "name": "Retrieve suggested items for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/suggested_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get suggested items for an order"
+        },
+        {
+          "info": {
+            "name": "Retrieve the Wholesale object for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/orders/:id/wholesale",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get the Wholesale object for an order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,255 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items order_items API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "order_items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_items/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Retrieve an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve an order item"
+        },
+        {
+          "info": {
+            "name": "Update an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/order_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an order item"
+        },
+        {
+          "info": {
+            "name": "Destroy an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/order_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy an order item"
+        },
+        {
+          "info": {
+            "name": "Perform an action on an order_item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/order_items/:id/call/:action",
+            "params": [
+              {
+                "name": "action",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Perform an action on an order_item"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) OrderItem"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/order_items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update OrderItem meta fields"
+        },
+        {
+          "info": {
+            "name": "Separate an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/order_items/:id/separate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Separate an order item into a new order"
+        },
+        {
+          "info": {
+            "name": "List all serial numbers associated with an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_items/:id/serial_numbers",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Return an order_items serial numbers"
+        },
+        {
+          "info": {
+            "name": "Retrieve the Wholesale item object for an order item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_items/:id/wholesale_item",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get the Wholesale item object for an order item"
+        },
+        {
+          "info": {
+            "name": "Update a wholesale item object",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/order_items/:id/wholesale_item",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a wholesale item object"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

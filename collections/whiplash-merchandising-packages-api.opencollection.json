@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items packages API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "packages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List shipping documents for a package",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/packages/:id/shipping_documents",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all shipping documents for a package"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

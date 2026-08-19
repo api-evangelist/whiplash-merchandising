@@ -1,0 +1,1049 @@
+{
+  "item": [
+    {
+      "id": "aa5ce323-6fc6-435a-87eb-cac336aab7fa",
+      "name": "customers",
+      "description": {
+        "content": "Customers are Whiplash clients, not the End Consumer. Most Whiplash resources are owned by a Customer (or belong to resources that are).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a315d7f2-afbd-45b4-b30d-27c635f17db5",
+          "name": "List all customers",
+          "request": {
+            "name": "List all customers",
+            "description": {
+              "content": "Get all customers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_total",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_links",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0020303a-b1e6-4866-adb0-b305990875dc",
+              "name": "Get all customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 7661,\n    \"name\": \"string\",\n    \"created_at\": \"2000-12-03T18:29:49.245Z\",\n    \"active\": false,\n    \"auto_merge_gestation\": 7723,\n    \"default_warehouse_id\": 3245,\n    \"eori_number\": \"string\",\n    \"estimated_monthly_volume\": \"string\",\n    \"fedex_account\": \"string\",\n    \"from_email\": \"string\",\n    \"incoterm\": \"string\",\n    \"instructions\": \"string\",\n    \"item_scanning_preference\": true,\n    \"label_format\": \"string\",\n    \"notes\": \"string\",\n    \"notify_originator\": true,\n    \"notify_originator_inventory\": 8916,\n    \"originator_permissions\": false,\n    \"packing_slip_msg\": \"string\",\n    \"packingslip_template\": \"string\",\n    \"request_serial_numbers\": false,\n    \"ship_method_preference\": 3386,\n    \"shipping_name\": \"string\",\n    \"ups_account\": \"string\",\n    \"vat_number\": \"string\",\n    \"ein\": \"string\",\n    \"gs1_company_prefix\": \"string\",\n    \"warehouse_fallback\": 2661,\n    \"payment_hold\": true,\n    \"primary_contact\": \"string\",\n    \"global_e_guid\": \"string\",\n    \"exit_notice\": false,\n    \"data_mapping_string\": \"string\",\n    \"whitelisted_warehouses\": {\n      \"id\": 5436,\n      \"name\": \"string\",\n      \"timezone\": \"string\",\n      \"timezone_raw\": \"string\",\n      \"partner_id\": 128,\n      \"shipping_address_1\": \"string\",\n      \"shipping_address_2\": \"string\",\n      \"shipping_city\": \"string\",\n      \"shipping_state\": \"string\",\n      \"shipping_zip\": \"string\",\n      \"shipping_country\": \"string\",\n      \"shipping_country_iso2\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"slug\": \"string\",\n      \"default_pick_strategy\": \"string\",\n      \"bin_total_count_max\": 9864,\n      \"bin_cubic_volume_max\": \"string\",\n      \"number_of_groups\": 5519,\n      \"fedex_pickup_time\": \"string\",\n      \"active\": false,\n      \"square_footage\": 5338,\n      \"created_at\": \"1946-10-26T00:13:57.122Z\",\n      \"updated_at\": \"1970-05-04T23:55:38.215Z\",\n      \"ups_shipper_number\": \"string\",\n      \"email\": \"string\",\n      \"ups_carrier_facility\": \"string\",\n      \"currency\": \"string\",\n      \"vat\": \"string\",\n      \"domestic_return_labels\": true,\n      \"international_return_labels\": false,\n      \"accepting_new_customers\": true,\n      \"receiving_hours\": \"string\",\n      \"pickup_hours\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_phone\": \"string\",\n      \"delivery_appointment_required\": false,\n      \"label_format\": \"string\",\n      \"shipping_label_format\": \"string\",\n      \"loading_dock_quantity\": 8187,\n      \"receiving_special_instructions\": \"string\",\n      \"single_item_batch_size\": \"string\",\n      \"packaging_customer_id\": 403,\n      \"notes\": \"string\",\n      \"warehouse_features\": [\n        {\n          \"id\": 4207,\n          \"feature\": \"string\",\n          \"feature_code\": \"string\",\n          \"created_at\": \"1947-05-02T01:05:26.298Z\",\n          \"updated_at\": \"1946-08-29T04:43:27.867Z\",\n          \"warehouses\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            }\n          ]\n        },\n        {\n          \"id\": 9894,\n          \"feature\": \"string\",\n          \"feature_code\": \"string\",\n          \"created_at\": \"1953-11-04T05:42:59.950Z\",\n          \"updated_at\": \"1995-01-15T17:31:30.889Z\",\n          \"warehouses\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"allowed_warehouse_ids\": [\n      6377,\n      559\n    ],\n    \"account_level\": 1286,\n    \"account_level_name\": \"string\",\n    \"activated_at\": \"2017-07-06T15:41:30.932Z\",\n    \"deactivated_at\": \"1958-10-10T03:04:34.662Z\",\n    \"auto_merge_skus\": false,\n    \"partner_id\": 3783,\n    \"billing_email\": \"string\",\n    \"billing_contact_name\": \"string\",\n    \"billing_company\": \"string\",\n    \"billing_phone1\": \"string\",\n    \"billing_phone2\": \"string\",\n    \"billing_address1\": \"string\",\n    \"billing_address2\": \"string\",\n    \"billing_address3\": \"string\",\n    \"billing_city\": \"string\",\n    \"billing_state\": \"string\",\n    \"billing_zip\": \"string\",\n    \"billing_country\": \"string\",\n    \"billing_residential\": false,\n    \"items_returnable\": false,\n    \"allow_international_returns\": true,\n    \"items_exchangeable\": false,\n    \"return_time_limit\": 7556,\n    \"return_label_expires_in\": 251,\n    \"return_price_restricted\": true,\n    \"return_sku_match\": \"string\",\n    \"rma_display_logo\": true,\n    \"rma_footer_content\": \"string\",\n    \"return_name\": \"string\",\n    \"return_company\": \"string\",\n    \"return_email\": \"string\",\n    \"return_phone\": \"string\",\n    \"return_address_1\": \"string\",\n    \"return_address_2\": \"string\",\n    \"return_city\": \"string\",\n    \"return_state\": \"string\",\n    \"return_zip\": \"string\",\n    \"return_country\": \"string\",\n    \"supports_return_labels\": false,\n    \"logo_content_type\": \"string\",\n    \"logo_file_name\": \"string\",\n    \"logo_file_size\": 9119,\n    \"logo_updated_at\": \"1955-06-09T08:43:28.508Z\",\n    \"full_logo_url\": \"string\",\n    \"email_confirmation_from\": \"string\",\n    \"email_confirmation_name\": \"string\",\n    \"email_confirmation_msg\": \"string\",\n    \"email_confirmation_preference\": 5612,\n    \"email_confirmation_template\": \"string\",\n    \"low_inventory_threshold\": 790,\n    \"lot_control\": true,\n    \"expiration_period\": 7581,\n    \"ship_strategy\": 7622,\n    \"items_unavailable_on_sellout\": 4762,\n    \"replenishment_min\": \"string\",\n    \"replenishment_target\": \"string\",\n    \"allow_b_stock_receiving\": false,\n    \"location_default_return_role\": \"string\",\n    \"location_enable_pending_returns\": true,\n    \"location_enable_receiving_into_reserved\": false,\n    \"project_task_labels\": [\n      \"string\",\n      \"string\"\n    ],\n    \"dashboard_enable_domo\": \"string\",\n    \"dashboard_enable_parcel_insights\": \"string\",\n    \"gestation_length\": \"string\",\n    \"billing_core\": true\n  },\n  {\n    \"id\": 5014,\n    \"name\": \"string\",\n    \"created_at\": \"1990-10-29T09:56:40.844Z\",\n    \"active\": true,\n    \"auto_merge_gestation\": 1602,\n    \"default_warehouse_id\": 9109,\n    \"eori_number\": \"string\",\n    \"estimated_monthly_volume\": \"string\",\n    \"fedex_account\": \"string\",\n    \"from_email\": \"string\",\n    \"incoterm\": \"string\",\n    \"instructions\": \"string\",\n    \"item_scanning_preference\": false,\n    \"label_format\": \"string\",\n    \"notes\": \"string\",\n    \"notify_originator\": true,\n    \"notify_originator_inventory\": 4558,\n    \"originator_permissions\": false,\n    \"packing_slip_msg\": \"string\",\n    \"packingslip_template\": \"string\",\n    \"request_serial_numbers\": false,\n    \"ship_method_preference\": 4106,\n    \"shipping_name\": \"string\",\n    \"ups_account\": \"string\",\n    \"vat_number\": \"string\",\n    \"ein\": \"string\",\n    \"gs1_company_prefix\": \"string\",\n    \"warehouse_fallback\": 3605,\n    \"payment_hold\": true,\n    \"primary_contact\": \"string\",\n    \"global_e_guid\": \"string\",\n    \"exit_notice\": false,\n    \"data_mapping_string\": \"string\",\n    \"whitelisted_warehouses\": {\n      \"id\": 6535,\n      \"name\": \"string\",\n      \"timezone\": \"string\",\n      \"timezone_raw\": \"string\",\n      \"partner_id\": 3389,\n      \"shipping_address_1\": \"string\",\n      \"shipping_address_2\": \"string\",\n      \"shipping_city\": \"string\",\n      \"shipping_state\": \"string\",\n      \"shipping_zip\": \"string\",\n      \"shipping_country\": \"string\",\n      \"shipping_country_iso2\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"slug\": \"string\",\n      \"default_pick_strategy\": \"string\",\n      \"bin_total_count_max\": 5438,\n      \"bin_cubic_volume_max\": \"string\",\n      \"number_of_groups\": 8716,\n      \"fedex_pickup_time\": \"string\",\n      \"active\": false,\n      \"square_footage\": 2505,\n      \"created_at\": \"2001-09-02T01:58:10.245Z\",\n      \"updated_at\": \"1947-05-19T17:35:38.019Z\",\n      \"ups_shipper_number\": \"string\",\n      \"email\": \"string\",\n      \"ups_carrier_facility\": \"string\",\n      \"currency\": \"string\",\n      \"vat\": \"string\",\n      \"domestic_return_labels\": true,\n      \"international_return_labels\": false,\n      \"accepting_new_customers\": true,\n      \"receiving_hours\": \"string\",\n      \"pickup_hours\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_phone\": \"string\",\n      \"delivery_appointment_required\": false,\n      \"label_format\": \"string\",\n      \"shipping_label_format\": \"string\",\n      \"loading_dock_quantity\": 1996,\n      \"receiving_special_instructions\": \"string\",\n      \"single_item_batch_size\": \"string\",\n      \"packaging_customer_id\": 2445,\n      \"notes\": \"string\",\n      \"warehouse_features\": [\n        {\n          \"id\": 3397,\n          \"feature\": \"string\",\n          \"feature_code\": \"string\",\n          \"created_at\": \"1962-08-13T10:13:29.970Z\",\n          \"updated_at\": \"1966-03-29T10:54:43.868Z\",\n          \"warehouses\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            }\n          ]\n        },\n        {\n          \"id\": 4807,\n          \"feature\": \"string\",\n          \"feature_code\": \"string\",\n          \"created_at\": \"1964-07-31T05:04:34.588Z\",\n          \"updated_at\": \"1962-11-03T12:39:27.030Z\",\n          \"warehouses\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"allowed_warehouse_ids\": [\n      7282,\n      8055\n    ],\n    \"account_level\": 1589,\n    \"account_level_name\": \"string\",\n    \"activated_at\": \"2000-05-26T18:36:35.849Z\",\n    \"deactivated_at\": \"2007-01-26T13:12:35.060Z\",\n    \"auto_merge_skus\": true,\n    \"partner_id\": 6413,\n    \"billing_email\": \"string\",\n    \"billing_contact_name\": \"string\",\n    \"billing_company\": \"string\",\n    \"billing_phone1\": \"string\",\n    \"billing_phone2\": \"string\",\n    \"billing_address1\": \"string\",\n    \"billing_address2\": \"string\",\n    \"billing_address3\": \"string\",\n    \"billing_city\": \"string\",\n    \"billing_state\": \"string\",\n    \"billing_zip\": \"string\",\n    \"billing_country\": \"string\",\n    \"billing_residential\": false,\n    \"items_returnable\": true,\n    \"allow_international_returns\": true,\n    \"items_exchangeable\": true,\n    \"return_time_limit\": 2398,\n    \"return_label_expires_in\": 5028,\n    \"return_price_restricted\": false,\n    \"return_sku_match\": \"string\",\n    \"rma_display_logo\": false,\n    \"rma_footer_content\": \"string\",\n    \"return_name\": \"string\",\n    \"return_company\": \"string\",\n    \"return_email\": \"string\",\n    \"return_phone\": \"string\",\n    \"return_address_1\": \"string\",\n    \"return_address_2\": \"string\",\n    \"return_city\": \"string\",\n    \"return_state\": \"string\",\n    \"return_zip\": \"string\",\n    \"return_country\": \"string\",\n    \"supports_return_labels\": true,\n    \"logo_content_type\": \"string\",\n    \"logo_file_name\": \"string\",\n    \"logo_file_size\": 1144,\n    \"logo_updated_at\": \"1961-02-04T23:32:52.854Z\",\n    \"full_logo_url\": \"string\",\n    \"email_confirmation_from\": \"string\",\n    \"email_confirmation_name\": \"string\",\n    \"email_confirmation_msg\": \"string\",\n    \"email_confirmation_preference\": 2022,\n    \"email_confirmation_template\": \"string\",\n    \"low_inventory_threshold\": 1696,\n    \"lot_control\": false,\n    \"expiration_period\": 238,\n    \"ship_strategy\": 4150,\n    \"items_unavailable_on_sellout\": 2557,\n    \"replenishment_min\": \"string\",\n    \"replenishment_target\": \"string\",\n    \"allow_b_stock_receiving\": false,\n    \"location_default_return_role\": \"string\",\n    \"location_enable_pending_returns\": true,\n    \"location_enable_receiving_into_reserved\": false,\n    \"project_task_labels\": [\n      \"string\",\n      \"string\"\n    ],\n    \"dashboard_enable_domo\": \"string\",\n    \"dashboard_enable_parcel_insights\": \"string\",\n    \"gestation_length\": \"string\",\n    \"billing_core\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ccdebff-19d8-49fc-9643-6aaf9bf9a785",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c285aea1-ffcb-4faf-b477-def920883504",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e3194e2-7597-46b4-aed7-6d3f26dbe563",
+          "name": "List actions you can perform",
+          "request": {
+            "name": "List actions you can perform",
+            "description": {
+              "content": "Get resource actions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "customers",
+                "actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74fce358-2a02-428e-bca4-89c019f1cf61",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9fcd924-5e57-494f-97a9-8dd6c610d855",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08e5f3a3-9b17-4b54-84ae-88b1d160f782",
+          "name": "Count customers",
+          "request": {
+            "name": "Count customers",
+            "description": {
+              "content": "Count of all customers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "customers",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "796843e9-a7da-42f8-af8e-9677862e22b7",
+              "name": "Count of all customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 2509\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33b9c0ec-94fa-48d2-a19e-c997c069dad1",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85371bdb-8254-4d62-88f1-d1e83e49e050",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "baa43a21-e86f-444f-b8cb-adafc94258fe",
+          "name": "Retrieve a customer",
+          "request": {
+            "name": "Retrieve a customer",
+            "description": {
+              "content": "Get a customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7f9fa21-1fae-4e84-9ce9-926a5b89f2e2",
+              "name": "Get a customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1038,\n  \"name\": \"string\",\n  \"created_at\": \"2001-03-23T14:02:56.488Z\",\n  \"active\": false,\n  \"auto_merge_gestation\": 280,\n  \"default_warehouse_id\": 2485,\n  \"eori_number\": \"string\",\n  \"estimated_monthly_volume\": \"string\",\n  \"fedex_account\": \"string\",\n  \"from_email\": \"string\",\n  \"incoterm\": \"string\",\n  \"instructions\": \"string\",\n  \"item_scanning_preference\": true,\n  \"label_format\": \"string\",\n  \"notes\": \"string\",\n  \"notify_originator\": false,\n  \"notify_originator_inventory\": 4142,\n  \"originator_permissions\": true,\n  \"packing_slip_msg\": \"string\",\n  \"packingslip_template\": \"string\",\n  \"request_serial_numbers\": false,\n  \"ship_method_preference\": 3858,\n  \"shipping_name\": \"string\",\n  \"ups_account\": \"string\",\n  \"vat_number\": \"string\",\n  \"ein\": \"string\",\n  \"gs1_company_prefix\": \"string\",\n  \"warehouse_fallback\": 5434,\n  \"payment_hold\": false,\n  \"primary_contact\": \"string\",\n  \"global_e_guid\": \"string\",\n  \"exit_notice\": false,\n  \"data_mapping_string\": \"string\",\n  \"whitelisted_warehouses\": {\n    \"id\": 1884,\n    \"name\": \"string\",\n    \"timezone\": \"string\",\n    \"timezone_raw\": \"string\",\n    \"partner_id\": 6491,\n    \"shipping_address_1\": \"string\",\n    \"shipping_address_2\": \"string\",\n    \"shipping_city\": \"string\",\n    \"shipping_state\": \"string\",\n    \"shipping_zip\": \"string\",\n    \"shipping_country\": \"string\",\n    \"shipping_country_iso2\": \"string\",\n    \"latitude\": \"string\",\n    \"longitude\": \"string\",\n    \"slug\": \"string\",\n    \"default_pick_strategy\": \"string\",\n    \"bin_total_count_max\": 8318,\n    \"bin_cubic_volume_max\": \"string\",\n    \"number_of_groups\": 6907,\n    \"fedex_pickup_time\": \"string\",\n    \"active\": true,\n    \"square_footage\": 4804,\n    \"created_at\": \"2019-09-04T04:46:05.694Z\",\n    \"updated_at\": \"1993-01-29T07:58:36.660Z\",\n    \"ups_shipper_number\": \"string\",\n    \"email\": \"string\",\n    \"ups_carrier_facility\": \"string\",\n    \"currency\": \"string\",\n    \"vat\": \"string\",\n    \"domestic_return_labels\": false,\n    \"international_return_labels\": false,\n    \"accepting_new_customers\": true,\n    \"receiving_hours\": \"string\",\n    \"pickup_hours\": \"string\",\n    \"contact_name\": \"string\",\n    \"contact_phone\": \"string\",\n    \"delivery_appointment_required\": true,\n    \"label_format\": \"string\",\n    \"shipping_label_format\": \"string\",\n    \"loading_dock_quantity\": 2085,\n    \"receiving_special_instructions\": \"string\",\n    \"single_item_batch_size\": \"string\",\n    \"packaging_customer_id\": 7660,\n    \"notes\": \"string\",\n    \"warehouse_features\": [\n      {\n        \"id\": 284,\n        \"feature\": \"string\",\n        \"feature_code\": \"string\",\n        \"created_at\": \"2006-09-12T21:03:39.229Z\",\n        \"updated_at\": \"2013-04-13T02:53:54.702Z\",\n        \"warehouses\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          }\n        ]\n      },\n      {\n        \"id\": 9427,\n        \"feature\": \"string\",\n        \"feature_code\": \"string\",\n        \"created_at\": \"1999-03-18T23:43:35.884Z\",\n        \"updated_at\": \"2019-08-12T12:51:04.268Z\",\n        \"warehouses\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"allowed_warehouse_ids\": [\n    3055,\n    624\n  ],\n  \"account_level\": 3836,\n  \"account_level_name\": \"string\",\n  \"activated_at\": \"2015-11-15T10:37:17.340Z\",\n  \"deactivated_at\": \"2020-01-21T18:31:42.051Z\",\n  \"auto_merge_skus\": false,\n  \"partner_id\": 3428,\n  \"billing_email\": \"string\",\n  \"billing_contact_name\": \"string\",\n  \"billing_company\": \"string\",\n  \"billing_phone1\": \"string\",\n  \"billing_phone2\": \"string\",\n  \"billing_address1\": \"string\",\n  \"billing_address2\": \"string\",\n  \"billing_address3\": \"string\",\n  \"billing_city\": \"string\",\n  \"billing_state\": \"string\",\n  \"billing_zip\": \"string\",\n  \"billing_country\": \"string\",\n  \"billing_residential\": true,\n  \"items_returnable\": true,\n  \"allow_international_returns\": true,\n  \"items_exchangeable\": false,\n  \"return_time_limit\": 2130,\n  \"return_label_expires_in\": 2481,\n  \"return_price_restricted\": false,\n  \"return_sku_match\": \"string\",\n  \"rma_display_logo\": true,\n  \"rma_footer_content\": \"string\",\n  \"return_name\": \"string\",\n  \"return_company\": \"string\",\n  \"return_email\": \"string\",\n  \"return_phone\": \"string\",\n  \"return_address_1\": \"string\",\n  \"return_address_2\": \"string\",\n  \"return_city\": \"string\",\n  \"return_state\": \"string\",\n  \"return_zip\": \"string\",\n  \"return_country\": \"string\",\n  \"supports_return_labels\": true,\n  \"logo_content_type\": \"string\",\n  \"logo_file_name\": \"string\",\n  \"logo_file_size\": 7026,\n  \"logo_updated_at\": \"1950-12-11T10:34:47.125Z\",\n  \"full_logo_url\": \"string\",\n  \"email_confirmation_from\": \"string\",\n  \"email_confirmation_name\": \"string\",\n  \"email_confirmation_msg\": \"string\",\n  \"email_confirmation_preference\": 4385,\n  \"email_confirmation_template\": \"string\",\n  \"low_inventory_threshold\": 6538,\n  \"lot_control\": false,\n  \"expiration_period\": 791,\n  \"ship_strategy\": 1042,\n  \"items_unavailable_on_sellout\": 1476,\n  \"replenishment_min\": \"string\",\n  \"replenishment_target\": \"string\",\n  \"allow_b_stock_receiving\": false,\n  \"location_default_return_role\": \"string\",\n  \"location_enable_pending_returns\": true,\n  \"location_enable_receiving_into_reserved\": true,\n  \"project_task_labels\": [\n    \"string\",\n    \"string\"\n  ],\n  \"dashboard_enable_domo\": \"string\",\n  \"dashboard_enable_parcel_insights\": \"string\",\n  \"gestation_length\": \"string\",\n  \"billing_core\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b6fdfe1-7a94-42cf-bfa8-5d2095d366a6",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b47eeb63-5334-47cb-a7e1-db0cf417bca4",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78e4bc76-079c-4980-b106-d92a51f53176",
+          "name": "Update a customer",
+          "request": {
+            "name": "Update a customer",
+            "description": {
+              "content": "Update a customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workday_uuid\": \"<string>\",\n  \"partner_id\": \"<integer>\",\n  \"billing_contact_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"auto_merge_gestation\": \"<integer>\",\n  \"default_warehouse_id\": \"<integer>\",\n  \"eori_number\": \"<string>\",\n  \"estimated_monthly_volume\": \"<string>\",\n  \"fedex_account\": \"<string>\",\n  \"from_email\": \"<string>\",\n  \"incoterm\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"item_scanning_preference\": \"<boolean>\",\n  \"label_format\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"notify_originator\": \"<boolean>\",\n  \"notify_originator_inventory\": \"<integer>\",\n  \"originator_permissions\": \"<boolean>\",\n  \"packing_slip_msg\": \"<string>\",\n  \"packingslip_template\": \"<string>\",\n  \"request_serial_numbers\": \"<boolean>\",\n  \"ship_method_preference\": \"<integer>\",\n  \"shipping_name\": \"<string>\",\n  \"ups_account\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"ein\": \"<string>\",\n  \"gs1_company_prefix\": \"<string>\",\n  \"warehouse_fallback\": \"<integer>\",\n  \"payment_hold\": \"<boolean>\",\n  \"primary_contact\": \"<string>\",\n  \"global_e_guid\": \"<string>\",\n  \"exit_notice\": \"<boolean>\",\n  \"data_mapping_string\": \"<string>\",\n  \"allowed_warehouse_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"account_level\": \"<integer>\",\n  \"auto_merge_skus\": \"<boolean>\",\n  \"billing_email\": \"<string>\",\n  \"billing_company\": \"<string>\",\n  \"billing_phone1\": \"<string>\",\n  \"billing_phone2\": \"<string>\",\n  \"billing_address1\": \"<string>\",\n  \"billing_address2\": \"<string>\",\n  \"billing_address3\": \"<string>\",\n  \"billing_city\": \"<string>\",\n  \"billing_state\": \"<string>\",\n  \"billing_zip\": \"<string>\",\n  \"billing_country\": \"<string>\",\n  \"billing_residential\": \"<boolean>\",\n  \"items_returnable\": \"<boolean>\",\n  \"allow_international_returns\": \"<boolean>\",\n  \"items_exchangeable\": \"<boolean>\",\n  \"return_time_limit\": \"<integer>\",\n  \"return_label_expires_in\": \"<integer>\",\n  \"return_price_restricted\": \"<boolean>\",\n  \"return_sku_match\": \"<string>\",\n  \"rma_display_logo\": \"<boolean>\",\n  \"rma_footer_content\": \"<string>\",\n  \"return_name\": \"<string>\",\n  \"return_company\": \"<string>\",\n  \"return_email\": \"<string>\",\n  \"return_phone\": \"<string>\",\n  \"return_address_1\": \"<string>\",\n  \"return_address_2\": \"<string>\",\n  \"return_city\": \"<string>\",\n  \"return_state\": \"<string>\",\n  \"return_zip\": \"<string>\",\n  \"return_country\": \"<string>\",\n  \"supports_return_labels\": \"<boolean>\",\n  \"logo_content_type\": \"<string>\",\n  \"logo_file_name\": \"<string>\",\n  \"logo_file_size\": \"<integer>\",\n  \"logo_updated_at\": \"<dateTime>\",\n  \"full_logo_url\": \"<string>\",\n  \"email_confirmation_from\": \"<string>\",\n  \"email_confirmation_name\": \"<string>\",\n  \"email_confirmation_msg\": \"<string>\",\n  \"email_confirmation_preference\": \"<integer>\",\n  \"email_confirmation_template\": \"<string>\",\n  \"low_inventory_threshold\": \"<integer>\",\n  \"lot_control\": \"<boolean>\",\n  \"expiration_period\": \"<integer>\",\n  \"ship_strategy\": \"<integer>\",\n  \"items_unavailable_on_sellout\": \"<integer>\",\n  \"replenishment_min\": \"<string>\",\n  \"replenishment_target\": \"<string>\",\n  \"allow_b_stock_receiving\": \"<boolean>\",\n  \"location_default_return_role\": \"<string>\",\n  \"location_enable_pending_returns\": \"<boolean>\",\n  \"location_enable_receiving_into_reserved\": \"<boolean>\",\n  \"receiving_fields\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"project_task_labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dashboard_enable_domo\": \"<string>\",\n  \"dashboard_enable_parcel_insights\": \"<string>\",\n  \"gestation_length\": \"<string>\",\n  \"billing_core\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20508f92-fc96-4b84-aa3f-90b8914442b9",
+              "name": "Update a customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workday_uuid\": \"<string>\",\n  \"partner_id\": \"<integer>\",\n  \"billing_contact_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"auto_merge_gestation\": \"<integer>\",\n  \"default_warehouse_id\": \"<integer>\",\n  \"eori_number\": \"<string>\",\n  \"estimated_monthly_volume\": \"<string>\",\n  \"fedex_account\": \"<string>\",\n  \"from_email\": \"<string>\",\n  \"incoterm\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"item_scanning_preference\": \"<boolean>\",\n  \"label_format\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"notify_originator\": \"<boolean>\",\n  \"notify_originator_inventory\": \"<integer>\",\n  \"originator_permissions\": \"<boolean>\",\n  \"packing_slip_msg\": \"<string>\",\n  \"packingslip_template\": \"<string>\",\n  \"request_serial_numbers\": \"<boolean>\",\n  \"ship_method_preference\": \"<integer>\",\n  \"shipping_name\": \"<string>\",\n  \"ups_account\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"ein\": \"<string>\",\n  \"gs1_company_prefix\": \"<string>\",\n  \"warehouse_fallback\": \"<integer>\",\n  \"payment_hold\": \"<boolean>\",\n  \"primary_contact\": \"<string>\",\n  \"global_e_guid\": \"<string>\",\n  \"exit_notice\": \"<boolean>\",\n  \"data_mapping_string\": \"<string>\",\n  \"allowed_warehouse_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"account_level\": \"<integer>\",\n  \"auto_merge_skus\": \"<boolean>\",\n  \"billing_email\": \"<string>\",\n  \"billing_company\": \"<string>\",\n  \"billing_phone1\": \"<string>\",\n  \"billing_phone2\": \"<string>\",\n  \"billing_address1\": \"<string>\",\n  \"billing_address2\": \"<string>\",\n  \"billing_address3\": \"<string>\",\n  \"billing_city\": \"<string>\",\n  \"billing_state\": \"<string>\",\n  \"billing_zip\": \"<string>\",\n  \"billing_country\": \"<string>\",\n  \"billing_residential\": \"<boolean>\",\n  \"items_returnable\": \"<boolean>\",\n  \"allow_international_returns\": \"<boolean>\",\n  \"items_exchangeable\": \"<boolean>\",\n  \"return_time_limit\": \"<integer>\",\n  \"return_label_expires_in\": \"<integer>\",\n  \"return_price_restricted\": \"<boolean>\",\n  \"return_sku_match\": \"<string>\",\n  \"rma_display_logo\": \"<boolean>\",\n  \"rma_footer_content\": \"<string>\",\n  \"return_name\": \"<string>\",\n  \"return_company\": \"<string>\",\n  \"return_email\": \"<string>\",\n  \"return_phone\": \"<string>\",\n  \"return_address_1\": \"<string>\",\n  \"return_address_2\": \"<string>\",\n  \"return_city\": \"<string>\",\n  \"return_state\": \"<string>\",\n  \"return_zip\": \"<string>\",\n  \"return_country\": \"<string>\",\n  \"supports_return_labels\": \"<boolean>\",\n  \"logo_content_type\": \"<string>\",\n  \"logo_file_name\": \"<string>\",\n  \"logo_file_size\": \"<integer>\",\n  \"logo_updated_at\": \"<dateTime>\",\n  \"full_logo_url\": \"<string>\",\n  \"email_confirmation_from\": \"<string>\",\n  \"email_confirmation_name\": \"<string>\",\n  \"email_confirmation_msg\": \"<string>\",\n  \"email_confirmation_preference\": \"<integer>\",\n  \"email_confirmation_template\": \"<string>\",\n  \"low_inventory_threshold\": \"<integer>\",\n  \"lot_control\": \"<boolean>\",\n  \"expiration_period\": \"<integer>\",\n  \"ship_strategy\": \"<integer>\",\n  \"items_unavailable_on_sellout\": \"<integer>\",\n  \"replenishment_min\": \"<string>\",\n  \"replenishment_target\": \"<string>\",\n  \"allow_b_stock_receiving\": \"<boolean>\",\n  \"location_default_return_role\": \"<string>\",\n  \"location_enable_pending_returns\": \"<boolean>\",\n  \"location_enable_receiving_into_reserved\": \"<boolean>\",\n  \"receiving_fields\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"project_task_labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dashboard_enable_domo\": \"<string>\",\n  \"dashboard_enable_parcel_insights\": \"<string>\",\n  \"gestation_length\": \"<string>\",\n  \"billing_core\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1038,\n  \"name\": \"string\",\n  \"created_at\": \"2001-03-23T14:02:56.488Z\",\n  \"active\": false,\n  \"auto_merge_gestation\": 280,\n  \"default_warehouse_id\": 2485,\n  \"eori_number\": \"string\",\n  \"estimated_monthly_volume\": \"string\",\n  \"fedex_account\": \"string\",\n  \"from_email\": \"string\",\n  \"incoterm\": \"string\",\n  \"instructions\": \"string\",\n  \"item_scanning_preference\": true,\n  \"label_format\": \"string\",\n  \"notes\": \"string\",\n  \"notify_originator\": false,\n  \"notify_originator_inventory\": 4142,\n  \"originator_permissions\": true,\n  \"packing_slip_msg\": \"string\",\n  \"packingslip_template\": \"string\",\n  \"request_serial_numbers\": false,\n  \"ship_method_preference\": 3858,\n  \"shipping_name\": \"string\",\n  \"ups_account\": \"string\",\n  \"vat_number\": \"string\",\n  \"ein\": \"string\",\n  \"gs1_company_prefix\": \"string\",\n  \"warehouse_fallback\": 5434,\n  \"payment_hold\": false,\n  \"primary_contact\": \"string\",\n  \"global_e_guid\": \"string\",\n  \"exit_notice\": false,\n  \"data_mapping_string\": \"string\",\n  \"whitelisted_warehouses\": {\n    \"id\": 1884,\n    \"name\": \"string\",\n    \"timezone\": \"string\",\n    \"timezone_raw\": \"string\",\n    \"partner_id\": 6491,\n    \"shipping_address_1\": \"string\",\n    \"shipping_address_2\": \"string\",\n    \"shipping_city\": \"string\",\n    \"shipping_state\": \"string\",\n    \"shipping_zip\": \"string\",\n    \"shipping_country\": \"string\",\n    \"shipping_country_iso2\": \"string\",\n    \"latitude\": \"string\",\n    \"longitude\": \"string\",\n    \"slug\": \"string\",\n    \"default_pick_strategy\": \"string\",\n    \"bin_total_count_max\": 8318,\n    \"bin_cubic_volume_max\": \"string\",\n    \"number_of_groups\": 6907,\n    \"fedex_pickup_time\": \"string\",\n    \"active\": true,\n    \"square_footage\": 4804,\n    \"created_at\": \"2019-09-04T04:46:05.694Z\",\n    \"updated_at\": \"1993-01-29T07:58:36.660Z\",\n    \"ups_shipper_number\": \"string\",\n    \"email\": \"string\",\n    \"ups_carrier_facility\": \"string\",\n    \"currency\": \"string\",\n    \"vat\": \"string\",\n    \"domestic_return_labels\": false,\n    \"international_return_labels\": false,\n    \"accepting_new_customers\": true,\n    \"receiving_hours\": \"string\",\n    \"pickup_hours\": \"string\",\n    \"contact_name\": \"string\",\n    \"contact_phone\": \"string\",\n    \"delivery_appointment_required\": true,\n    \"label_format\": \"string\",\n    \"shipping_label_format\": \"string\",\n    \"loading_dock_quantity\": 2085,\n    \"receiving_special_instructions\": \"string\",\n    \"single_item_batch_size\": \"string\",\n    \"packaging_customer_id\": 7660,\n    \"notes\": \"string\",\n    \"warehouse_features\": [\n      {\n        \"id\": 284,\n        \"feature\": \"string\",\n        \"feature_code\": \"string\",\n        \"created_at\": \"2006-09-12T21:03:39.229Z\",\n        \"updated_at\": \"2013-04-13T02:53:54.702Z\",\n        \"warehouses\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          }\n        ]\n      },\n      {\n        \"id\": 9427,\n        \"feature\": \"string\",\n        \"feature_code\": \"string\",\n        \"created_at\": \"1999-03-18T23:43:35.884Z\",\n        \"updated_at\": \"2019-08-12T12:51:04.268Z\",\n        \"warehouses\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ApiV2EntitiesWarehouse detected>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"allowed_warehouse_ids\": [\n    3055,\n    624\n  ],\n  \"account_level\": 3836,\n  \"account_level_name\": \"string\",\n  \"activated_at\": \"2015-11-15T10:37:17.340Z\",\n  \"deactivated_at\": \"2020-01-21T18:31:42.051Z\",\n  \"auto_merge_skus\": false,\n  \"partner_id\": 3428,\n  \"billing_email\": \"string\",\n  \"billing_contact_name\": \"string\",\n  \"billing_company\": \"string\",\n  \"billing_phone1\": \"string\",\n  \"billing_phone2\": \"string\",\n  \"billing_address1\": \"string\",\n  \"billing_address2\": \"string\",\n  \"billing_address3\": \"string\",\n  \"billing_city\": \"string\",\n  \"billing_state\": \"string\",\n  \"billing_zip\": \"string\",\n  \"billing_country\": \"string\",\n  \"billing_residential\": true,\n  \"items_returnable\": true,\n  \"allow_international_returns\": true,\n  \"items_exchangeable\": false,\n  \"return_time_limit\": 2130,\n  \"return_label_expires_in\": 2481,\n  \"return_price_restricted\": false,\n  \"return_sku_match\": \"string\",\n  \"rma_display_logo\": true,\n  \"rma_footer_content\": \"string\",\n  \"return_name\": \"string\",\n  \"return_company\": \"string\",\n  \"return_email\": \"string\",\n  \"return_phone\": \"string\",\n  \"return_address_1\": \"string\",\n  \"return_address_2\": \"string\",\n  \"return_city\": \"string\",\n  \"return_state\": \"string\",\n  \"return_zip\": \"string\",\n  \"return_country\": \"string\",\n  \"supports_return_labels\": true,\n  \"logo_content_type\": \"string\",\n  \"logo_file_name\": \"string\",\n  \"logo_file_size\": 7026,\n  \"logo_updated_at\": \"1950-12-11T10:34:47.125Z\",\n  \"full_logo_url\": \"string\",\n  \"email_confirmation_from\": \"string\",\n  \"email_confirmation_name\": \"string\",\n  \"email_confirmation_msg\": \"string\",\n  \"email_confirmation_preference\": 4385,\n  \"email_confirmation_template\": \"string\",\n  \"low_inventory_threshold\": 6538,\n  \"lot_control\": false,\n  \"expiration_period\": 791,\n  \"ship_strategy\": 1042,\n  \"items_unavailable_on_sellout\": 1476,\n  \"replenishment_min\": \"string\",\n  \"replenishment_target\": \"string\",\n  \"allow_b_stock_receiving\": false,\n  \"location_default_return_role\": \"string\",\n  \"location_enable_pending_returns\": true,\n  \"location_enable_receiving_into_reserved\": true,\n  \"project_task_labels\": [\n    \"string\",\n    \"string\"\n  ],\n  \"dashboard_enable_domo\": \"string\",\n  \"dashboard_enable_parcel_insights\": \"string\",\n  \"gestation_length\": \"string\",\n  \"billing_core\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bac3e6c-bd88-47cb-aebc-b94a7d1404e2",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workday_uuid\": \"<string>\",\n  \"partner_id\": \"<integer>\",\n  \"billing_contact_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"auto_merge_gestation\": \"<integer>\",\n  \"default_warehouse_id\": \"<integer>\",\n  \"eori_number\": \"<string>\",\n  \"estimated_monthly_volume\": \"<string>\",\n  \"fedex_account\": \"<string>\",\n  \"from_email\": \"<string>\",\n  \"incoterm\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"item_scanning_preference\": \"<boolean>\",\n  \"label_format\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"notify_originator\": \"<boolean>\",\n  \"notify_originator_inventory\": \"<integer>\",\n  \"originator_permissions\": \"<boolean>\",\n  \"packing_slip_msg\": \"<string>\",\n  \"packingslip_template\": \"<string>\",\n  \"request_serial_numbers\": \"<boolean>\",\n  \"ship_method_preference\": \"<integer>\",\n  \"shipping_name\": \"<string>\",\n  \"ups_account\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"ein\": \"<string>\",\n  \"gs1_company_prefix\": \"<string>\",\n  \"warehouse_fallback\": \"<integer>\",\n  \"payment_hold\": \"<boolean>\",\n  \"primary_contact\": \"<string>\",\n  \"global_e_guid\": \"<string>\",\n  \"exit_notice\": \"<boolean>\",\n  \"data_mapping_string\": \"<string>\",\n  \"allowed_warehouse_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"account_level\": \"<integer>\",\n  \"auto_merge_skus\": \"<boolean>\",\n  \"billing_email\": \"<string>\",\n  \"billing_company\": \"<string>\",\n  \"billing_phone1\": \"<string>\",\n  \"billing_phone2\": \"<string>\",\n  \"billing_address1\": \"<string>\",\n  \"billing_address2\": \"<string>\",\n  \"billing_address3\": \"<string>\",\n  \"billing_city\": \"<string>\",\n  \"billing_state\": \"<string>\",\n  \"billing_zip\": \"<string>\",\n  \"billing_country\": \"<string>\",\n  \"billing_residential\": \"<boolean>\",\n  \"items_returnable\": \"<boolean>\",\n  \"allow_international_returns\": \"<boolean>\",\n  \"items_exchangeable\": \"<boolean>\",\n  \"return_time_limit\": \"<integer>\",\n  \"return_label_expires_in\": \"<integer>\",\n  \"return_price_restricted\": \"<boolean>\",\n  \"return_sku_match\": \"<string>\",\n  \"rma_display_logo\": \"<boolean>\",\n  \"rma_footer_content\": \"<string>\",\n  \"return_name\": \"<string>\",\n  \"return_company\": \"<string>\",\n  \"return_email\": \"<string>\",\n  \"return_phone\": \"<string>\",\n  \"return_address_1\": \"<string>\",\n  \"return_address_2\": \"<string>\",\n  \"return_city\": \"<string>\",\n  \"return_state\": \"<string>\",\n  \"return_zip\": \"<string>\",\n  \"return_country\": \"<string>\",\n  \"supports_return_labels\": \"<boolean>\",\n  \"logo_content_type\": \"<string>\",\n  \"logo_file_name\": \"<string>\",\n  \"logo_file_size\": \"<integer>\",\n  \"logo_updated_at\": \"<dateTime>\",\n  \"full_logo_url\": \"<string>\",\n  \"email_confirmation_from\": \"<string>\",\n  \"email_confirmation_name\": \"<string>\",\n  \"email_confirmation_msg\": \"<string>\",\n  \"email_confirmation_preference\": \"<integer>\",\n  \"email_confirmation_template\": \"<string>\",\n  \"low_inventory_threshold\": \"<integer>\",\n  \"lot_control\": \"<boolean>\",\n  \"expiration_period\": \"<integer>\",\n  \"ship_strategy\": \"<integer>\",\n  \"items_unavailable_on_sellout\": \"<integer>\",\n  \"replenishment_min\": \"<string>\",\n  \"replenishment_target\": \"<string>\",\n  \"allow_b_stock_receiving\": \"<boolean>\",\n  \"location_default_return_role\": \"<string>\",\n  \"location_enable_pending_returns\": \"<boolean>\",\n  \"location_enable_receiving_into_reserved\": \"<boolean>\",\n  \"receiving_fields\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"project_task_labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dashboard_enable_domo\": \"<string>\",\n  \"dashboard_enable_parcel_insights\": \"<string>\",\n  \"gestation_length\": \"<string>\",\n  \"billing_core\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "affe41bc-bf2e-4280-8e97-74248c7a6475",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workday_uuid\": \"<string>\",\n  \"partner_id\": \"<integer>\",\n  \"billing_contact_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"auto_merge_gestation\": \"<integer>\",\n  \"default_warehouse_id\": \"<integer>\",\n  \"eori_number\": \"<string>\",\n  \"estimated_monthly_volume\": \"<string>\",\n  \"fedex_account\": \"<string>\",\n  \"from_email\": \"<string>\",\n  \"incoterm\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"item_scanning_preference\": \"<boolean>\",\n  \"label_format\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"notify_originator\": \"<boolean>\",\n  \"notify_originator_inventory\": \"<integer>\",\n  \"originator_permissions\": \"<boolean>\",\n  \"packing_slip_msg\": \"<string>\",\n  \"packingslip_template\": \"<string>\",\n  \"request_serial_numbers\": \"<boolean>\",\n  \"ship_method_preference\": \"<integer>\",\n  \"shipping_name\": \"<string>\",\n  \"ups_account\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"ein\": \"<string>\",\n  \"gs1_company_prefix\": \"<string>\",\n  \"warehouse_fallback\": \"<integer>\",\n  \"payment_hold\": \"<boolean>\",\n  \"primary_contact\": \"<string>\",\n  \"global_e_guid\": \"<string>\",\n  \"exit_notice\": \"<boolean>\",\n  \"data_mapping_string\": \"<string>\",\n  \"allowed_warehouse_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"account_level\": \"<integer>\",\n  \"auto_merge_skus\": \"<boolean>\",\n  \"billing_email\": \"<string>\",\n  \"billing_company\": \"<string>\",\n  \"billing_phone1\": \"<string>\",\n  \"billing_phone2\": \"<string>\",\n  \"billing_address1\": \"<string>\",\n  \"billing_address2\": \"<string>\",\n  \"billing_address3\": \"<string>\",\n  \"billing_city\": \"<string>\",\n  \"billing_state\": \"<string>\",\n  \"billing_zip\": \"<string>\",\n  \"billing_country\": \"<string>\",\n  \"billing_residential\": \"<boolean>\",\n  \"items_returnable\": \"<boolean>\",\n  \"allow_international_returns\": \"<boolean>\",\n  \"items_exchangeable\": \"<boolean>\",\n  \"return_time_limit\": \"<integer>\",\n  \"return_label_expires_in\": \"<integer>\",\n  \"return_price_restricted\": \"<boolean>\",\n  \"return_sku_match\": \"<string>\",\n  \"rma_display_logo\": \"<boolean>\",\n  \"rma_footer_content\": \"<string>\",\n  \"return_name\": \"<string>\",\n  \"return_company\": \"<string>\",\n  \"return_email\": \"<string>\",\n  \"return_phone\": \"<string>\",\n  \"return_address_1\": \"<string>\",\n  \"return_address_2\": \"<string>\",\n  \"return_city\": \"<string>\",\n  \"return_state\": \"<string>\",\n  \"return_zip\": \"<string>\",\n  \"return_country\": \"<string>\",\n  \"supports_return_labels\": \"<boolean>\",\n  \"logo_content_type\": \"<string>\",\n  \"logo_file_name\": \"<string>\",\n  \"logo_file_size\": \"<integer>\",\n  \"logo_updated_at\": \"<dateTime>\",\n  \"full_logo_url\": \"<string>\",\n  \"email_confirmation_from\": \"<string>\",\n  \"email_confirmation_name\": \"<string>\",\n  \"email_confirmation_msg\": \"<string>\",\n  \"email_confirmation_preference\": \"<integer>\",\n  \"email_confirmation_template\": \"<string>\",\n  \"low_inventory_threshold\": \"<integer>\",\n  \"lot_control\": \"<boolean>\",\n  \"expiration_period\": \"<integer>\",\n  \"ship_strategy\": \"<integer>\",\n  \"items_unavailable_on_sellout\": \"<integer>\",\n  \"replenishment_min\": \"<string>\",\n  \"replenishment_target\": \"<string>\",\n  \"allow_b_stock_receiving\": \"<boolean>\",\n  \"location_default_return_role\": \"<string>\",\n  \"location_enable_pending_returns\": \"<boolean>\",\n  \"location_enable_receiving_into_reserved\": \"<boolean>\",\n  \"receiving_fields\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"project_task_labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dashboard_enable_domo\": \"<string>\",\n  \"dashboard_enable_parcel_insights\": \"<string>\",\n  \"gestation_length\": \"<string>\",\n  \"billing_core\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3c64be2-ac0d-4018-a908-838486710561",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workday_uuid\": \"<string>\",\n  \"partner_id\": \"<integer>\",\n  \"billing_contact_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"auto_merge_gestation\": \"<integer>\",\n  \"default_warehouse_id\": \"<integer>\",\n  \"eori_number\": \"<string>\",\n  \"estimated_monthly_volume\": \"<string>\",\n  \"fedex_account\": \"<string>\",\n  \"from_email\": \"<string>\",\n  \"incoterm\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"item_scanning_preference\": \"<boolean>\",\n  \"label_format\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"notify_originator\": \"<boolean>\",\n  \"notify_originator_inventory\": \"<integer>\",\n  \"originator_permissions\": \"<boolean>\",\n  \"packing_slip_msg\": \"<string>\",\n  \"packingslip_template\": \"<string>\",\n  \"request_serial_numbers\": \"<boolean>\",\n  \"ship_method_preference\": \"<integer>\",\n  \"shipping_name\": \"<string>\",\n  \"ups_account\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"ein\": \"<string>\",\n  \"gs1_company_prefix\": \"<string>\",\n  \"warehouse_fallback\": \"<integer>\",\n  \"payment_hold\": \"<boolean>\",\n  \"primary_contact\": \"<string>\",\n  \"global_e_guid\": \"<string>\",\n  \"exit_notice\": \"<boolean>\",\n  \"data_mapping_string\": \"<string>\",\n  \"allowed_warehouse_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"account_level\": \"<integer>\",\n  \"auto_merge_skus\": \"<boolean>\",\n  \"billing_email\": \"<string>\",\n  \"billing_company\": \"<string>\",\n  \"billing_phone1\": \"<string>\",\n  \"billing_phone2\": \"<string>\",\n  \"billing_address1\": \"<string>\",\n  \"billing_address2\": \"<string>\",\n  \"billing_address3\": \"<string>\",\n  \"billing_city\": \"<string>\",\n  \"billing_state\": \"<string>\",\n  \"billing_zip\": \"<string>\",\n  \"billing_country\": \"<string>\",\n  \"billing_residential\": \"<boolean>\",\n  \"items_returnable\": \"<boolean>\",\n  \"allow_international_returns\": \"<boolean>\",\n  \"items_exchangeable\": \"<boolean>\",\n  \"return_time_limit\": \"<integer>\",\n  \"return_label_expires_in\": \"<integer>\",\n  \"return_price_restricted\": \"<boolean>\",\n  \"return_sku_match\": \"<string>\",\n  \"rma_display_logo\": \"<boolean>\",\n  \"rma_footer_content\": \"<string>\",\n  \"return_name\": \"<string>\",\n  \"return_company\": \"<string>\",\n  \"return_email\": \"<string>\",\n  \"return_phone\": \"<string>\",\n  \"return_address_1\": \"<string>\",\n  \"return_address_2\": \"<string>\",\n  \"return_city\": \"<string>\",\n  \"return_state\": \"<string>\",\n  \"return_zip\": \"<string>\",\n  \"return_country\": \"<string>\",\n  \"supports_return_labels\": \"<boolean>\",\n  \"logo_content_type\": \"<string>\",\n  \"logo_file_name\": \"<string>\",\n  \"logo_file_size\": \"<integer>\",\n  \"logo_updated_at\": \"<dateTime>\",\n  \"full_logo_url\": \"<string>\",\n  \"email_confirmation_from\": \"<string>\",\n  \"email_confirmation_name\": \"<string>\",\n  \"email_confirmation_msg\": \"<string>\",\n  \"email_confirmation_preference\": \"<integer>\",\n  \"email_confirmation_template\": \"<string>\",\n  \"low_inventory_threshold\": \"<integer>\",\n  \"lot_control\": \"<boolean>\",\n  \"expiration_period\": \"<integer>\",\n  \"ship_strategy\": \"<integer>\",\n  \"items_unavailable_on_sellout\": \"<integer>\",\n  \"replenishment_min\": \"<string>\",\n  \"replenishment_target\": \"<string>\",\n  \"allow_b_stock_receiving\": \"<boolean>\",\n  \"location_default_return_role\": \"<string>\",\n  \"location_enable_pending_returns\": \"<boolean>\",\n  \"location_enable_receiving_into_reserved\": \"<boolean>\",\n  \"receiving_fields\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"project_task_labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dashboard_enable_domo\": \"<string>\",\n  \"dashboard_enable_parcel_insights\": \"<string>\",\n  \"gestation_length\": \"<string>\",\n  \"billing_core\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4bef152a-f783-44bb-ac72-fe5cd750d3e7",
+    "name": "Rydership bundle_items customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

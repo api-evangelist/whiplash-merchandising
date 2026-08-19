@@ -1,0 +1,343 @@
+{
+  "item": [
+    {
+      "id": "e3f103e4-f89d-4895-b29f-dbd010e91faf",
+      "name": "packages",
+      "description": {
+        "content": "Shipment package details and tracking.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a2e00b7-2da2-401c-ac05-48edcf84e496",
+          "name": "List shipping documents for a package",
+          "request": {
+            "name": "List shipping documents for a package",
+            "description": {
+              "content": "List all shipping documents for a package",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "packages",
+                ":id",
+                "shipping_documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_total",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_links",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f9e181d5-03b3-43c7-9bcf-2fcc4c82bfb4",
+              "name": "List all shipping documents for a package",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "packages",
+                    ":id",
+                    "shipping_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3163,\n    \"order_id\": 7569,\n    \"owner_id\": 8801,\n    \"owner_type\": \"string\",\n    \"provider_document_type\": \"string\",\n    \"document_format\": \"string\",\n    \"label_provider\": \"string\",\n    \"electronically_submitted\": false,\n    \"resolved_url\": \"string\",\n    \"created_at\": \"2023-10-09T22:34:33.987Z\",\n    \"updated_at\": \"2024-09-27T07:22:28.553Z\",\n    \"url\": \"string\",\n    \"provider_url\": \"string\"\n  },\n  {\n    \"id\": 4324,\n    \"order_id\": 6094,\n    \"owner_id\": 8296,\n    \"owner_type\": \"string\",\n    \"provider_document_type\": \"string\",\n    \"document_format\": \"string\",\n    \"label_provider\": \"string\",\n    \"electronically_submitted\": false,\n    \"resolved_url\": \"string\",\n    \"created_at\": \"1980-06-12T17:39:59.000Z\",\n    \"updated_at\": \"1971-03-13T23:17:32.999Z\",\n    \"url\": \"string\",\n    \"provider_url\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de8f6bc5-ace8-4515-81b9-8cd773756260",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "packages",
+                    ":id",
+                    "shipping_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67ba7947-0b1a-4195-b851-5995af7b259e",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "packages",
+                    ":id",
+                    "shipping_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ca23ac73-ad05-41c4-9204-630347384cea",
+    "name": "Rydership bundle_items packages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

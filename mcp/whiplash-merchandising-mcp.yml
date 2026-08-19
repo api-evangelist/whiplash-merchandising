@@ -2,10 +2,9 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/whiplash-merchandising-openapi-original.json
-notes: >-
-  No official hosted/remote MCP server was found for Whiplash / Rydership.
-  This is a candidate tool surface derived from core Rydership V2 operations,
-  one tool per operationId. Auth is OAuth 2.0 authorization_code (invite-only).
+notes: No official hosted/remote MCP server was found for Whiplash / Rydership. This is a candidate tool
+  surface derived from core Rydership V2 operations, one tool per operationId. Auth is OAuth 2.0 authorization_code
+  (invite-only).
 server:
   name: whiplash-rydership
   transport: http
@@ -55,3 +54,9 @@ tools:
 - name: list_notification_events
   description: List all notification events (webhook event catalog)
   source_operation: openapi/whiplash-merchandising-openapi-original.json#GetApiV2NotificationEvents
+deployment:
+  mode: none
+  verified: derived
+  tools: 15
+  checked: '2026-08-12'
+  source: catalog MCP census

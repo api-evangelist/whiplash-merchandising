@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items load_scacs API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "load_scacs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all load scacs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/load_scacs",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of load scacs "
+        },
+        {
+          "info": {
+            "name": "Count load scacs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/load_scacs/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of load scacs "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

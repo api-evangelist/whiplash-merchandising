@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items simulate API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "simulate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a consumer return with simulated data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/simulate/consumer_returns/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a consumer_return with simulated data"
+        },
+        {
+          "info": {
+            "name": "Simulate processing for an consumer return",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/simulate/consumer_returns/:consumer_return_id/processing",
+            "params": [
+              {
+                "name": "consumer_return_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Simulate processing for a consumer_return, received through finalized"
+        },
+        {
+          "info": {
+            "name": "Create an order with simulated data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/simulate/orders/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order with simulated data"
+        },
+        {
+          "info": {
+            "name": "Simulate processing for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/simulate/orders/:order_id/processing",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Simulate processing for an order, packed through shipped"
+        },
+        {
+          "info": {
+            "name": "Create a shipnotice with simulated data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/simulate/shipnotices/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a shipnotice with simulated data"
+        },
+        {
+          "info": {
+            "name": "Simulate processing for an ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/simulate/shipnotices/:shipnotice_id/processing",
+            "params": [
+              {
+                "name": "shipnotice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Simulate processing for a shipnotice, received through finalized"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

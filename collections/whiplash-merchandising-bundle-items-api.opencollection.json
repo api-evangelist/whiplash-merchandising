@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "bundle_items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a bundle item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/bundle_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a bundle item"
+        },
+        {
+          "info": {
+            "name": "Update a bundle item's quantity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/bundle_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a bundle item for a bundle"
+        },
+        {
+          "info": {
+            "name": "Destroy a bundle item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/bundle_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy a bundle item for a bundle"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,217 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items consumer_returns API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "consumer_returns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all consumer returns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/consumer_returns",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all consumer returns"
+        },
+        {
+          "info": {
+            "name": "Create a consumer return",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/consumer_returns",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a consumer return"
+        },
+        {
+          "info": {
+            "name": "Create consumer_returns in bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/consumer_returns/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create consumer_returns in bulk"
+        },
+        {
+          "info": {
+            "name": "Count consumer returns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/consumer_returns/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of consumer returns"
+        },
+        {
+          "info": {
+            "name": "Retrieve a consumer return",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/consumer_returns/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a consumer return"
+        },
+        {
+          "info": {
+            "name": "Update a consumer return",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/consumer_returns/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a consumer return"
+        },
+        {
+          "info": {
+            "name": "Destroy a consumer return",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/consumer_returns/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy a consumer return"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/consumer_returns/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) ConsumerReturn"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/consumer_returns/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update ConsumerReturn meta fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

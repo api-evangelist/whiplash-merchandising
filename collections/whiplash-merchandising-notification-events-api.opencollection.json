@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items notification_events API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "notification_events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all notification events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_events",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of notification events"
+        },
+        {
+          "info": {
+            "name": "Retrieve a notification event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_events/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a notification event"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

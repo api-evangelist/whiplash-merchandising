@@ -1,0 +1,304 @@
+{
+  "item": [
+    {
+      "id": "beeb5275-5ca3-440a-b71e-00d63c6551c4",
+      "name": "originators",
+      "description": {
+        "content": "Originators are e-commerce, API, or ERP representations of an Item, Order, OrderItem, ConsumerReturn, Shipnotice, or ShipnoticeItem. They contain your system's ID and, optionally, details.\nYou can use your own ID to retrieve, update, and destroy resources directly.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "157ca292-5cec-4f44-9fab-adf50d871707",
+          "name": "List originators",
+          "request": {
+            "name": "List originators",
+            "description": {
+              "content": "Get a list of originators",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "originators"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "originated_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_total",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_links",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f30369c6-4e2b-4fc8-82a7-dc7f75e8227b",
+              "name": "Get a list of originators",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "originators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originated_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6568,\n    \"originated_id\": 5541,\n    \"originated_type\": \"string\",\n    \"shop_id\": 7022,\n    \"shop_domain\": \"string\",\n    \"provider\": \"string\",\n    \"original_id\": \"string\",\n    \"group_id\": \"string\",\n    \"misc\": \"string\",\n    \"active\": true,\n    \"integration_id\": 5319,\n    \"last_notified_at\": \"1974-07-15T19:54:24.172Z\",\n    \"last_notification_status\": \"string\",\n    \"last_synced_at\": \"1959-01-28T07:20:59.205Z\",\n    \"distinct_originator_key\": \"string\",\n    \"created_at\": \"1996-01-28T00:49:00.078Z\",\n    \"updated_at\": \"1950-09-22T06:59:33.300Z\",\n    \"application_id\": 2732\n  },\n  {\n    \"id\": 3684,\n    \"originated_id\": 3007,\n    \"originated_type\": \"string\",\n    \"shop_id\": 3911,\n    \"shop_domain\": \"string\",\n    \"provider\": \"string\",\n    \"original_id\": \"string\",\n    \"group_id\": \"string\",\n    \"misc\": \"string\",\n    \"active\": true,\n    \"integration_id\": 1664,\n    \"last_notified_at\": \"1974-11-08T10:33:58.123Z\",\n    \"last_notification_status\": \"string\",\n    \"last_synced_at\": \"2013-06-28T15:47:12.233Z\",\n    \"distinct_originator_key\": \"string\",\n    \"created_at\": \"1981-07-19T11:55:47.830Z\",\n    \"updated_at\": \"1990-11-01T03:02:10.037Z\",\n    \"application_id\": 3382\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7a6550c-d370-4a3c-8b13-f2a0ad462a2f",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "originators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originated_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f527526-59d1-4f2e-928c-ab83603db159",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "originators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "originated_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "346f2250-96a0-4d8a-88c7-4d3fe9c629cb",
+    "name": "Rydership bundle_items originators API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items customers API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/customers",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all customers"
+        },
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/customers/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Count customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/customers/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Count of all customers"
+        },
+        {
+          "info": {
+            "name": "Retrieve a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/customers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a customer"
+        },
+        {
+          "info": {
+            "name": "Update a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/customers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

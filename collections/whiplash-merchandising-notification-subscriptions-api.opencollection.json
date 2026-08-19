@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items notification_subscriptions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "notification_subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all notification subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_subscriptions",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of notification subscriptions"
+        },
+        {
+          "info": {
+            "name": "Create a notification subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/notification_subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a notification subscription"
+        },
+        {
+          "info": {
+            "name": "Count notification subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_subscriptions/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a count of notification subscriptions"
+        },
+        {
+          "info": {
+            "name": "Retrieve a notification subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a notification subscription"
+        },
+        {
+          "info": {
+            "name": "Update a notification subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/notification_subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a notification subscription"
+        },
+        {
+          "info": {
+            "name": "Delete a notification subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/notification_subscriptions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a notification subscription"
+        },
+        {
+          "info": {
+            "name": "Test a notification subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/notification_subscriptions/:id/test",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Test a notification subscription"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

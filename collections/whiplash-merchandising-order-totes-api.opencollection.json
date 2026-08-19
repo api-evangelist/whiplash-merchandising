@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items order_totes API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "order_totes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Count order items for an order tote",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_totes/:code/order_items/count",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of order items for a given order tote"
+        },
+        {
+          "info": {
+            "name": "Count orders for a tote",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/order_totes/:code/orders/count",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of orders for a given tote"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

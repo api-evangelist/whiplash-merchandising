@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items scancodes API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "scancodes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a scancode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/scancodes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a scancode"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

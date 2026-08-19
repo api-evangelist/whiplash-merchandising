@@ -1,0 +1,638 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items items API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of items "
+        },
+        {
+          "info": {
+            "name": "Create an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/items",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an item"
+        },
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Count items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of items"
+        },
+        {
+          "info": {
+            "name": "Retrieve an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an item"
+        },
+        {
+          "info": {
+            "name": "Update an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an item"
+        },
+        {
+          "info": {
+            "name": "Archive an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy an item"
+        },
+        {
+          "info": {
+            "name": "List all bundle items containing this item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/bundle_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Shows all bundle items containing this item"
+        },
+        {
+          "info": {
+            "name": "Add an item to an bundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/items/:id/bundle_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an item to an bundle"
+        },
+        {
+          "info": {
+            "name": "Perform an action on an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/items/:id/call/:action",
+            "params": [
+              {
+                "name": "action",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Perform an action on an item"
+        },
+        {
+          "info": {
+            "name": "List all instances of this item in bundles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/in_bundles",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Shows all instances of this item in bundles"
+        },
+        {
+          "info": {
+            "name": "List locations associated with this item - by role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/locations_with_transfer_count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "show locations associated with this item"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) Item"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Item meta fields"
+        },
+        {
+          "info": {
+            "name": "List associated originators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/originators",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the originators for a(n) Item"
+        },
+        {
+          "info": {
+            "name": "Count originators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/originators/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the count of originators for a(n) Item"
+        },
+        {
+          "info": {
+            "name": "List all scancodes associated with this item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/scancodes",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "show scancodes associated with this item"
+        },
+        {
+          "info": {
+            "name": "List associated ship notice items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/shipnotice_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all shipnotice items for a(n) item"
+        },
+        {
+          "info": {
+            "name": "Count associated ship notice items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/shipnotice_items/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a count of shipnotice items for a(n) item"
+        },
+        {
+          "info": {
+            "name": "List an item's history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/transactions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all transactions for an item"
+        },
+        {
+          "info": {
+            "name": "Count the transactions in an item's history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/transactions/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of item transactions"
+        },
+        {
+          "info": {
+            "name": "Export an item's transaction history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/transactions/export",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Export item transaction history to CSV"
+        },
+        {
+          "info": {
+            "name": "Item stock by warehouse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/items/:id/warehouse_quantities",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Shows the number of this item in the warehouse"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

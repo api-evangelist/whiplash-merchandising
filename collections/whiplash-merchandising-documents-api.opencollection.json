@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items documents API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/documents",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tagged_with",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all documents"
+        },
+        {
+          "info": {
+            "name": "Create a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/documents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a document"
+        },
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/documents/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Retrieve a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/documents/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a document"
+        },
+        {
+          "info": {
+            "name": "Destroy an document",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/documents/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy an document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1622 @@
+{
+  "item": [
+    {
+      "id": "b473b408-548f-4cd0-a118-5d64ed19da35",
+      "name": "notification_subscriptions",
+      "description": {
+        "content": "User notification preferences and subscriptions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9906a18f-491c-4448-a7a9-baf91afce8b8",
+          "name": "List all notification subscriptions",
+          "request": {
+            "name": "List all notification subscriptions",
+            "description": {
+              "content": "Get a list of notification subscriptions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_total",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_links",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bf609aa-cbb1-4de5-bb76-0287670667ce",
+              "name": "Get a list of notification subscriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6520,\n    \"notification_event_id\": 2616,\n    \"customer_id\": 5506,\n    \"user_id\": 8496,\n    \"notification_type\": \"string\",\n    \"endpoint\": \"string\",\n    \"active\": true,\n    \"version\": 9907,\n    \"created_at\": \"2019-10-05T03:19:15.395Z\",\n    \"updated_at\": \"1964-11-06T09:59:41.772Z\",\n    \"discarded_at\": \"1948-09-15T19:04:24.079Z\",\n    \"user\": {\n      \"id\": 5477,\n      \"email\": \"string\",\n      \"sign_in_count\": 2037,\n      \"created_at\": \"2013-03-15T15:47:14.119Z\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"role\": \"staff\",\n      \"locale\": \"en\",\n      \"warehouse_id\": 6206,\n      \"partner_id\": 7514,\n      \"active\": true,\n      \"current_sign_in_at\": \"1957-10-22T07:04:49.715Z\",\n      \"current_sign_in_expires_at\": \"2002-08-02T07:27:52.963Z\",\n      \"customer_ids\": [\n        9584,\n        6093\n      ],\n      \"create_email\": false,\n      \"skip_confirmation\": true\n    }\n  },\n  {\n    \"id\": 7534,\n    \"notification_event_id\": 5344,\n    \"customer_id\": 1681,\n    \"user_id\": 5073,\n    \"notification_type\": \"string\",\n    \"endpoint\": \"string\",\n    \"active\": true,\n    \"version\": 1424,\n    \"created_at\": \"2020-05-21T00:46:26.382Z\",\n    \"updated_at\": \"1965-02-15T14:40:38.273Z\",\n    \"discarded_at\": \"1967-01-17T06:41:26.347Z\",\n    \"user\": {\n      \"id\": 7305,\n      \"email\": \"string\",\n      \"sign_in_count\": 4207,\n      \"created_at\": \"1949-12-02T01:51:30.770Z\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"role\": \"manager\",\n      \"locale\": \"en\",\n      \"warehouse_id\": 8215,\n      \"partner_id\": 1082,\n      \"active\": false,\n      \"current_sign_in_at\": \"1958-02-28T06:47:43.439Z\",\n      \"current_sign_in_expires_at\": \"2015-03-27T23:15:28.225Z\",\n      \"customer_ids\": [\n        5371,\n        5030\n      ],\n      \"create_email\": true,\n      \"skip_confirmation\": true\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2a41b49-c648-46b1-a284-3a138ba14c27",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0362641-5822-48cd-b2ac-fefa2cb946b9",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_total",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_links",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b21d60c-75eb-4a11-843a-658abec84e8f",
+          "name": "Create a notification subscription",
+          "request": {
+            "name": "Create a notification subscription",
+            "description": {
+              "content": "Create a notification subscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "134685b0-d46c-4ed0-9fba-5fc2b4493886",
+              "name": "Create a notification subscription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7538,\n  \"notification_event_id\": 8302,\n  \"customer_id\": 8915,\n  \"user_id\": 6652,\n  \"notification_type\": \"string\",\n  \"endpoint\": \"string\",\n  \"active\": true,\n  \"version\": 607,\n  \"created_at\": \"1986-01-23T13:56:59.817Z\",\n  \"updated_at\": \"2019-12-05T10:46:38.951Z\",\n  \"discarded_at\": \"1997-11-30T08:28:47.640Z\",\n  \"user\": {\n    \"id\": 8508,\n    \"email\": \"string\",\n    \"sign_in_count\": 2823,\n    \"created_at\": \"1987-09-10T01:12:32.477Z\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"role\": \"staff\",\n    \"locale\": \"es\",\n    \"warehouse_id\": 4948,\n    \"partner_id\": 803,\n    \"active\": false,\n    \"current_sign_in_at\": \"2016-04-24T08:53:56.331Z\",\n    \"current_sign_in_expires_at\": \"2018-05-11T08:06:59.545Z\",\n    \"customer_ids\": [\n      7141,\n      5432\n    ],\n    \"create_email\": false,\n    \"skip_confirmation\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ddeb28c4-9551-4d90-8f11-5ea5c1380c29",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3722a6ac-9290-47f4-9c9b-51e093a38434",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2fdc29cd-bb90-4323-8945-7be78fb495da",
+              "name": "conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db369f06-0bcc-45dc-816c-7ee1888a4298",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_type\": \"<string>\",\n  \"notification_event_id\": \"<integer>\",\n  \"endpoint\": \"<string>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9782c13-9f9f-4cf1-ba79-848acf822ca7",
+          "name": "Count notification subscriptions",
+          "request": {
+            "name": "Count notification subscriptions",
+            "description": {
+              "content": "Get a count of notification subscriptions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0af27639-17ec-48ab-b8cd-fa539993b69a",
+              "name": "Get a count of notification subscriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8410\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "803b2d19-2e85-417b-ba3d-b323369754cd",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b46b636-e11b-41aa-a3bb-53cc6297da3b",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e6be74f-3151-409f-a7d8-f2c6c0ce2ace",
+          "name": "Retrieve a notification subscription",
+          "request": {
+            "name": "Retrieve a notification subscription",
+            "description": {
+              "content": "Get a notification subscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a614080e-4b9a-45b6-933e-e8a057fd1ffb",
+              "name": "Get a notification subscription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7538,\n  \"notification_event_id\": 8302,\n  \"customer_id\": 8915,\n  \"user_id\": 6652,\n  \"notification_type\": \"string\",\n  \"endpoint\": \"string\",\n  \"active\": true,\n  \"version\": 607,\n  \"created_at\": \"1986-01-23T13:56:59.817Z\",\n  \"updated_at\": \"2019-12-05T10:46:38.951Z\",\n  \"discarded_at\": \"1997-11-30T08:28:47.640Z\",\n  \"user\": {\n    \"id\": 8508,\n    \"email\": \"string\",\n    \"sign_in_count\": 2823,\n    \"created_at\": \"1987-09-10T01:12:32.477Z\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"role\": \"staff\",\n    \"locale\": \"es\",\n    \"warehouse_id\": 4948,\n    \"partner_id\": 803,\n    \"active\": false,\n    \"current_sign_in_at\": \"2016-04-24T08:53:56.331Z\",\n    \"current_sign_in_expires_at\": \"2018-05-11T08:06:59.545Z\",\n    \"customer_ids\": [\n      7141,\n      5432\n    ],\n    \"create_email\": false,\n    \"skip_confirmation\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e33c0e2a-aa78-4fa9-b3fa-8cc68d2e2a29",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f86723da-9a71-420d-ae68-b4324e3b2321",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d7bcdd7-7514-4bbd-8279-20b56a68118c",
+          "name": "Update a notification subscription",
+          "request": {
+            "name": "Update a notification subscription",
+            "description": {
+              "content": "Update a notification subscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notification_event_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"notification_type\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\",\n  \"discarded_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b70b7d3-4d29-47d4-8698-a9ed7efd0aeb",
+              "name": "Update a notification subscription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_event_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"notification_type\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\",\n  \"discarded_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7538,\n  \"notification_event_id\": 8302,\n  \"customer_id\": 8915,\n  \"user_id\": 6652,\n  \"notification_type\": \"string\",\n  \"endpoint\": \"string\",\n  \"active\": true,\n  \"version\": 607,\n  \"created_at\": \"1986-01-23T13:56:59.817Z\",\n  \"updated_at\": \"2019-12-05T10:46:38.951Z\",\n  \"discarded_at\": \"1997-11-30T08:28:47.640Z\",\n  \"user\": {\n    \"id\": 8508,\n    \"email\": \"string\",\n    \"sign_in_count\": 2823,\n    \"created_at\": \"1987-09-10T01:12:32.477Z\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"role\": \"staff\",\n    \"locale\": \"es\",\n    \"warehouse_id\": 4948,\n    \"partner_id\": 803,\n    \"active\": false,\n    \"current_sign_in_at\": \"2016-04-24T08:53:56.331Z\",\n    \"current_sign_in_expires_at\": \"2018-05-11T08:06:59.545Z\",\n    \"customer_ids\": [\n      7141,\n      5432\n    ],\n    \"create_email\": false,\n    \"skip_confirmation\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d19346d5-5310-4402-ad3e-032d6a6a9af3",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_event_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"notification_type\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\",\n  \"discarded_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0abddde1-99f2-4cb4-974e-63e94965b71d",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_event_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"notification_type\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\",\n  \"discarded_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70c6ef73-5833-40cf-babc-3984d55adead",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_event_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"notification_type\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"version\": \"<integer>\",\n  \"discarded_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad704823-73ba-4858-b107-1149b8e1b730",
+          "name": "Delete a notification subscription",
+          "request": {
+            "name": "Delete a notification subscription",
+            "description": {
+              "content": "Delete a notification subscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce48029f-cdcd-4879-9d74-be107dc951d1",
+              "name": "Successfully deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "133938db-1655-478a-86e1-56c75cddf440",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "603dc668-ff5c-4bc8-8490-7cea82b9a670",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c45ad80-bf51-4b29-bf61-fa893ebf032c",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00b5b6ff-89a4-43c5-85c8-35e9acbe393b",
+          "name": "Test a notification subscription",
+          "request": {
+            "name": "Test a notification subscription",
+            "description": {
+              "content": "Test a notification subscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "notification_subscriptions",
+                ":id",
+                "test"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8821a6c-9489-4f0d-aca3-c7681eff39cb",
+              "name": "Test a notification subscription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7538,\n  \"notification_event_id\": 8302,\n  \"customer_id\": 8915,\n  \"user_id\": 6652,\n  \"notification_type\": \"string\",\n  \"endpoint\": \"string\",\n  \"active\": true,\n  \"version\": 607,\n  \"created_at\": \"1986-01-23T13:56:59.817Z\",\n  \"updated_at\": \"2019-12-05T10:46:38.951Z\",\n  \"discarded_at\": \"1997-11-30T08:28:47.640Z\",\n  \"user\": {\n    \"id\": 8508,\n    \"email\": \"string\",\n    \"sign_in_count\": 2823,\n    \"created_at\": \"1987-09-10T01:12:32.477Z\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"role\": \"staff\",\n    \"locale\": \"es\",\n    \"warehouse_id\": 4948,\n    \"partner_id\": 803,\n    \"active\": false,\n    \"current_sign_in_at\": \"2016-04-24T08:53:56.331Z\",\n    \"current_sign_in_expires_at\": \"2018-05-11T08:06:59.545Z\",\n    \"customer_ids\": [\n      7141,\n      5432\n    ],\n    \"create_email\": false,\n    \"skip_confirmation\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fab27ee-e0a2-4b5c-b088-2e04537c7c01",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01ba9892-237a-4660-8798-b04ec9f2cb11",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "notification_subscriptions",
+                    ":id",
+                    "test"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "584c43d6-17e4-4f74-9cb6-362e4098eedc",
+    "name": "Rydership bundle_items notification_subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

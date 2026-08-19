@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items templates API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/templates",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of templates"
+        },
+        {
+          "info": {
+            "name": "Create a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/templates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a template"
+        },
+        {
+          "info": {
+            "name": "Retrieve a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a template"
+        },
+        {
+          "info": {
+            "name": "Update a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a template"
+        },
+        {
+          "info": {
+            "name": "Destroy a template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy a template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,344 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items shipnotices API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "shipnotices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all ship notices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all shipnotices"
+        },
+        {
+          "info": {
+            "name": "Create a ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/shipnotices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a shipnotice"
+        },
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Create shipnotices in bulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/shipnotices/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create shipnotices in bulk"
+        },
+        {
+          "info": {
+            "name": "Count ship notices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of shipnotices"
+        },
+        {
+          "info": {
+            "name": "Retrieve a ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Shipnotice"
+        },
+        {
+          "info": {
+            "name": "Update a ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/shipnotices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a shipnotice"
+        },
+        {
+          "info": {
+            "name": "Destroy a ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/shipnotices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy a shipnotice"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) Shipnotice"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/shipnotices/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Shipnotice meta fields"
+        },
+        {
+          "info": {
+            "name": "Count orders waiting for stock in a ship notice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/:id/orders_waiting",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the count of orders waiting for the shipnotice"
+        },
+        {
+          "info": {
+            "name": "List associated ship notice items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/:id/shipnotice_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_total",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_links",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all shipnotice items for a(n) shipnotice"
+        },
+        {
+          "info": {
+            "name": "Create a ship notice item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/api/v2/shipnotices/:id/shipnotice_items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "create a shipnotice item"
+        },
+        {
+          "info": {
+            "name": "Count associated ship notice items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotices/:id/shipnotice_items/count",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a count of shipnotice items for a(n) shipnotice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

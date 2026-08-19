@@ -1,0 +1,1502 @@
+{
+  "item": [
+    {
+      "id": "13cbd536-d401-4943-85a1-a7fab61e16d0",
+      "name": "shipnotice_items",
+      "description": {
+        "content": "Similar to an OrderItem, ShipnoticeItem represents an Item with a quantity in a Shipnotice. quantity refers to the quantity expected to arrive, and the quantity actually received is quantity_good.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e8052a26-eb21-4863-98c8-a55412defe0e",
+          "name": "List actions you can perform",
+          "request": {
+            "name": "List actions you can perform",
+            "description": {
+              "content": "Get resource actions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                "actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47d8e111-df70-445b-98ce-07091eee4cd8",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5df95e2-2155-4086-a3b7-3eb2ae2b272d",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b0f638c-7512-418f-97b0-639db790888a",
+          "name": "Count ship notice items",
+          "request": {
+            "name": "Count ship notice items",
+            "description": {
+              "content": "Returns count of shipnotice items",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90910933-4f39-47d1-acfb-60f7ef0aa2a9",
+              "name": "Returns count of shipnotice items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8061\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1746547-530b-4f4e-b326-79217302b5ed",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dce5467b-bf82-4692-aebf-51fddc41200d",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a111ba63-c253-4d73-8256-a1e6859f25a0",
+          "name": "Retrieve a ship notice item",
+          "request": {
+            "name": "Retrieve a ship notice item",
+            "description": {
+              "content": "Get a shipnotice item",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d63918de-d458-4031-8d8a-4521d74f3a26",
+              "name": "Get a shipnotice item",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8173,\n  \"shipnotice_id\": 8441,\n  \"item_id\": 9844,\n  \"quantity\": 8352,\n  \"quantity_good\": 3784,\n  \"quantity_damaged\": 5371,\n  \"description\": \"string\",\n  \"extended_description\": \"string\",\n  \"include_in_published\": false,\n  \"return_action\": \"string\",\n  \"purchase_order_number\": \"string\",\n  \"created_at\": \"2020-10-01T15:30:39.369Z\",\n  \"updated_at\": \"1951-07-15T11:57:24.428Z\",\n  \"item\": {\n    \"id\": 3919,\n    \"sku\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"full_description\": \"string\",\n    \"created_at\": \"2022-12-14T07:22:33.205Z\",\n    \"updated_at\": \"1964-01-01T10:53:33.509Z\",\n    \"customer_id\": 7971,\n    \"quantity\": 2648,\n    \"weight\": \"string\",\n    \"available\": true,\n    \"image_originator_url\": \"string\",\n    \"vendor\": \"string\",\n    \"scancode\": \"string\",\n    \"price\": \"string\",\n    \"media_mail\": false,\n    \"packaging\": true,\n    \"length\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"active\": false,\n    \"wholesale_cost\": \"string\",\n    \"is_bundle\": true,\n    \"packaging_type\": \"LargeFlatRateBoardGameBox\",\n    \"promo\": true,\n    \"street_date\": \"2008-12-09T12:14:27.301Z\",\n    \"category\": \"string\",\n    \"include_inbound_in_published\": true,\n    \"returnable\": false,\n    \"return_sku_match\": \"string\",\n    \"return_price_restricted\": true,\n    \"request_serial_number\": false,\n    \"currency\": \"string\",\n    \"tariff_number\": \"string\",\n    \"notify_originator_inventory\": 8788,\n    \"name\": \"string\",\n    \"nmfc_code\": \"string\",\n    \"nmfc_class\": \"string\",\n    \"commodity_description\": \"string\",\n    \"image_url\": \"string\",\n    \"hazmat\": false,\n    \"hazmat_type\": \"lighters\",\n    \"misc\": \"string\",\n    \"ean\": \"string\",\n    \"lot_control\": true,\n    \"expiration_period\": 7727,\n    \"ship_strategy\": 3235,\n    \"velocity\": 6726,\n    \"case_quantity\": 523,\n    \"carton_quantity\": 6536,\n    \"origin_country\": \"AD\",\n    \"alcohol\": false,\n    \"shippable_container\": false,\n    \"goh\": false,\n    \"label_format\": \"string\",\n    \"replenishment_min\": \"string\",\n    \"replenishment_target\": \"string\",\n    \"low_inventory_threshold\": 2761,\n    \"published_quantity\": 6213\n  },\n  \"lot\": {\n    \"id\": 6310,\n    \"number\": \"string\",\n    \"expires_on\": \"2020-12-07\",\n    \"shipnotice_item_id\": 2318,\n    \"created_at\": \"1991-04-12T00:39:25.997Z\",\n    \"updated_at\": \"1983-09-19T14:32:07.542Z\"\n  },\n  \"item_image_url\": \"string\",\n  \"item_scancode\": \"string\",\n  \"item_sku\": \"string\",\n  \"item_title\": \"string\",\n  \"item_lot_control\": true,\n  \"item_currency\": \"string\",\n  \"case_quantity\": 290,\n  \"carton_quantity\": 7164,\n  \"goh\": false,\n  \"unit_cost\": \"string\",\n  \"warehouse_id\": 9269,\n  \"unallocated\": 9168,\n  \"location_role\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71db2189-8463-491b-9d65-4b3e9087ade4",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4aeffff3-b878-4b1e-9e14-c2ff296081c6",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dec7dca1-8e40-4292-be52-4f9c16de2f8f",
+          "name": "Update a ship notice item",
+          "request": {
+            "name": "Update a ship notice item",
+            "description": {
+              "content": "Update a shipnotice item",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"extended_description\": \"<string>\",\n  \"include_in_published\": \"<boolean>\",\n  \"purchase_order_number\": \"<string>\",\n  \"location_role\": \"<string>\",\n  \"unit_cost\": \"<float>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "618e84cc-85f7-49fe-95b4-ecd3454279c6",
+              "name": "Update a shipnotice item",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"extended_description\": \"<string>\",\n  \"include_in_published\": \"<boolean>\",\n  \"purchase_order_number\": \"<string>\",\n  \"location_role\": \"<string>\",\n  \"unit_cost\": \"<float>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8173,\n  \"shipnotice_id\": 8441,\n  \"item_id\": 9844,\n  \"quantity\": 8352,\n  \"quantity_good\": 3784,\n  \"quantity_damaged\": 5371,\n  \"description\": \"string\",\n  \"extended_description\": \"string\",\n  \"include_in_published\": false,\n  \"return_action\": \"string\",\n  \"purchase_order_number\": \"string\",\n  \"created_at\": \"2020-10-01T15:30:39.369Z\",\n  \"updated_at\": \"1951-07-15T11:57:24.428Z\",\n  \"item\": {\n    \"id\": 3919,\n    \"sku\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"full_description\": \"string\",\n    \"created_at\": \"2022-12-14T07:22:33.205Z\",\n    \"updated_at\": \"1964-01-01T10:53:33.509Z\",\n    \"customer_id\": 7971,\n    \"quantity\": 2648,\n    \"weight\": \"string\",\n    \"available\": true,\n    \"image_originator_url\": \"string\",\n    \"vendor\": \"string\",\n    \"scancode\": \"string\",\n    \"price\": \"string\",\n    \"media_mail\": false,\n    \"packaging\": true,\n    \"length\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"active\": false,\n    \"wholesale_cost\": \"string\",\n    \"is_bundle\": true,\n    \"packaging_type\": \"LargeFlatRateBoardGameBox\",\n    \"promo\": true,\n    \"street_date\": \"2008-12-09T12:14:27.301Z\",\n    \"category\": \"string\",\n    \"include_inbound_in_published\": true,\n    \"returnable\": false,\n    \"return_sku_match\": \"string\",\n    \"return_price_restricted\": true,\n    \"request_serial_number\": false,\n    \"currency\": \"string\",\n    \"tariff_number\": \"string\",\n    \"notify_originator_inventory\": 8788,\n    \"name\": \"string\",\n    \"nmfc_code\": \"string\",\n    \"nmfc_class\": \"string\",\n    \"commodity_description\": \"string\",\n    \"image_url\": \"string\",\n    \"hazmat\": false,\n    \"hazmat_type\": \"lighters\",\n    \"misc\": \"string\",\n    \"ean\": \"string\",\n    \"lot_control\": true,\n    \"expiration_period\": 7727,\n    \"ship_strategy\": 3235,\n    \"velocity\": 6726,\n    \"case_quantity\": 523,\n    \"carton_quantity\": 6536,\n    \"origin_country\": \"AD\",\n    \"alcohol\": false,\n    \"shippable_container\": false,\n    \"goh\": false,\n    \"label_format\": \"string\",\n    \"replenishment_min\": \"string\",\n    \"replenishment_target\": \"string\",\n    \"low_inventory_threshold\": 2761,\n    \"published_quantity\": 6213\n  },\n  \"lot\": {\n    \"id\": 6310,\n    \"number\": \"string\",\n    \"expires_on\": \"2020-12-07\",\n    \"shipnotice_item_id\": 2318,\n    \"created_at\": \"1991-04-12T00:39:25.997Z\",\n    \"updated_at\": \"1983-09-19T14:32:07.542Z\"\n  },\n  \"item_image_url\": \"string\",\n  \"item_scancode\": \"string\",\n  \"item_sku\": \"string\",\n  \"item_title\": \"string\",\n  \"item_lot_control\": true,\n  \"item_currency\": \"string\",\n  \"case_quantity\": 290,\n  \"carton_quantity\": 7164,\n  \"goh\": false,\n  \"unit_cost\": \"string\",\n  \"warehouse_id\": 9269,\n  \"unallocated\": 9168,\n  \"location_role\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7150c230-7405-4633-af5a-6b0c770522c9",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"extended_description\": \"<string>\",\n  \"include_in_published\": \"<boolean>\",\n  \"purchase_order_number\": \"<string>\",\n  \"location_role\": \"<string>\",\n  \"unit_cost\": \"<float>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "395059e6-aed3-441a-9604-46ac8f68fe99",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"extended_description\": \"<string>\",\n  \"include_in_published\": \"<boolean>\",\n  \"purchase_order_number\": \"<string>\",\n  \"location_role\": \"<string>\",\n  \"unit_cost\": \"<float>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d86c6547-e6c6-4ba9-928c-b70eef8446a9",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"extended_description\": \"<string>\",\n  \"include_in_published\": \"<boolean>\",\n  \"purchase_order_number\": \"<string>\",\n  \"location_role\": \"<string>\",\n  \"unit_cost\": \"<float>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51e1f5b0-58d3-4c7f-860c-b3d3f77a0dd7",
+          "name": "Destroy a shipnotice item",
+          "request": {
+            "name": "Destroy a shipnotice item",
+            "description": {
+              "content": "Destroy a shipnotice item",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3832bece-4950-4b46-b746-c0a6ddf81e52",
+              "name": "Successfully deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "acc8b136-ae09-47da-a7ef-18d8cc0b91de",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6289429-ce8a-4a0e-84c3-c8b666d8bcf6",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f6c5a31-0b7d-4df3-bdad-7a6d9ec005d7",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d07ec8bc-fdff-4fc6-9a9f-95b24264e475",
+          "name": "List meta fields",
+          "request": {
+            "name": "List meta fields",
+            "description": {
+              "content": "Get the meta fields for a(n) ShipnoticeItem",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                ":id",
+                "meta_fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "associations",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "associations",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6da6ed6d-cf0e-4b15-b02e-6deaad7db793",
+              "name": "Get the meta fields for a(n) ShipnoticeItem",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": {},\n  \"association_fields\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a41014e-09ae-467e-a3f0-caf2c53127ea",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "709ff29e-f522-4d52-bc13-dcf9289e27c9",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "associations",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93ed4ca4-1f90-41c1-b093-f90ed84187de",
+          "name": "Set meta fields",
+          "request": {
+            "name": "Set meta fields",
+            "description": {
+              "content": "Update ShipnoticeItem meta fields",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shipnotice_items",
+                ":id",
+                "meta_fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fields\": \"<object>\",\n  \"association_fields\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87f4ce8c-4717-4b20-91ff-dc5635e1cf12",
+              "name": "Successfully updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": \"<object>\",\n  \"association_fields\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c28c1fcd-3427-436b-ac53-077847855fe4",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": \"<object>\",\n  \"association_fields\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38796a0c-8831-419f-86c5-9a18d473be8e",
+              "name": "forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": \"<object>\",\n  \"association_fields\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83e32e21-b245-4894-85fa-eb4924e9cd82",
+              "name": "unprocessable_entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shipnotice_items",
+                    ":id",
+                    "meta_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": \"<object>\",\n  \"association_fields\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "806ad623-5980-493d-84a4-bf546e5df011",
+    "name": "Rydership bundle_items shipnotice_items API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Rydership V2 API is open by invite only. Fill out request form <a href=\"https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092\"> here</a>.\n<br>\n<a href=\"api.v2.html\">V2 documentation</a>\n<br>\n<a href=\"api.v2-1.html\">V2.1 documentation</a>\n\n\nContact Support:\n Name: Rydership Development Team\n Email: tech@whiplash.com",
+      "type": "text/plain"
+    }
+  }
+}

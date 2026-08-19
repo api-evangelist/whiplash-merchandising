@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rydership bundle_items shipnotice_items API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "shipnotice_items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List actions you can perform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotice_items/actions"
+          },
+          "docs": "Get resource actions"
+        },
+        {
+          "info": {
+            "name": "Count ship notice items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotice_items/count",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns count of shipnotice items"
+        },
+        {
+          "info": {
+            "name": "Retrieve a ship notice item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotice_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a shipnotice item"
+        },
+        {
+          "info": {
+            "name": "Update a ship notice item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/shipnotice_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a shipnotice item"
+        },
+        {
+          "info": {
+            "name": "Destroy a shipnotice item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/api/v2/shipnotice_items/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Destroy a shipnotice item"
+        },
+        {
+          "info": {
+            "name": "List meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/api/v2/shipnotice_items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "associations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the meta fields for a(n) ShipnoticeItem"
+        },
+        {
+          "info": {
+            "name": "Set meta fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/api/v2/shipnotice_items/:id/meta_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update ShipnoticeItem meta fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
