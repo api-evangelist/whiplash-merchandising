@@ -38,6 +38,18 @@ tags:
 - Company
 - Fulfillment
 - Logistics
+- E-Commerce
+- Shipping
+- Warehousing
+- Inventory
+- 3PL
+- Order Management
+- Returns
+- Supply Chain
+tags_raw:
+- Company
+- Fulfillment
+- Logistics
 - Ecommerce
 - Shipping
 - Warehousing
@@ -55,6 +67,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Bundle Items
+  tags_raw:
   - bundle_items
   properties:
   - type: OpenAPI
@@ -71,6 +85,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Consumer Returns
+  tags_raw:
   - consumer_returns
   properties:
   - type: OpenAPI
@@ -87,6 +103,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Customers
+  tags_raw:
   - customers
   properties:
   - type: OpenAPI
@@ -103,6 +121,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Documents
+  tags_raw:
   - documents
   properties:
   - type: OpenAPI
@@ -123,6 +143,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Item
+  tags_raw:
   - items
   properties:
   - type: OpenAPI
@@ -136,7 +158,8 @@ apis:
   description: The load_scacs API from Whiplash Merchandising — 2 operation(s) for load_scacs.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
+  tags: []
+  tags_raw:
   - load_scacs
   properties:
   - type: OpenAPI
@@ -151,6 +174,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Notification Events
+  tags_raw:
   - notification_events
   properties:
   - type: OpenAPI
@@ -165,6 +190,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Notification Subscriptions
+  tags_raw:
   - notification_subscriptions
   properties:
   - type: OpenAPI
@@ -178,7 +205,8 @@ apis:
   description: Order-related documentation and paperwork.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
+  tags: []
+  tags_raw:
   - order_documents
   properties:
   - type: OpenAPI
@@ -193,6 +221,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Order Items
+  tags_raw:
   - order_items
   properties:
   - type: OpenAPI
@@ -206,7 +236,8 @@ apis:
   description: Order picking container management.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
+  tags: []
+  tags_raw:
   - order_totes
   properties:
   - type: OpenAPI
@@ -224,6 +255,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Order
+  tags_raw:
   - orders
   properties:
   - type: OpenAPI
@@ -256,6 +289,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Packages
+  tags_raw:
   - packages
   properties:
   - type: OpenAPI
@@ -270,6 +305,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Project
+  tags_raw:
   - projects
   properties:
   - type: OpenAPI
@@ -299,7 +336,8 @@ apis:
     refers to the quantity expected to arrive, and the quantity actually received is quantity_good.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
+  tags: []
+  tags_raw:
   - shipnotice_items
   properties:
   - type: OpenAPI
@@ -318,6 +356,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Ship Notices
+  tags_raw:
   - shipnotices
   properties:
   - type: OpenAPI
@@ -347,6 +387,8 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
+  - Templates
+  tags_raw:
   - templates
   properties:
   - type: OpenAPI
@@ -361,7 +403,8 @@ apis:
     The wholesale_items API from Whiplash Merchandising — 2 operation(s) for wholesale_items.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
+  tags: []
+  tags_raw:
   - wholesale_items
   properties:
   - type: OpenAPI
