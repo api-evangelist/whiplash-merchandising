@@ -1,0 +1,57 @@
+slug: whiplash-merchandising
+provider: Whiplash Merchandising
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Transportation & Logistics
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: consumer_returns
+  spec_file: whiplash-merchandising-consumer-returns-api-openapi.yml
+  capability_id: BC-2460.50
+  capability_id_l1: BC-2460
+  capability_name: Returns and Reverse Operations Management
+  confidence: 0.82
+  evidence: POST /api/v2/consumer_returns "Create a consumer return"; schemas ApiV2EntitiesReturnItem,
+    ApiV2EntitiesWarehouse
+  reason: 3PL fulfilment platform whose description names "returns processing"; these operations create
+    and manage consumer return records tied to warehouses and return items, i.e. returns and reverse-logistics
+    operations in the warehouse.
+- tag: shipnotices
+  spec_file: whiplash-merchandising-shipnotices-api-openapi.yml
+  capability_id: BC-2460.10
+  capability_id_l1: BC-2460
+  capability_name: Inbound Operations Management
+  confidence: 0.82
+  evidence: POST /api/v2/shipnotices  Create a ship notice; GET /api/v2/shipnotices/{id}/orders_waiting  Count
+    orders waiting for stock in a ship notice; schemas ApiV2EntitiesWarehouse, ApiV2EntitiesLot
+  reason: Advance ship notices announcing inbound stock to a named warehouse, including orders waiting
+    on that stock — clearly receipt of goods entering the warehouse (inbound operations of a 3PL).
+- tag: shipnotice_items
+  spec_file: whiplash-merchandising-shipnotice-items-api-openapi.yml
+  capability_id: BC-2460.10
+  capability_id_l1: BC-2460
+  capability_name: Inbound Operations Management
+  confidence: 0.75
+  evidence: GET /api/v2/shipnotice_items/{id}  Retrieve a ship notice item; schemas ApiV2EntitiesShipnoticeItem,
+    ApiV2EntitiesLot
+  reason: Line items of advance ship notices declaring goods (with lots) arriving into the fulfillment
+    centre — the inbound receipt/putaway flow of a 3PL warehouse.
+- tag: orders
+  spec_file: whiplash-merchandising-orders-api-openapi.yml
+  capability_id: BC-2460.30
+  capability_id_l1: BC-2460
+  capability_name: Outbound Operations Management
+  confidence: 0.7
+  evidence: POST /api/v2/orders  Create an order; ApiV2EntitiesPackage, ApiV2EntitiesShippingDocument,
+    ApiV2EntitiesPackingRule
+  reason: Fulfillment orders submitted to a 3PL's warehouses, carrying packing rules, packages, shipping
+    methods and shipping documents — i.e. picking, packing and dispatch of outbound shipments. Cross-industry
+    order fulfilment is a plausible alternative reading, hence 0.7.
