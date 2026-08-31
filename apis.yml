@@ -78,8 +78,7 @@ apis:
     within product bundles.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
-  - Bundle Items
+  tags: []
   tags_raw:
   - bundle_items
   properties:
@@ -96,8 +95,7 @@ apis:
     and is processed in much the same way.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
-  - Consumer Returns
+  tags: []
   tags_raw:
   - consumer_returns
   properties:
@@ -185,8 +183,7 @@ apis:
   description: System event definitions for notifications.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
-  - Notification Events
+  tags: []
   tags_raw:
   - notification_events
   properties:
@@ -201,8 +198,7 @@ apis:
   description: User notification preferences and subscriptions.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
-  - Notification Subscriptions
+  tags: []
   tags_raw:
   - notification_subscriptions
   properties:
@@ -232,8 +228,7 @@ apis:
   description: An OrderItem represents an Item with a quantity in an Order.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags:
-  - Order Items
+  tags: []
   tags_raw:
   - order_items
   properties:
@@ -368,7 +363,7 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
-  - Ship Notices
+  - shipnotices
   tags_raw:
   - shipnotices
   properties:
@@ -431,6 +426,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/ryder-system/
+  name: Ryder System
+  x-relationship: acquired
+  x-evidence: "Whiplash was founded in 2011, backed by 500 Global, and acquired by Ryder System in 2021."
 - type: CapabilityMap
   url: capabilities/whiplash-merchandising-capability-edges.yml
   name: Whiplash Merchandising Business Capability Map
