@@ -78,7 +78,8 @@ apis:
     within product bundles.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags: []
+  tags:
+  - Bundle Items
   tags_raw:
   - bundle_items
   properties:
@@ -95,7 +96,8 @@ apis:
     and is processed in much the same way.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags: []
+  tags:
+  - Consumer Returns
   tags_raw:
   - consumer_returns
   properties:
@@ -183,7 +185,8 @@ apis:
   description: System event definitions for notifications.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags: []
+  tags:
+  - Notification Events
   tags_raw:
   - notification_events
   properties:
@@ -198,7 +201,8 @@ apis:
   description: User notification preferences and subscriptions.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags: []
+  tags:
+  - Notification Subscriptions
   tags_raw:
   - notification_subscriptions
   properties:
@@ -228,7 +232,8 @@ apis:
   description: An OrderItem represents an Item with a quantity in an Order.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
-  tags: []
+  tags:
+  - Order Items
   tags_raw:
   - order_items
   properties:
@@ -363,7 +368,7 @@ apis:
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
   tags:
-  - shipnotices
+  - Ship Notices
   tags_raw:
   - shipnotices
   properties:
