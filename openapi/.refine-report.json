@@ -1,27 +1,7 @@
 {
   "provider": "whiplash-merchandising",
   "sources": [
-    "whiplash-merchandising-bundle-items-api-openapi.yml",
-    "whiplash-merchandising-consumer-returns-api-openapi.yml",
-    "whiplash-merchandising-customers-api-openapi.yml",
-    "whiplash-merchandising-documents-api-openapi.yml",
-    "whiplash-merchandising-items-api-openapi.yml",
-    "whiplash-merchandising-load-scacs-api-openapi.yml",
-    "whiplash-merchandising-notification-events-api-openapi.yml",
-    "whiplash-merchandising-notification-subscriptions-api-openapi.yml",
-    "whiplash-merchandising-order-documents-api-openapi.yml",
-    "whiplash-merchandising-order-items-api-openapi.yml",
-    "whiplash-merchandising-order-totes-api-openapi.yml",
-    "whiplash-merchandising-orders-api-openapi.yml",
-    "whiplash-merchandising-originators-api-openapi.yml",
-    "whiplash-merchandising-packages-api-openapi.yml",
-    "whiplash-merchandising-projects-api-openapi.yml",
-    "whiplash-merchandising-scancodes-api-openapi.yml",
-    "whiplash-merchandising-shipnotice-items-api-openapi.yml",
-    "whiplash-merchandising-shipnotices-api-openapi.yml",
-    "whiplash-merchandising-simulate-api-openapi.yml",
-    "whiplash-merchandising-templates-api-openapi.yml",
-    "whiplash-merchandising-wholesale-items-api-openapi.yml"
+    "_original/whiplash-merchandising-openapi-original.json"
   ],
   "outputs": [
     "whiplash-merchandising-bundle-items-api-openapi.yml",
@@ -49,6 +29,34 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "whiplash-merchandising-openapi-original.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "whiplash-merchandising-openapi-original.json: declared missing tag: load_scacs",
+    "whiplash-merchandising-openapi-original.json: declared missing tag: wholesale_items",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "whiplash-merchandising-bundle-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-consumer-returns-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-load-scacs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-notification-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-notification-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-order-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-order-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-order-totes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-originators-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-packages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-scancodes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-shipnotice-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-shipnotices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-simulate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "whiplash-merchandising-wholesale-items-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

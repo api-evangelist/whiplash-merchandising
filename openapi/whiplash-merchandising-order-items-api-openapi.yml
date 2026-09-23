@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items order_items API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Order Items API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -25,14 +21,14 @@ servers:
 - url: ''
   description: Base Path
 tags:
-- name: order_items
+- name: Order Items
   description: An OrderItem represents an Item with a quantity in an Order.
 paths:
   /api/v2/order_items/actions:
     get:
       operationId: GetApiV2OrderItemsActions
       tags:
-      - order_items
+      - Order Items
       summary: List actions you can perform
       description: Get resource actions
       parameters: []
@@ -53,9 +49,8 @@ paths:
     get:
       operationId: GetApiV2OrderItemsId
       tags:
-      - order_items
+      - Order Items
       summary: Retrieve an order item
-      description: Retrieve an order item
       parameters:
       - name: id
         in: path
@@ -111,9 +106,8 @@ paths:
     put:
       operationId: PutApiV2OrderItemsId
       tags:
-      - order_items
+      - Order Items
       summary: Update an order item
-      description: Update an order item
       parameters:
       - name: id
         in: path
@@ -155,9 +149,8 @@ paths:
     delete:
       operationId: DeleteApiV2OrderItemsId
       tags:
-      - order_items
+      - Order Items
       summary: Destroy an order item
-      description: Destroy an order item
       parameters:
       - name: id
         in: path
@@ -189,9 +182,8 @@ paths:
     put:
       operationId: PutApiV2OrderItemsIdCallAction
       tags:
-      - order_items
+      - Order Items
       summary: Perform an action on an order_item
-      description: Perform an action on an order_item
       parameters:
       - name: action
         in: path
@@ -245,7 +237,7 @@ paths:
     get:
       operationId: GetApiV2OrderItemsIdMetaFields
       tags:
-      - order_items
+      - Order Items
       summary: List meta fields
       description: Get the meta fields for a(n) OrderItem
       parameters:
@@ -285,7 +277,7 @@ paths:
     put:
       operationId: PutApiV2OrderItemsIdMetaFields
       tags:
-      - order_items
+      - Order Items
       summary: Set meta fields
       description: Update OrderItem meta fields
       parameters:
@@ -325,7 +317,7 @@ paths:
     put:
       operationId: PutApiV2OrderItemsIdSeparate
       tags:
-      - order_items
+      - Order Items
       summary: Separate an order item
       description: Separate an order item into a new order
       parameters:
@@ -364,7 +356,7 @@ paths:
     get:
       operationId: GetApiV2OrderItemsIdSerialNumbers
       tags:
-      - order_items
+      - Order Items
       summary: List all serial numbers associated with an order item
       description: Return an order_items serial numbers
       parameters:
@@ -405,7 +397,7 @@ paths:
     get:
       operationId: GetApiV2OrderItemsIdWholesaleItem
       tags:
-      - order_items
+      - Order Items
       summary: Retrieve the Wholesale item object for an order item
       description: get the Wholesale item object for an order item
       parameters:
@@ -437,9 +429,8 @@ paths:
     put:
       operationId: PutApiV2OrderItemsIdWholesaleItem
       tags:
-      - order_items
+      - Order Items
       summary: Update a wholesale item object
-      description: Update a wholesale item object
       parameters:
       - name: id
         in: path
@@ -480,113 +471,6 @@ paths:
               $ref: '#/components/schemas/PutApiV2OrderItemsIdWholesaleItemRequest'
 components:
   schemas:
-    ApiV2EntitiesSerialNumber:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the serial number id
-        order_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order_item_id for the serial number
-        shipnotice_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the shipnotice_item_id for the serial number (returns only)
-        text:
-          type:
-          - string
-          - 'null'
-          description: the serial number itself
-        deleted_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: if not null, the DateTime when the serial was deleted
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
-    PutApiV2OrderItemsIdWholesaleItemRequest:
-      type: object
-      properties:
-        order_item_id:
-          type: integer
-          format: int32
-          description: the associated order item id
-        line_no:
-          type: string
-          description: the line number
-        item_alias:
-          type: string
-          description: the item alias
-        item_color:
-          type: string
-          description: the item color
-        item_size:
-          type: string
-          description: the item size
-        vendor_part_number:
-          type: string
-          description: the vendor part number
-        buyer_part_number:
-          type: string
-          description: the buyer part number
-        consumer_package_code:
-          type: string
-          description: the consumer package code
-        outer_pack_value:
-          type: string
-          description: the outer pack value
-        inner_pack_value:
-          type: string
-          description: the inner pack value
-        size_description:
-          type: string
-          description: the size description
-        color_description:
-          type: string
-          description: the color description
-        upc:
-          type: string
-          description: the UPC
-        description:
-          type: string
-          description: the description
-        style:
-          type: string
-          description: the style
-        ean:
-          type: string
-          description: the EAN
-        alternate_item_number:
-          type: string
-          description: the alternate item number
-        alternate_barcode:
-          type: string
-          description: the alternate barcode
-        alternate_sku:
-          type: string
-          description: the alternate SKU
-        lot:
-          type: string
-          description: the lot
-        ih_category:
-          type: string
-          description: the IH category
     ApiV2EntitiesOriginator:
       type: object
       title: V2
@@ -683,280 +567,15 @@ components:
           format: int32
           description: the id of the oauth application
       additionalProperties: false
-    PutApiV2OrderItemsIdRequest:
+    PutApiV2OrderItemsIdMetaFieldsRequest:
       type: object
       properties:
-        order_id:
-          type: integer
-          format: int32
-          description: the order item order id
-        item_id:
-          type: integer
-          format: int32
-          description: the order item item id
-        package_id:
-          type: integer
-          format: int32
-          description: the order item package id
-        quote_item_id:
-          type: integer
-          format: int32
-          description: the order item quote item id
-        sku:
-          type: string
-          description: the SKU of this item
-        description:
-          type: string
-          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
-        quantity:
-          type: integer
-          format: int32
-          description: number of this item in Order
-        price:
-          type: string
-          description: price of this item
-        unshippable:
-          type: boolean
-          description: is this item unshippable?
-        available:
-          type: boolean
-          description: is this item available?
-        packed:
-          type: integer
-          format: int32
-          description: number of items packed
-        packaging:
-          type: boolean
-          description: is this item packaging?
-        wholesale_cost:
-          type: string
-          description: wholesale cost of the item
-        is_bundle:
-          type: boolean
-          description: is this item a bundle?
-        retail_fee:
-          type: string
-          description: retail fee of this item
-        promo:
-          type: boolean
-          description: is this item a promo?
-        returnable:
-          type: boolean
-          description: is this item returnable?
-        currency:
-          type: string
-          description: currency code for this item
-        wholesale_fee:
-          type: string
-          description: wholesale fee of this item
-        hazmat:
-          type: boolean
-          description: (deprecated) is the order item hazmat?
-        misc:
-          type: string
-          description: miscellaneous information about the order item
-        request_serial_number:
-          type: boolean
-          description: does the item require a serial number when shipping?
-        case_quantity:
-          type: integer
-          format: int32
-          description: How many of this item to a case?
-        carton_quantity:
-          type: integer
-          format: int32
-          description: How many CASES to a carton?
-        goh:
-          type: boolean
-          description: Garment on hanger?
-        wholesale_item_attributes:
+        fields:
           type: object
-          properties:
-            order_item_id:
-              type: integer
-              format: int32
-              description: the associated order item id
-            line_no:
-              type: string
-              description: the line number
-            item_alias:
-              type: string
-              description: the item alias
-            item_color:
-              type: string
-              description: the item color
-            item_size:
-              type: string
-              description: the item size
-            vendor_part_number:
-              type: string
-              description: the vendor part number
-            buyer_part_number:
-              type: string
-              description: the buyer part number
-            consumer_package_code:
-              type: string
-              description: the consumer package code
-            outer_pack_value:
-              type: string
-              description: the outer pack value
-            inner_pack_value:
-              type: string
-              description: the inner pack value
-            size_description:
-              type: string
-              description: the size description
-            color_description:
-              type: string
-              description: the color description
-            upc:
-              type: string
-              description: the UPC
-            description:
-              type: string
-              description: the description
-            style:
-              type: string
-              description: the style
-            ean:
-              type: string
-              description: the EAN
-            alternate_item_number:
-              type: string
-              description: the alternate item number
-            alternate_barcode:
-              type: string
-              description: the alternate barcode
-            alternate_sku:
-              type: string
-              description: the alternate SKU
-            lot:
-              type: string
-              description: the lot
-            ih_category:
-              type: string
-              description: the IH category
-    ApiV2EntitiesWholesaleItem:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the wholesale item id
-        order_item_id:
-          type: integer
-          format: int32
-          description: the associated order item id
-        line_no:
-          type:
-          - string
-          - 'null'
-          description: the line number
-        item_alias:
-          type:
-          - string
-          - 'null'
-          description: the item alias
-        item_color:
-          type:
-          - string
-          - 'null'
-          description: the item color
-        item_size:
-          type:
-          - string
-          - 'null'
-          description: the item size
-        vendor_part_number:
-          type:
-          - string
-          - 'null'
-          description: the vendor part number
-        buyer_part_number:
-          type:
-          - string
-          - 'null'
-          description: the buyer part number
-        consumer_package_code:
-          type:
-          - string
-          - 'null'
-          description: the consumer package code
-        outer_pack_value:
-          type:
-          - string
-          - 'null'
-          description: the outer pack value
-        inner_pack_value:
-          type:
-          - string
-          - 'null'
-          description: the inner pack value
-        size_description:
-          type:
-          - string
-          - 'null'
-          description: the size description
-        color_description:
-          type:
-          - string
-          - 'null'
-          description: the color description
-        upc:
-          type:
-          - string
-          - 'null'
-          description: the UPC
-        description:
-          type:
-          - string
-          - 'null'
-          description: the description
-        style:
-          type:
-          - string
-          - 'null'
-          description: the style
-        ean:
-          type:
-          - string
-          - 'null'
-          description: the EAN
-        alternate_item_number:
-          type:
-          - string
-          - 'null'
-          description: the alternate item number
-        alternate_barcode:
-          type:
-          - string
-          - 'null'
-          description: the alternate barcode
-        alternate_sku:
-          type:
-          - string
-          - 'null'
-          description: the alternate SKU
-        lot:
-          type:
-          - string
-          - 'null'
-          description: the lot
-        ih_category:
-          type:
-          - string
-          - 'null'
-          description: the IH category
-        created_at:
-          type: string
-          format: date-time
-          description: the wholesale item creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the wholesale item last update date and time
-      additionalProperties: false
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
     ApiSharedEntitiesMetaFields:
       type: object
       title: Shared
@@ -968,14 +587,14 @@ components:
           type: object
           description: Included meta fields for associations
       additionalProperties: false
-    PutApiV2OrderItemsIdCallActionRequest:
+    ApiSharedEntitiesApiError:
       type: object
+      title: Shared
       properties:
-        action:
+        message:
           type: string
-        args:
-          type: object
-          description: Method params
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesOrderItem:
       type: object
       title: V2
@@ -1130,12 +749,384 @@ components:
         wholesale_item:
           $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
       additionalProperties: false
-    PutApiV2OrderItemsIdMetaFieldsRequest:
+    ApiV2EntitiesSerialNumber:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the serial number id
+        order_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order_item_id for the serial number
+        shipnotice_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the shipnotice_item_id for the serial number (returns only)
+        text:
+          type:
+          - string
+          - 'null'
+          description: the serial number itself
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: if not null, the DateTime when the serial was deleted
+      additionalProperties: false
+    PutApiV2OrderItemsIdRequest:
       type: object
       properties:
-        fields:
+        order_id:
+          type: integer
+          format: int32
+          description: the order item order id
+        item_id:
+          type: integer
+          format: int32
+          description: the order item item id
+        package_id:
+          type: integer
+          format: int32
+          description: the order item package id
+        quote_item_id:
+          type: integer
+          format: int32
+          description: the order item quote item id
+        sku:
+          type: string
+          description: the SKU of this item
+        description:
+          type: string
+          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+        quantity:
+          type: integer
+          format: int32
+          description: number of this item in Order
+        price:
+          type: string
+          description: price of this item
+        unshippable:
+          type: boolean
+          description: is this item unshippable?
+        available:
+          type: boolean
+          description: is this item available?
+        packed:
+          type: integer
+          format: int32
+          description: number of items packed
+        packaging:
+          type: boolean
+          description: is this item packaging?
+        wholesale_cost:
+          type: string
+          description: wholesale cost of the item
+        is_bundle:
+          type: boolean
+          description: is this item a bundle?
+        retail_fee:
+          type: string
+          description: retail fee of this item
+        promo:
+          type: boolean
+          description: is this item a promo?
+        returnable:
+          type: boolean
+          description: is this item returnable?
+        currency:
+          type: string
+          description: currency code for this item
+        wholesale_fee:
+          type: string
+          description: wholesale fee of this item
+        hazmat:
+          type: boolean
+          description: (deprecated) is the order item hazmat?
+        misc:
+          type: string
+          description: miscellaneous information about the order item
+        request_serial_number:
+          type: boolean
+          description: does the item require a serial number when shipping?
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        wholesale_item_attributes:
           type: object
-          description: Hash of key/value pairs
-        association_fields:
+          properties:
+            order_item_id:
+              type: integer
+              format: int32
+              description: the associated order item id
+            line_no:
+              type: string
+              description: the line number
+            item_alias:
+              type: string
+              description: the item alias
+            item_color:
+              type: string
+              description: the item color
+            item_size:
+              type: string
+              description: the item size
+            vendor_part_number:
+              type: string
+              description: the vendor part number
+            buyer_part_number:
+              type: string
+              description: the buyer part number
+            consumer_package_code:
+              type: string
+              description: the consumer package code
+            outer_pack_value:
+              type: string
+              description: the outer pack value
+            inner_pack_value:
+              type: string
+              description: the inner pack value
+            size_description:
+              type: string
+              description: the size description
+            color_description:
+              type: string
+              description: the color description
+            upc:
+              type: string
+              description: the UPC
+            description:
+              type: string
+              description: the description
+            style:
+              type: string
+              description: the style
+            ean:
+              type: string
+              description: the EAN
+            alternate_item_number:
+              type: string
+              description: the alternate item number
+            alternate_barcode:
+              type: string
+              description: the alternate barcode
+            alternate_sku:
+              type: string
+              description: the alternate SKU
+            lot:
+              type: string
+              description: the lot
+            ih_category:
+              type: string
+              description: the IH category
+    PutApiV2OrderItemsIdCallActionRequest:
+      type: object
+      properties:
+        action:
+          type: string
+        args:
           type: object
-          description: Included meta fields for associations
+          description: Method params
+    PutApiV2OrderItemsIdWholesaleItemRequest:
+      type: object
+      properties:
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type: string
+          description: the line number
+        item_alias:
+          type: string
+          description: the item alias
+        item_color:
+          type: string
+          description: the item color
+        item_size:
+          type: string
+          description: the item size
+        vendor_part_number:
+          type: string
+          description: the vendor part number
+        buyer_part_number:
+          type: string
+          description: the buyer part number
+        consumer_package_code:
+          type: string
+          description: the consumer package code
+        outer_pack_value:
+          type: string
+          description: the outer pack value
+        inner_pack_value:
+          type: string
+          description: the inner pack value
+        size_description:
+          type: string
+          description: the size description
+        color_description:
+          type: string
+          description: the color description
+        upc:
+          type: string
+          description: the UPC
+        description:
+          type: string
+          description: the description
+        style:
+          type: string
+          description: the style
+        ean:
+          type: string
+          description: the EAN
+        alternate_item_number:
+          type: string
+          description: the alternate item number
+        alternate_barcode:
+          type: string
+          description: the alternate barcode
+        alternate_sku:
+          type: string
+          description: the alternate SKU
+        lot:
+          type: string
+          description: the lot
+        ih_category:
+          type: string
+          description: the IH category
+    ApiV2EntitiesWholesaleItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the wholesale item id
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type:
+          - string
+          - 'null'
+          description: the line number
+        item_alias:
+          type:
+          - string
+          - 'null'
+          description: the item alias
+        item_color:
+          type:
+          - string
+          - 'null'
+          description: the item color
+        item_size:
+          type:
+          - string
+          - 'null'
+          description: the item size
+        vendor_part_number:
+          type:
+          - string
+          - 'null'
+          description: the vendor part number
+        buyer_part_number:
+          type:
+          - string
+          - 'null'
+          description: the buyer part number
+        consumer_package_code:
+          type:
+          - string
+          - 'null'
+          description: the consumer package code
+        outer_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the outer pack value
+        inner_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the inner pack value
+        size_description:
+          type:
+          - string
+          - 'null'
+          description: the size description
+        color_description:
+          type:
+          - string
+          - 'null'
+          description: the color description
+        upc:
+          type:
+          - string
+          - 'null'
+          description: the UPC
+        description:
+          type:
+          - string
+          - 'null'
+          description: the description
+        style:
+          type:
+          - string
+          - 'null'
+          description: the style
+        ean:
+          type:
+          - string
+          - 'null'
+          description: the EAN
+        alternate_item_number:
+          type:
+          - string
+          - 'null'
+          description: the alternate item number
+        alternate_barcode:
+          type:
+          - string
+          - 'null'
+          description: the alternate barcode
+        alternate_sku:
+          type:
+          - string
+          - 'null'
+          description: the alternate SKU
+        lot:
+          type:
+          - string
+          - 'null'
+          description: the lot
+        ih_category:
+          type:
+          - string
+          - 'null'
+          description: the IH category
+        created_at:
+          type: string
+          format: date-time
+          description: the wholesale item creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the wholesale item last update date and time
+      additionalProperties: false

@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items originators API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Originators API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com

@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items load_scacs API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Load Scacs API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -33,7 +29,7 @@ paths:
       tags:
       - load_scacs
       summary: List all load scacs
-      description: 'Get a list of load scacs '
+      description: Get a list of load scacs
       parameters:
       - name: search
         in: query
@@ -107,7 +103,7 @@ paths:
       tags:
       - load_scacs
       summary: Count load scacs
-      description: 'Returns count of load scacs '
+      description: Returns count of load scacs
       parameters:
       - name: search
         in: query
@@ -163,6 +159,15 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
     ApiV2EntitiesLoadScac:
       type: object
       title: V2
@@ -197,15 +202,6 @@ components:
           - 'null'
           format: int32
           description: the id of the customer associated with this load scac
-      additionalProperties: false
-    ApiV2EntitiesCount:
-      type: object
-      title: V2
-      properties:
-        count:
-          type: integer
-          format: int32
-          description: the resource count
       additionalProperties: false
     ApiSharedEntitiesApiError:
       type: object

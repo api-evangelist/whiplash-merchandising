@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items documents API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Documents API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -25,14 +21,14 @@ servers:
 - url: ''
   description: Base Path
 tags:
-- name: documents
+- name: Documents
   description: Documents are imported files and exported reports. We store a record in your account of every file you import, as well as every report you've run, so they're easy to search and access.
 paths:
   /api/v2/documents:
     get:
       operationId: GetApiV2Documents
       tags:
-      - documents
+      - Documents
       summary: List all documents
       description: Get all documents
       parameters:
@@ -85,9 +81,8 @@ paths:
     post:
       operationId: PostApiV2Documents
       tags:
-      - documents
+      - Documents
       summary: Create a document
-      description: Create a document
       parameters: []
       responses:
         '201':
@@ -131,7 +126,7 @@ paths:
     get:
       operationId: GetApiV2DocumentsActions
       tags:
-      - documents
+      - Documents
       summary: List actions you can perform
       description: Get resource actions
       parameters: []
@@ -152,7 +147,7 @@ paths:
     get:
       operationId: GetApiV2DocumentsId
       tags:
-      - documents
+      - Documents
       summary: Retrieve a document
       description: Get a document
       parameters:
@@ -184,9 +179,8 @@ paths:
     delete:
       operationId: DeleteApiV2DocumentsId
       tags:
-      - documents
+      - Documents
       summary: Destroy an document
-      description: Destroy an document
       parameters:
       - name: id
         in: path
@@ -216,57 +210,6 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
-    PostApiV2DocumentsRequest:
-      type: object
-      properties:
-        url:
-          type: string
-          description: the document file url
-        partner_id:
-          type: integer
-          format: int32
-          description: the document partner id
-        owner_id:
-          type: integer
-          format: int32
-          description: the document owners id
-        owner_type:
-          type: string
-          description: the document owner type
-        customer_name:
-          type: string
-          description: associated customer name
-        partner_name:
-          type: string
-          description: associated partner name
-        user_name:
-          type: string
-          description: associated user name
-        signed_url:
-          type: string
-          description: the document pre-signed url
-        keyword_list:
-          type: string
-          description: Comma separated list of keyword tags
-        file_name:
-          type: string
-        message_list:
-          type: string
-          description: Comma separated list of message tags
-        context_list:
-          type: string
-          description: Comma separated list of context tags
-        resource_type_list:
-          type: string
-          description: Comma separated list resource_type tags
     ApiV2EntitiesDocument:
       type: object
       title: V2
@@ -343,4 +286,55 @@ components:
         signed_url:
           type: string
           description: the document pre-signed url
+      additionalProperties: false
+    PostApiV2DocumentsRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          description: the document file url
+        partner_id:
+          type: integer
+          format: int32
+          description: the document partner id
+        owner_id:
+          type: integer
+          format: int32
+          description: the document owners id
+        owner_type:
+          type: string
+          description: the document owner type
+        customer_name:
+          type: string
+          description: associated customer name
+        partner_name:
+          type: string
+          description: associated partner name
+        user_name:
+          type: string
+          description: associated user name
+        signed_url:
+          type: string
+          description: the document pre-signed url
+        keyword_list:
+          type: string
+          description: Comma separated list of keyword tags
+        file_name:
+          type: string
+        message_list:
+          type: string
+          description: Comma separated list of message tags
+        context_list:
+          type: string
+          description: Comma separated list of context tags
+        resource_type_list:
+          type: string
+          description: Comma separated list resource_type tags
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
       additionalProperties: false

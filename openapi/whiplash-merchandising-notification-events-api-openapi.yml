@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items notification_events API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Notification Events API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -25,14 +21,14 @@ servers:
 - url: ''
   description: Base Path
 tags:
-- name: notification_events
+- name: Notification Events
   description: System event definitions for notifications.
 paths:
   /api/v2/notification_events:
     get:
       operationId: GetApiV2NotificationEvents
       tags:
-      - notification_events
+      - Notification Events
       summary: List all notification events
       description: Get a list of notification events
       parameters:
@@ -106,7 +102,7 @@ paths:
     get:
       operationId: GetApiV2NotificationEventsId
       tags:
-      - notification_events
+      - Notification Events
       summary: Retrieve a notification event
       description: Get a notification event
       parameters:
@@ -137,14 +133,6 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     ApiV2EntitiesNotificationEvent:
       type: object
       title: V2
@@ -187,4 +175,12 @@ components:
           type: string
           format: date-time
           description: the notification event last update date and time
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
       additionalProperties: false

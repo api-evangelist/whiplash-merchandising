@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items templates API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Templates API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -25,14 +21,14 @@ servers:
 - url: ''
   description: Base Path
 tags:
-- name: templates
+- name: Templates
   description: Templates allow you to customize packing slips, email confirmations, order inserts, etc.
 paths:
   /api/v2/templates:
     get:
       operationId: GetApiV2Templates
       tags:
-      - templates
+      - Templates
       summary: List all templates
       description: Get a list of templates
       parameters:
@@ -93,9 +89,8 @@ paths:
     post:
       operationId: PostApiV2Templates
       tags:
-      - templates
+      - Templates
       summary: Create a template
-      description: Create a template
       parameters: []
       responses:
         '201':
@@ -139,7 +134,7 @@ paths:
     get:
       operationId: GetApiV2TemplatesId
       tags:
-      - templates
+      - Templates
       summary: Retrieve a template
       description: Get a template
       parameters:
@@ -171,9 +166,8 @@ paths:
     put:
       operationId: PutApiV2TemplatesId
       tags:
-      - templates
+      - Templates
       summary: Update a template
-      description: Update a template
       parameters:
       - name: id
         in: path
@@ -209,9 +203,8 @@ paths:
     delete:
       operationId: DeleteApiV2TemplatesId
       tags:
-      - templates
+      - Templates
       summary: Destroy a template
-      description: Destroy a template
       parameters:
       - name: id
         in: path
@@ -241,6 +234,79 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    PostApiV2TemplatesRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template
+        template_type_id:
+          type: integer
+          format: int32
+          description: ID of the template type
+        content:
+          type: string
+          description: Content of the template
+        size:
+          type: string
+          description: the template size
+        default:
+          type: boolean
+          description: Is the default template
+      required:
+      - name
+      - template_type_id
+      - content
+    ApiV2EntitiesTemplateType:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id of the template type
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the template type
+        display_name:
+          type: string
+          description: Descriptive name of the template type
+        slug:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: url-friendly name
+        resource_type:
+          type:
+          - string
+          - 'null'
+          description: Which resource type these templates are associated with
+        format:
+          type:
+          - string
+          - 'null'
+          description: Mimetype / File extention
+        accessibility:
+          type:
+          - string
+          - 'null'
+          description: Who has what access
+        valid_sizes:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+          description: the template type creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the template last type update date and time
+      additionalProperties: false
     PutApiV2TemplatesIdRequest:
       type: object
       properties:
@@ -326,77 +392,4 @@ components:
             type: string
         template_type:
           $ref: '#/components/schemas/ApiV2EntitiesTemplateType'
-      additionalProperties: false
-    PostApiV2TemplatesRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the template
-        template_type_id:
-          type: integer
-          format: int32
-          description: ID of the template type
-        content:
-          type: string
-          description: Content of the template
-        size:
-          type: string
-          description: the template size
-        default:
-          type: boolean
-          description: Is the default template
-      required:
-      - name
-      - template_type_id
-      - content
-    ApiV2EntitiesTemplateType:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: id of the template type
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the template type
-        display_name:
-          type: string
-          description: Descriptive name of the template type
-        slug:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: url-friendly name
-        resource_type:
-          type:
-          - string
-          - 'null'
-          description: Which resource type these templates are associated with
-        format:
-          type:
-          - string
-          - 'null'
-          description: Mimetype / File extention
-        accessibility:
-          type:
-          - string
-          - 'null'
-          description: Who has what access
-        valid_sizes:
-          type: array
-          items:
-            type: string
-        created_at:
-          type: string
-          format: date-time
-          description: the template type creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the template last type update date and time
       additionalProperties: false

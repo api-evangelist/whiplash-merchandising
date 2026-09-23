@@ -1,18 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   version: '2.0'
-  title: Rydership bundle_items notification_subscriptions API
-  description: 'The Rydership V2 API is open by invite only. Fill out request form <a href="https://help.whiplash.com/hc/en-us/requests/new?ticket_form_id=360001303092"> here</a>.
+  title: Rydership Notification Subscriptions API
+  description: 'The Rydership V2 API is open by invite only. Fill out request form here.
 
-    <br>
 
-    <a href="api.v2.html">V2 documentation</a>
+    V2 documentation
 
-    <br>
 
-    <a href="api.v2-1.html">V2.1 documentation</a>
-
-    '
+    V2.1 documentation'
   contact:
     name: Rydership Development Team
     email: tech@whiplash.com
@@ -25,14 +21,14 @@ servers:
 - url: ''
   description: Base Path
 tags:
-- name: notification_subscriptions
+- name: Notification Subscriptions
   description: User notification preferences and subscriptions.
 paths:
   /api/v2/notification_subscriptions:
     get:
       operationId: GetApiV2NotificationSubscriptions
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: List all notification subscriptions
       description: Get a list of notification subscriptions
       parameters:
@@ -105,9 +101,8 @@ paths:
     post:
       operationId: PostApiV2NotificationSubscriptions
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Create a notification subscription
-      description: Create a notification subscription
       parameters: []
       responses:
         '201':
@@ -151,7 +146,7 @@ paths:
     get:
       operationId: GetApiV2NotificationSubscriptionsCount
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Count notification subscriptions
       description: Get a count of notification subscriptions
       parameters:
@@ -185,7 +180,7 @@ paths:
     get:
       operationId: GetApiV2NotificationSubscriptionsId
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Retrieve a notification subscription
       description: Get a notification subscription
       parameters:
@@ -217,9 +212,8 @@ paths:
     put:
       operationId: PutApiV2NotificationSubscriptionsId
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Update a notification subscription
-      description: Update a notification subscription
       parameters:
       - name: id
         in: path
@@ -261,9 +255,8 @@ paths:
     delete:
       operationId: DeleteApiV2NotificationSubscriptionsId
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Delete a notification subscription
-      description: Delete a notification subscription
       parameters:
       - name: id
         in: path
@@ -295,9 +288,8 @@ paths:
     get:
       operationId: GetApiV2NotificationSubscriptionsIdTest
       tags:
-      - notification_subscriptions
+      - Notification Subscriptions
       summary: Test a notification subscription
-      description: Test a notification subscription
       parameters:
       - name: id
         in: path
@@ -362,6 +354,38 @@ components:
           type: string
           description: error message
       additionalProperties: false
+    PutApiV2NotificationSubscriptionsIdRequest:
+      type: object
+      properties:
+        notification_event_id:
+          type: integer
+          format: int32
+          description: the id of the notification event this subscription is subscribed to
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer who owns the subscription
+        user_id:
+          type: integer
+          format: int32
+          description: the id of the intended recipient
+        notification_type:
+          type: string
+          description: the type of notification to send the subscriber
+        endpoint:
+          type: string
+          description: the URL the subscription will hit for Slack and Webhook types
+        active:
+          type: boolean
+          description: is the notification subscription active?
+        version:
+          type: integer
+          format: int32
+          description: whether the payload will match the v1 or v2 API
+        discarded_at:
+          type: string
+          format: date-time
+          description: the notification subscription discarded date and time
     ApiV2EntitiesUser:
       type: object
       title: V2
@@ -529,35 +553,3 @@ components:
         user:
           $ref: '#/components/schemas/ApiV2EntitiesUser'
       additionalProperties: false
-    PutApiV2NotificationSubscriptionsIdRequest:
-      type: object
-      properties:
-        notification_event_id:
-          type: integer
-          format: int32
-          description: the id of the notification event this subscription is subscribed to
-        customer_id:
-          type: integer
-          format: int32
-          description: the id of the customer who owns the subscription
-        user_id:
-          type: integer
-          format: int32
-          description: the id of the intended recipient
-        notification_type:
-          type: string
-          description: the type of notification to send the subscriber
-        endpoint:
-          type: string
-          description: the URL the subscription will hit for Slack and Webhook types
-        active:
-          type: boolean
-          description: is the notification subscription active?
-        version:
-          type: integer
-          format: int32
-          description: whether the payload will match the v1 or v2 API
-        discarded_at:
-          type: string
-          format: date-time
-          description: the notification subscription discarded date and time
