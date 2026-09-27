@@ -567,33 +567,158 @@ components:
           format: int32
           description: the id of the oauth application
       additionalProperties: false
-    PutApiV2OrderItemsIdMetaFieldsRequest:
+    ApiV2EntitiesSerialNumber:
       type: object
+      title: V2
       properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
-    ApiSharedEntitiesMetaFields:
-      type: object
-      title: Shared
-      properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
+        id:
+          type: integer
+          format: int32
+          description: the serial number id
+        order_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order_item_id for the serial number
+        shipnotice_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the shipnotice_item_id for the serial number (returns only)
+        text:
+          type:
+          - string
+          - 'null'
+          description: the serial number itself
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: if not null, the DateTime when the serial was deleted
       additionalProperties: false
-    ApiSharedEntitiesApiError:
+    ApiV2EntitiesWholesaleItem:
       type: object
-      title: Shared
+      title: V2
       properties:
-        message:
+        id:
+          type: integer
+          format: int32
+          description: the wholesale item id
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type:
+          - string
+          - 'null'
+          description: the line number
+        item_alias:
+          type:
+          - string
+          - 'null'
+          description: the item alias
+        item_color:
+          type:
+          - string
+          - 'null'
+          description: the item color
+        item_size:
+          type:
+          - string
+          - 'null'
+          description: the item size
+        vendor_part_number:
+          type:
+          - string
+          - 'null'
+          description: the vendor part number
+        buyer_part_number:
+          type:
+          - string
+          - 'null'
+          description: the buyer part number
+        consumer_package_code:
+          type:
+          - string
+          - 'null'
+          description: the consumer package code
+        outer_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the outer pack value
+        inner_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the inner pack value
+        size_description:
+          type:
+          - string
+          - 'null'
+          description: the size description
+        color_description:
+          type:
+          - string
+          - 'null'
+          description: the color description
+        upc:
+          type:
+          - string
+          - 'null'
+          description: the UPC
+        description:
+          type:
+          - string
+          - 'null'
+          description: the description
+        style:
+          type:
+          - string
+          - 'null'
+          description: the style
+        ean:
+          type:
+          - string
+          - 'null'
+          description: the EAN
+        alternate_item_number:
+          type:
+          - string
+          - 'null'
+          description: the alternate item number
+        alternate_barcode:
+          type:
+          - string
+          - 'null'
+          description: the alternate barcode
+        alternate_sku:
+          type:
+          - string
+          - 'null'
+          description: the alternate SKU
+        lot:
+          type:
+          - string
+          - 'null'
+          description: the lot
+        ih_category:
+          type:
+          - string
+          - 'null'
+          description: the IH category
+        created_at:
           type: string
-          description: error message
+          format: date-time
+          description: the wholesale item creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the wholesale item last update date and time
       additionalProperties: false
     ApiV2EntitiesOrderItem:
       type: object
@@ -749,37 +874,16 @@ components:
         wholesale_item:
           $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
       additionalProperties: false
-    ApiV2EntitiesSerialNumber:
+    ApiSharedEntitiesMetaFields:
       type: object
-      title: V2
+      title: Shared
       properties:
-        id:
-          type: integer
-          format: int32
-          description: the serial number id
-        order_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order_item_id for the serial number
-        shipnotice_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the shipnotice_item_id for the serial number (returns only)
-        text:
-          type:
-          - string
-          - 'null'
-          description: the serial number itself
-        deleted_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: if not null, the DateTime when the serial was deleted
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
       additionalProperties: false
     PutApiV2OrderItemsIdRequest:
       type: object
@@ -934,14 +1038,14 @@ components:
             ih_category:
               type: string
               description: the IH category
-    PutApiV2OrderItemsIdCallActionRequest:
+    ApiSharedEntitiesApiError:
       type: object
+      title: Shared
       properties:
-        action:
+        message:
           type: string
-        args:
-          type: object
-          description: Method params
+          description: error message
+      additionalProperties: false
     PutApiV2OrderItemsIdWholesaleItemRequest:
       type: object
       properties:
@@ -1009,124 +1113,20 @@ components:
         ih_category:
           type: string
           description: the IH category
-    ApiV2EntitiesWholesaleItem:
+    PutApiV2OrderItemsIdMetaFieldsRequest:
       type: object
-      title: V2
       properties:
-        id:
-          type: integer
-          format: int32
-          description: the wholesale item id
-        order_item_id:
-          type: integer
-          format: int32
-          description: the associated order item id
-        line_no:
-          type:
-          - string
-          - 'null'
-          description: the line number
-        item_alias:
-          type:
-          - string
-          - 'null'
-          description: the item alias
-        item_color:
-          type:
-          - string
-          - 'null'
-          description: the item color
-        item_size:
-          type:
-          - string
-          - 'null'
-          description: the item size
-        vendor_part_number:
-          type:
-          - string
-          - 'null'
-          description: the vendor part number
-        buyer_part_number:
-          type:
-          - string
-          - 'null'
-          description: the buyer part number
-        consumer_package_code:
-          type:
-          - string
-          - 'null'
-          description: the consumer package code
-        outer_pack_value:
-          type:
-          - string
-          - 'null'
-          description: the outer pack value
-        inner_pack_value:
-          type:
-          - string
-          - 'null'
-          description: the inner pack value
-        size_description:
-          type:
-          - string
-          - 'null'
-          description: the size description
-        color_description:
-          type:
-          - string
-          - 'null'
-          description: the color description
-        upc:
-          type:
-          - string
-          - 'null'
-          description: the UPC
-        description:
-          type:
-          - string
-          - 'null'
-          description: the description
-        style:
-          type:
-          - string
-          - 'null'
-          description: the style
-        ean:
-          type:
-          - string
-          - 'null'
-          description: the EAN
-        alternate_item_number:
-          type:
-          - string
-          - 'null'
-          description: the alternate item number
-        alternate_barcode:
-          type:
-          - string
-          - 'null'
-          description: the alternate barcode
-        alternate_sku:
-          type:
-          - string
-          - 'null'
-          description: the alternate SKU
-        lot:
-          type:
-          - string
-          - 'null'
-          description: the lot
-        ih_category:
-          type:
-          - string
-          - 'null'
-          description: the IH category
-        created_at:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+    PutApiV2OrderItemsIdCallActionRequest:
+      type: object
+      properties:
+        action:
           type: string
-          format: date-time
-          description: the wholesale item creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the wholesale item last update date and time
-      additionalProperties: false
+        args:
+          type: object
+          description: Method params

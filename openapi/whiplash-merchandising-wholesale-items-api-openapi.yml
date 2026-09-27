@@ -328,14 +328,6 @@ components:
           format: date-time
           description: the wholesale item last update date and time
       additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     PutApiV2WholesaleItemsIdRequest:
       type: object
       properties:
@@ -403,3 +395,11 @@ components:
         ih_category:
           type: string
           description: the IH category
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false

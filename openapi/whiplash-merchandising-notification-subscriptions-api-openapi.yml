@@ -318,41 +318,69 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    PostApiV2NotificationSubscriptionsRequest:
+    ApiV2EntitiesNotificationSubscription:
       type: object
+      title: V2
       properties:
-        notification_type:
-          type: string
-          description: the type of notification to send the subscriber
-        notification_event_id:
+        id:
           type: integer
           format: int32
+          description: the notification subscription id
+        notification_event_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
           description: the id of the notification event this subscription is subscribed to
-        endpoint:
-          type: string
-          description: the URL the subscription will hit for Slack and Webhook types
         customer_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
           description: the id of the customer who owns the subscription
         user_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
           description: the id of the intended recipient
+        notification_type:
+          type:
+          - string
+          - 'null'
+          description: the type of notification to send the subscriber
+        endpoint:
+          type:
+          - string
+          - 'null'
+          description: the URL the subscription will hit for Slack and Webhook types
         active:
-          type: boolean
+          type:
+          - boolean
+          - 'null'
           description: is the notification subscription active?
         version:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
           description: whether the payload will match the v1 or v2 API
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
+        created_at:
           type: string
-          description: error message
+          format: date-time
+          description: the notification subscription creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the notification subscription last update date and time
+        discarded_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the notification subscription discarded date and time
+        user:
+          $ref: '#/components/schemas/ApiV2EntitiesUser'
       additionalProperties: false
     PutApiV2NotificationSubscriptionsIdRequest:
       type: object
@@ -386,6 +414,42 @@ components:
           type: string
           format: date-time
           description: the notification subscription discarded date and time
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
+    PostApiV2NotificationSubscriptionsRequest:
+      type: object
+      properties:
+        notification_type:
+          type: string
+          description: the type of notification to send the subscriber
+        notification_event_id:
+          type: integer
+          format: int32
+          description: the id of the notification event this subscription is subscribed to
+        endpoint:
+          type: string
+          description: the URL the subscription will hit for Slack and Webhook types
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer who owns the subscription
+        user_id:
+          type: integer
+          format: int32
+          description: the id of the intended recipient
+        active:
+          type: boolean
+          description: is the notification subscription active?
+        version:
+          type: integer
+          format: int32
+          description: whether the payload will match the v1 or v2 API
     ApiV2EntitiesUser:
       type: object
       title: V2
@@ -488,68 +552,4 @@ components:
           type: integer
           format: int32
           description: the resource count
-      additionalProperties: false
-    ApiV2EntitiesNotificationSubscription:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the notification subscription id
-        notification_event_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the notification event this subscription is subscribed to
-        customer_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the customer who owns the subscription
-        user_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the intended recipient
-        notification_type:
-          type:
-          - string
-          - 'null'
-          description: the type of notification to send the subscriber
-        endpoint:
-          type:
-          - string
-          - 'null'
-          description: the URL the subscription will hit for Slack and Webhook types
-        active:
-          type:
-          - boolean
-          - 'null'
-          description: is the notification subscription active?
-        version:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: whether the payload will match the v1 or v2 API
-        created_at:
-          type: string
-          format: date-time
-          description: the notification subscription creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the notification subscription last update date and time
-        discarded_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the notification subscription discarded date and time
-        user:
-          $ref: '#/components/schemas/ApiV2EntitiesUser'
       additionalProperties: false

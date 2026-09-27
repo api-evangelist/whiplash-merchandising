@@ -105,14 +105,6 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     ApiV2EntitiesProjectTask:
       type: object
       title: V2
@@ -157,4 +149,12 @@ components:
           type: string
           format: date-time
           description: 'project_task updated_at '
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
       additionalProperties: false

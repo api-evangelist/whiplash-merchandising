@@ -1161,46 +1161,623 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    ApiV2EntitiesOrderDocument:
+    ApiV2EntitiesSerialNumber:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the order document id
-        order_id:
+          description: the serial number id
+        order_item_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the order document order id
-        customer_id:
+          description: the order_item_id for the serial number
+        shipnotice_item_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the order document customer id
-        url:
-          type: string
-          description: the order document file url
-        document_type:
+          description: the shipnotice_item_id for the serial number (returns only)
+        text:
           type:
           - string
           - 'null'
-          description: the order document type
+          description: the serial number itself
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: if not null, the DateTime when the serial was deleted
+      additionalProperties: false
+    PostApiV2OrdersBulkRequest:
+      type: object
+      properties:
+        resources:
+          type: array
+          description: An array of order objects to create in bulk
+          items:
+            type: object
+            properties:
+              shipping_method_id:
+                type: integer
+                format: int32
+                description: the order shipping method id
+              estimated_shipping_method_id:
+                type: integer
+                format: int32
+                description: the estimated order shipping method id, if set to cheapest rate
+              order_orig:
+                type: string
+                description: "the order original id (from the shop that sent whiplash the order)\n          Note: contains the global-e order id for any global-e order."
+              package_label_reference:
+                type: string
+                description: "User-defined reference for shipping labels on packages.\n          Note: this field has a limit of 35 chars."
+              level1_token:
+                type: string
+                description: the order level 1 token
+              level2_token:
+                type: string
+                description: the order level 2 token
+              skip_street_date:
+                type: boolean
+                description: skip street date for this order?
+              due_at:
+                type: string
+                format: date-time
+                description: the order due at date and time
+              meta_data:
+                type: string
+                description: meta data for this order as stringified JSON
+              customer_provided_label_carrier:
+                type: string
+                description: the carrier on the customer provided label (for tracking purposes)
+              purchase_order:
+                type: string
+                description: the purchase order this order
+              order_type:
+                type: string
+                enum:
+                - direct_to_consumer
+                - dropship
+                - retail
+                - transfer
+                - value_added_service
+                - wholesale
+                description: the order type
+              batch_priority:
+                type: boolean
+                description: the order batch priority
+              email:
+                type: string
+                description: the order shipping email
+              skip_address_verification:
+                type: boolean
+                description: skip order shipping address verification?
+              scac:
+                type: string
+                description: the orders Standard Carrier Alpha Code number
+              tms_id:
+                type: string
+                description: The Transport Management System ID for the order, if applicable
+              tms_required:
+                type: boolean
+                description: Does the order require a Transport Management System ID
+              shop_warehouse_ids:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+                description: the order shop warehouse ids
+              shop_shipping_method_currency:
+                type: string
+                description: the order shop shipping method currency
+              shop_created_at:
+                type: string
+                format: date-time
+                description: the order shop creation date and time
+              shop_updated_at:
+                type: string
+                format: date-time
+                description: the order shop last update date and time
+              shop_shipping_method_text:
+                type: string
+                description: "the order shop shipping method text\n          ge_standard = order uses global-e standard shipping method\n          ge_express = order uses global-e express shipping method"
+              shop_shipping_method_price:
+                type: string
+                description: the order shop shipping method price
+              billing_company:
+                type: string
+                description: the order billing company
+              billing_address_1:
+                type: string
+                description: the order billing street address 1
+              billing_address_2:
+                type: string
+                description: the order billing street address 2
+              billing_address_3:
+                type: string
+                description: the order billing street address 3
+              billing_city:
+                type: string
+                description: the order billing city
+              billing_state:
+                type: string
+                description: the order billing state
+              billing_zip:
+                type: string
+                description: the order billing zip
+              billing_country:
+                type: string
+                description: the order billing country
+              billing_phone:
+                type: string
+                description: the order billing phone number
+              do_not_bill:
+                type: boolean
+                description: do not bill for the order? (staff only)
+              billing_name:
+                type: string
+                description: the order billing name
+              first_name:
+                type: string
+                description: the first name of the person the order is being shipped to
+              last_name:
+                type: string
+                description: the last name of the person the order is being shipped to
+              full_name:
+                type: string
+                description: the full name of the person the order is being shipped to
+              shipping_name:
+                type: string
+                description: the order shipping name
+              shipping_company:
+                type: string
+                description: the order shipping company
+              shipping_address_1:
+                type: string
+                description: the order shipping street address 1
+              shipping_address_2:
+                type: string
+                description: the order shipping street address 2
+              shipping_city:
+                type: string
+                description: the order shipping city
+              shipping_state:
+                type: string
+                description: the order shipping state
+              shipping_zip:
+                type: string
+                description: the order shipping zip
+              shipping_country:
+                type: string
+                description: the order shipping country
+              shipping_country_iso2:
+                type: string
+                description: the order shipping country iso2 (US, GB, CA, etc)
+              shipping_phone:
+                type: string
+                description: the order shipping phone number
+              requested_address:
+                type: string
+                description: the order requested address
+              residential:
+                type: boolean
+                description: is the order address residential?
+              require_signature:
+                type: boolean
+                description: does the order require a signature upon delivery?
+              require_adult_signature:
+                type: boolean
+                description: does the order require an adult signature upon delivery?
+              saturday_delivery:
+                type: boolean
+                description: require a carrier that delivers on Saturdays for this order?
+              gift:
+                type: boolean
+                description: is the order a gift?
+              insure:
+                type: boolean
+                description: is the order insured?
+              contains_alcohol:
+                type: boolean
+                description: does the order contain alcohol?
+              shipping_carrier_facility:
+                type: string
+                description: carrier facility access point for the address destination
+              shipping_hold_for_pickup:
+                type: boolean
+                description: pickup option for carrier facility on the address destination
+              ship_notes:
+                type: string
+                description: the order ship notes
+              ship_3rdparty_cost:
+                type: string
+                description: the order third party shipping cost
+              ship_3rdparty_account:
+                type: string
+                description: the order third party shipping account
+              ship_3rdparty_zip:
+                type: string
+                description: the order third party shipping zip
+              ship_3rdparty_country:
+                type: string
+                description: the order third party shipping country
+              payment_type:
+                type: string
+                enum:
+                - sender
+                - collect
+                - third_party
+                description: the order payment type
+              public_note:
+                type: string
+                description: the order public note
+              days_in_transit:
+                type: integer
+                format: int32
+                description: the order estimated days in transit (used for release planning)
+              days_in_transit_carrier_estimate:
+                type: integer
+                format: int32
+                description: the order estimated days in transit estimate from the carrier
+              req_insurance_value:
+                type: string
+                description: the order requested insurance value
+              customs_vat_number:
+                type: string
+                description: Value Added Tax identifcation number for the sender of the order
+              customs_eori_number:
+                type: string
+                description: Economic Operators Registration and Identification number for the sender of the order
+              customs_ioss_number:
+                type: string
+                description: Import One-Stop Shop number for the sender of the order
+              customs_receiver_tax_id:
+                type: string
+                description: RFC Tax id
+              carrier_account_id:
+                type: integer
+                format: int32
+                description: the carrier account id for this package, if it has shipped (staff only)
+              tracking:
+                type: array
+                items:
+                  type: string
+                description: the order tracking numbers
+              tracking_links:
+                type: array
+                items:
+                  type: string
+                description: the order tracking links
+              approximate_delivery_date:
+                type: string
+                format: date
+                description: the order approxiamte delivery date
+              global_e_ge_order:
+                type: boolean
+                description: is the order a global_e order?
+              return_name:
+                type: string
+                description: the order return name
+              return_company:
+                type: string
+                description: the order return company
+              return_address_1:
+                type: string
+                description: the order return street address 1
+              return_address_2:
+                type: string
+                description: the order return street address 2
+              return_city:
+                type: string
+                description: the order return city
+              return_state:
+                type: string
+                description: the order return state
+              return_country:
+                type: string
+                description: the order return country
+              return_zip:
+                type: string
+                description: the order return zip
+              return_phone:
+                type: string
+                description: the order return phone number
+              return_email:
+                type: string
+                description: the order return email
+              return_time_limit:
+                type: integer
+                format: int32
+                description: the order return time limit
+              is_workable:
+                type: boolean
+                description: is the order workable?
+              is_gestating:
+                type: boolean
+                description: is the order gestating?
+              permissions_limited:
+                type: boolean
+                description: Permission limited orders are not editable, but still may be processed/shipped
+              order_items:
+                type: string
+              incoterm:
+                type: string
+                enum:
+                - EXW
+                - FCA
+                - CPT
+                - CIP
+                - DAT
+                - DAP
+                - DDP
+                - FAS
+                - FOB
+                - CFR
+                - CIF
+                - DAF
+                - DES
+                - DEQ
+                - DDU
+                description: desired incoterm for the order
+              status:
+                type: integer
+                format: int32
+                enum:
+                - 30
+                - 35
+                description: Quote (35) or Shipped Externally (30)
+              order_items_attributes:
+                type: array
+                description: Order items attributes
+                items:
+                  type: object
+                  properties:
+                    quantity:
+                      type: integer
+                      format: int32
+                      description: number of this item in Order
+                    order_id:
+                      type: integer
+                      format: int32
+                      description: the order item order id
+                    customer_id:
+                      type: integer
+                      format: int32
+                      description: the order item customer id
+                    item_id:
+                      type: integer
+                      format: int32
+                      description: the order item item id
+                    sku:
+                      type: string
+                      description: the SKU of this item
+                    description:
+                      type: string
+                      description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+                    price:
+                      type: string
+                      description: price of this item
+                    unshippable:
+                      type: boolean
+                      description: is this item unshippable?
+                    available:
+                      type: boolean
+                      description: is this item available?
+                    packed:
+                      type: integer
+                      format: int32
+                      description: number of items packed
+                    packaging:
+                      type: boolean
+                      description: is this item packaging?
+                    wholesale_cost:
+                      type: string
+                      description: wholesale cost of the item
+                    is_bundle:
+                      type: boolean
+                      description: is this item a bundle?
+                    retail_fee:
+                      type: string
+                      description: retail fee of this item
+                    promo:
+                      type: boolean
+                      description: is this item a promo?
+                    returnable:
+                      type: boolean
+                      description: is this item returnable?
+                    currency:
+                      type: string
+                      description: currency code for this item
+                    wholesale_fee:
+                      type: string
+                      description: wholesale fee of this item
+                    hazmat:
+                      type: boolean
+                      description: (deprecated) is the order item hazmat?
+                    misc:
+                      type: string
+                      description: miscellaneous information about the order item
+                    request_serial_number:
+                      type: boolean
+                      description: does the item require a serial number when shipping?
+                    case_quantity:
+                      type: integer
+                      format: int32
+                      description: How many of this item to a case?
+                    carton_quantity:
+                      type: integer
+                      format: int32
+                      description: How many CASES to a carton?
+                    goh:
+                      type: boolean
+                      description: Garment on hanger?
+                    originator_id:
+                      type: string
+                      description: The original id of the order item
+                    item_originator_id:
+                      type: string
+                      description: The original id of the item
+                    originator_attributes:
+                      type: object
+                      properties:
+                        original_id:
+                          type: string
+                          description: the originator original id (from the provider)
+                        group_id:
+                          type: string
+                          description: the originator group id
+                        misc:
+                          type: string
+                          description: miscellaneous info for the originator
+              originator_attributes:
+                type: object
+                properties:
+                  original_id:
+                    type: string
+                    description: the originator original id (from the provider)
+                  group_id:
+                    type: string
+                    description: the originator group id
+                  misc:
+                    type: string
+                    description: miscellaneous info for the originator
+              meta_fields:
+                type: object
+                description: Hash of key value pairs (must conform to available meta keys)
+                properties:
+                  fields:
+                    type: object
+                    description: Hash of key/value pairs
+                  association_fields:
+                    type: object
+                    description: Included meta fields for associations
+      required:
+      - resources
+    ApiV2EntitiesWholesaleItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the wholesale item id
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type:
+          - string
+          - 'null'
+          description: the line number
+        item_alias:
+          type:
+          - string
+          - 'null'
+          description: the item alias
+        item_color:
+          type:
+          - string
+          - 'null'
+          description: the item color
+        item_size:
+          type:
+          - string
+          - 'null'
+          description: the item size
+        vendor_part_number:
+          type:
+          - string
+          - 'null'
+          description: the vendor part number
+        buyer_part_number:
+          type:
+          - string
+          - 'null'
+          description: the buyer part number
+        consumer_package_code:
+          type:
+          - string
+          - 'null'
+          description: the consumer package code
+        outer_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the outer pack value
+        inner_pack_value:
+          type:
+          - string
+          - 'null'
+          description: the inner pack value
+        size_description:
+          type:
+          - string
+          - 'null'
+          description: the size description
+        color_description:
+          type:
+          - string
+          - 'null'
+          description: the color description
+        upc:
+          type:
+          - string
+          - 'null'
+          description: the UPC
+        description:
+          type:
+          - string
+          - 'null'
+          description: the description
+        style:
+          type:
+          - string
+          - 'null'
+          description: the style
+        ean:
+          type:
+          - string
+          - 'null'
+          description: the EAN
+        alternate_item_number:
+          type:
+          - string
+          - 'null'
+          description: the alternate item number
+        alternate_barcode:
+          type:
+          - string
+          - 'null'
+          description: the alternate barcode
+        alternate_sku:
+          type:
+          - string
+          - 'null'
+          description: the alternate SKU
+        lot:
+          type:
+          - string
+          - 'null'
+          description: the lot
+        ih_category:
+          type:
+          - string
+          - 'null'
+          description: the IH category
         created_at:
-          type:
-          - string
-          - 'null'
+          type: string
           format: date-time
-          description: the order document creation date and time
+          description: the wholesale item creation date and time
         updated_at:
-          type:
-          - string
-          - 'null'
+          type: string
           format: date-time
-          description: the order document last update date and time
+          description: the wholesale item last update date and time
       additionalProperties: false
     ApiV2EntitiesShippingDocument:
       type: object
@@ -1257,16 +1834,168 @@ components:
           - 'null'
           description: the raw carrier-provided document url (staff only)
       additionalProperties: false
-    ApiSharedEntitiesMetaFields:
+    ApiV2EntitiesFilterSet:
       type: object
-      title: Shared
+      title: V2
       properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
+        id:
+          type: integer
+          format: int32
+          description: the filter set id
+        name:
+          type:
+          - string
+          - 'null'
+          description: filter set name.
+        description:
+          type:
+          - string
+          - 'null'
+          description: filter set description.
+        filters:
+          type:
+          - string
+          - 'null'
+          description: 'filter set filters as stringified JSON (ex: "[{\"search_id\":\"destination\",\"search_name\":\"State|CO\",\"shipping_state_eq\":\"CO\"}]").'
+        saved_by_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the resource that saved the filter set
+        saved_by_type:
+          type:
+          - string
+          - 'null'
+          description: the type of resource that saved the filter set
+        access_token:
+          type:
+          - string
+          - 'null'
+          description: filter set access_token
+        type:
+          type:
+          - string
+          - 'null'
+          description: the filter set type
+        visible:
+          type:
+          - boolean
+          - 'null'
+          description: filter set visible?.
+        favorite:
+          type:
+          - boolean
+          - 'null'
+          description: filter set favorited?
+        default:
+          type:
+          - boolean
+          - 'null'
+          description: Default filter set?
+        snapshot:
+          type:
+          - boolean
+          - 'null'
+          description: Snapshot of a filter set?
+        parent_id:
+          type: integer
+          format: int32
+          description: ID of parent filter set
+        created_at:
+          type: string
+          format: date-time
+          description: the filter set creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the filter set last update date and time
+        snapshots:
+          $ref: '#/components/schemas/ApiV2EntitiesFilterSet'
+        ancestor_saved_by_id:
+          type: integer
+          format: int32
+          description: the filter set ancestor (Document, Rule, FilterSet) user or customer id
+        ancestor_saved_by_type:
+          type: string
+          description: the filter set ancestor type (Customer, User)
+      additionalProperties: false
+    ApiV2EntitiesShippingMethod:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the shipping method id
+        carrier:
+          type:
+          - string
+          - 'null'
+          description: the shipping method carrier (FedEx, UPS, etc)
+        service:
+          type:
+          - string
+          - 'null'
+          description: the shipping method service (NextDayAir, Ground, etc)
+        description:
+          type:
+          - string
+          - 'null'
+          description: the shipping method service description (Next Day Air, Ground, etc)
+        name:
+          type: string
+          description: nicely formatted carrier and service
+        scac:
+          type:
+          - string
+          - 'null'
+          description: Standard Carrier Alpha Code
+        international:
+          type:
+          - boolean
+          - 'null'
+          description: is the shipping method international?
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the shipping method active?
+        flat_rate:
+          type:
+          - boolean
+          - 'null'
+          description: is the shipping method flat rate?
+        expedited:
+          type:
+          - boolean
+          - 'null'
+          description: is the shipping method expedited?
+        trackable:
+          type: boolean
+          description: is the shipping method trackable?
+        origins:
+          type: array
+          items:
+            type: string
+        extended_description:
+          type:
+          - string
+          - 'null'
+          description: the shipping method extended description
+        multi_parcel:
+          type:
+          - boolean
+          - 'null'
+          description: does the shipping method support multi-parcel shipments?
+        created_at:
+          type: string
+          format: date-time
+          description: the shipping method creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the shipping method last update date and time
       additionalProperties: false
     PutApiV2OrdersIdCallActionRequest:
       type: object
@@ -1276,725 +2005,6 @@ components:
         args:
           type: object
           description: Method params
-    ApiV2EntitiesCount:
-      type: object
-      title: V2
-      properties:
-        count:
-          type: integer
-          format: int32
-          description: the resource count
-      additionalProperties: false
-    ApiV2EntitiesSerialNumber:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the serial number id
-        order_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order_item_id for the serial number
-        shipnotice_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the shipnotice_item_id for the serial number (returns only)
-        text:
-          type:
-          - string
-          - 'null'
-          description: the serial number itself
-        deleted_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: if not null, the DateTime when the serial was deleted
-      additionalProperties: false
-    PostApiV2OrdersIdOrderDocumentsRequest:
-      type: object
-      properties:
-        url:
-          type: string
-          description: the order document file url
-        customer_id:
-          type: integer
-          format: int32
-          description: the order document customer id
-        document_type:
-          type: string
-          description: the order document type
-      required:
-      - url
-    PutApiV2OrdersIdMetaFieldsRequest:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
-    ApiV2EntitiesPackage:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the package id
-        order_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the package order id
-        shipped_on:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the package shipped on date and time
-        ship_actual_cost:
-          type:
-          - string
-          - 'null'
-          description: the package shipping cost
-        actual_weight:
-          type:
-          - string
-          - 'null'
-          description: the package weight (in ounces)
-        actual_width:
-          type:
-          - string
-          - 'null'
-          description: the package width (in inches)
-        actual_height:
-          type:
-          - string
-          - 'null'
-          description: the package height (in inches)
-        actual_length:
-          type:
-          - string
-          - 'null'
-          description: the package length (in inches)
-        actual_dimensional_weight:
-          type:
-          - string
-          - 'null'
-          description: the package dimensional weight (in ounces)
-        tracking:
-          type:
-          - string
-          - 'null'
-          description: the package tracking number
-        tracking_link:
-          type: string
-          description: the package tracking link
-        order_item_ids:
-          type: array
-          items:
-            type: integer
-            format: int32
-        created_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the package creation date and time
-        updated_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the package last update date and time
-        ucc128:
-          type:
-          - string
-          - 'null'
-          description: the UCC128 carton label for the package
-        barcode_sscc18:
-          type:
-          - string
-          - 'null'
-          description: the SSCC18 package identifier
-        ship_actual_currency:
-          type:
-          - string
-          - 'null'
-          description: currency used for this package
-        manifest_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the package manifest id
-        batch_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the package batch id (staff only)
-        shipping_label_url:
-          type:
-          - string
-          - 'null'
-          description: the package shipping label url (staff only)
-        shipment_id:
-          type:
-          - string
-          - 'null'
-          description: the package easypost shipment id (staff only)
-        scan_form_url:
-          type:
-          - string
-          - 'null'
-          description: the package scan form url (staff only)
-        shipment_created_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the package easypost shipment creation date and time (staff only)
-        shipment_updated_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the package easypost shipment last update date and time (staff only)
-        contents_label_printed_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: when the contents label was last printed (staff only)
-        shipping_label_printed_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: when the shipping label was last printed (staff only)
-        scanned_to_pallet_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: when the package was scanned to a pallet (staff only)
-        pallet_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the pallet id this package is on (staff only)
-      additionalProperties: false
-    PostApiV2OrdersIdOrderItemsRequest:
-      type: object
-      properties:
-        item_id:
-          type: integer
-          format: int32
-          description: the order item item id
-        package_id:
-          type: integer
-          format: int32
-          description: the order item package id
-        quote_item_id:
-          type: integer
-          format: int32
-          description: the order item quote item id
-        sku:
-          type: string
-          description: the SKU of this item
-        description:
-          type: string
-          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
-        quantity:
-          type: integer
-          format: int32
-          description: number of this item in Order
-        price:
-          type: string
-          description: price of this item
-        unshippable:
-          type: boolean
-          description: is this item unshippable?
-        available:
-          type: boolean
-          description: is this item available?
-        packed:
-          type: integer
-          format: int32
-          description: number of items packed
-        packaging:
-          type: boolean
-          description: is this item packaging?
-        wholesale_cost:
-          type: string
-          description: wholesale cost of the item
-        is_bundle:
-          type: boolean
-          description: is this item a bundle?
-        retail_fee:
-          type: string
-          description: retail fee of this item
-        promo:
-          type: boolean
-          description: is this item a promo?
-        returnable:
-          type: boolean
-          description: is this item returnable?
-        currency:
-          type: string
-          description: currency code for this item
-        wholesale_fee:
-          type: string
-          description: wholesale fee of this item
-        hazmat:
-          type: boolean
-          description: (deprecated) is the order item hazmat?
-        misc:
-          type: string
-          description: miscellaneous information about the order item
-        request_serial_number:
-          type: boolean
-          description: does the item require a serial number when shipping?
-        case_quantity:
-          type: integer
-          format: int32
-          description: How many of this item to a case?
-        carton_quantity:
-          type: integer
-          format: int32
-          description: How many CASES to a carton?
-        goh:
-          type: boolean
-          description: Garment on hanger?
-        originator_attributes:
-          type: object
-          properties:
-            original_id:
-              type: string
-              description: the originator original id (from the provider)
-            group_id:
-              type: string
-              description: the originator group id
-            misc:
-              type: string
-              description: miscellaneous info for the originator
-        meta_fields:
-          type: object
-          description: Hash of key value pairs (must conform to available meta keys)
-          properties:
-            fields:
-              type: object
-              description: Hash of key/value pairs
-        wholesale_item_attributes:
-          type: object
-          properties:
-            order_item_id:
-              type: integer
-              format: int32
-              description: the associated order item id
-            line_no:
-              type: string
-              description: the line number
-            item_alias:
-              type: string
-              description: the item alias
-            item_color:
-              type: string
-              description: the item color
-            item_size:
-              type: string
-              description: the item size
-            vendor_part_number:
-              type: string
-              description: the vendor part number
-            buyer_part_number:
-              type: string
-              description: the buyer part number
-            consumer_package_code:
-              type: string
-              description: the consumer package code
-            outer_pack_value:
-              type: string
-              description: the outer pack value
-            inner_pack_value:
-              type: string
-              description: the inner pack value
-            size_description:
-              type: string
-              description: the size description
-            color_description:
-              type: string
-              description: the color description
-            upc:
-              type: string
-              description: the UPC
-            description:
-              type: string
-              description: the description
-            style:
-              type: string
-              description: the style
-            ean:
-              type: string
-              description: the EAN
-            alternate_item_number:
-              type: string
-              description: the alternate item number
-            alternate_barcode:
-              type: string
-              description: the alternate barcode
-            alternate_sku:
-              type: string
-              description: the alternate SKU
-            lot:
-              type: string
-              description: the lot
-            ih_category:
-              type: string
-              description: the IH category
-      required:
-      - item_id
-    ApiV2EntitiesCustomsInfo:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the customs info id
-        order_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the associated order id
-        customer_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the associated customer id
-        importer_of_record_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the associated importer of record id
-        send_electonic_trade_docs:
-          type:
-          - boolean
-          - 'null'
-          description: send ETD to carrier
-        signer:
-          type:
-          - string
-          - 'null'
-          description: e-signature for customs
-        au_vat_number:
-          type:
-          - string
-          - 'null'
-          description: AU VAT number
-        eu_vat_number:
-          type:
-          - string
-          - 'null'
-          description: EU VAT number
-        misc_vat_number:
-          type:
-          - string
-          - 'null'
-          description: non-EU/AU/UK VAT number
-        uk_vat_number:
-          type:
-          - string
-          - 'null'
-          description: UK VAT number
-        ioss_number:
-          type:
-          - string
-          - 'null'
-          description: IOSS number
-        eori_number:
-          type:
-          - string
-          - 'null'
-          description: EORI number
-        receiver_tax_id:
-          type:
-          - string
-          - 'null'
-          description: Tax id
-        created_at:
-          type: string
-          format: date-time
-          description: the customs creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the customs last update date and time
-      additionalProperties: false
-    ApiV2EntitiesOriginator:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the originator id
-        originated_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the object created by the originator
-        originated_type:
-          type:
-          - string
-          - 'null'
-          description: the type of object created by the originator
-        shop_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the originator shop id
-        shop_domain:
-          type: string
-          description: the originator shop domain
-        provider:
-          type:
-          - string
-          - 'null'
-          description: the originator provider (shopify, magento, bandcamp, etc)
-        original_id:
-          type:
-          - string
-          - 'null'
-          description: the originator original id (from the provider)
-        group_id:
-          type:
-          - string
-          - 'null'
-          description: the originator group id
-        misc:
-          type:
-          - string
-          - 'null'
-          description: miscellaneous info for the originator
-        active:
-          type:
-          - boolean
-          - 'null'
-          description: is the originator active?
-        integration_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the originator integration id
-        last_notified_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the originator last notified date and time
-        last_notification_status:
-          type:
-          - string
-          - 'null'
-          description: the originator last notification status
-        last_synced_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the originator last synced date and time
-        distinct_originator_key:
-          type:
-          - string
-          - 'null'
-          description: the originator distinct key
-        created_at:
-          type: string
-          format: date-time
-          description: the originator creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the originator last update date and time
-        application_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the oauth application
-      additionalProperties: false
-    ApiV2EntitiesOrderItem:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the order item id
-        order_id:
-          type: integer
-          format: int32
-          description: the order item order id
-        customer_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order item customer id
-        item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order item item id
-        package_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order item package id
-        quote_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the order item quote item id
-        sku:
-          type:
-          - string
-          - 'null'
-          description: the SKU of this item
-        description:
-          type:
-          - string
-          - 'null'
-          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
-        quantity:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: number of this item in Order
-        price:
-          type:
-          - string
-          - 'null'
-          description: price of this item
-        created_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the order item creation date and time
-        updated_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the order item last update date and time
-        unshippable:
-          type:
-          - boolean
-          - 'null'
-          description: is this item unshippable?
-        available:
-          type:
-          - boolean
-          - 'null'
-          description: is this item available?
-        packed:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: number of items packed
-        packaging:
-          type:
-          - boolean
-          - 'null'
-          description: is this item packaging?
-        wholesale_cost:
-          type:
-          - string
-          - 'null'
-          description: wholesale cost of the item
-        is_bundle:
-          type:
-          - boolean
-          - 'null'
-          description: is this item a bundle?
-        retail_fee:
-          type:
-          - string
-          - 'null'
-          description: retail fee of this item
-        promo:
-          type:
-          - boolean
-          - 'null'
-          description: is this item a promo?
-        returnable:
-          type:
-          - boolean
-          - 'null'
-          description: is this item returnable?
-        currency:
-          type:
-          - string
-          - 'null'
-          description: currency code for this item
-        wholesale_fee:
-          type:
-          - string
-          - 'null'
-          description: wholesale fee of this item
-        hazmat:
-          type: boolean
-          description: (deprecated) is the order item hazmat?
-        misc:
-          type:
-          - string
-          - 'null'
-          description: miscellaneous information about the order item
-        request_serial_number:
-          type:
-          - boolean
-          - 'null'
-          description: does the item require a serial number when shipping?
-        case_quantity:
-          type: integer
-          format: int32
-          description: How many of this item to a case?
-        carton_quantity:
-          type: integer
-          format: int32
-          description: How many CASES to a carton?
-        goh:
-          type: boolean
-          description: Garment on hanger?
-        originator:
-          $ref: '#/components/schemas/ApiV2EntitiesOriginator'
-        wholesale_item:
-          $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
-      additionalProperties: false
     PostApiV2OrdersRequest:
       type: object
       properties:
@@ -2679,31 +2689,6 @@ components:
                 address_type:
                   type: string
                   description: the address type of record
-    ApiV2EntitiesOrderEvent:
-      type: object
-      title: V2
-      properties:
-        date:
-          type: string
-          format: date-time
-          description: the event date and time
-        description:
-          type: string
-          description: event description.
-        event_type:
-          type: string
-          description: the event type
-        saved_by:
-          type: string
-          description: saved by name (staff only)
-        saved_via:
-          type: string
-          description: saved by provider (staff only)
-        saved_by_id:
-          type: integer
-          format: int32
-          description: saved by id (staff only)
-      additionalProperties: false
     ApiV2EntitiesOrder:
       type: object
       title: V2
@@ -3374,434 +3359,341 @@ components:
           items:
             $ref: '#/components/schemas/ApiV2EntitiesSerialNumber'
       additionalProperties: false
-    ApiV2EntitiesFilterSet:
+    ApiV2EntitiesCount:
       type: object
       title: V2
       properties:
-        id:
+        count:
           type: integer
           format: int32
-          description: the filter set id
-        name:
-          type:
-          - string
-          - 'null'
-          description: filter set name.
-        description:
-          type:
-          - string
-          - 'null'
-          description: filter set description.
-        filters:
-          type:
-          - string
-          - 'null'
-          description: 'filter set filters as stringified JSON (ex: "[{\"search_id\":\"destination\",\"search_name\":\"State|CO\",\"shipping_state_eq\":\"CO\"}]").'
-        saved_by_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the resource that saved the filter set
-        saved_by_type:
-          type:
-          - string
-          - 'null'
-          description: the type of resource that saved the filter set
-        access_token:
-          type:
-          - string
-          - 'null'
-          description: filter set access_token
-        type:
-          type:
-          - string
-          - 'null'
-          description: the filter set type
-        visible:
-          type:
-          - boolean
-          - 'null'
-          description: filter set visible?.
-        favorite:
-          type:
-          - boolean
-          - 'null'
-          description: filter set favorited?
-        default:
-          type:
-          - boolean
-          - 'null'
-          description: Default filter set?
-        snapshot:
-          type:
-          - boolean
-          - 'null'
-          description: Snapshot of a filter set?
-        parent_id:
-          type: integer
-          format: int32
-          description: ID of parent filter set
-        created_at:
-          type: string
-          format: date-time
-          description: the filter set creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the filter set last update date and time
-        snapshots:
-          $ref: '#/components/schemas/ApiV2EntitiesFilterSet'
-        ancestor_saved_by_id:
-          type: integer
-          format: int32
-          description: the filter set ancestor (Document, Rule, FilterSet) user or customer id
-        ancestor_saved_by_type:
-          type: string
-          description: the filter set ancestor type (Customer, User)
+          description: the resource count
       additionalProperties: false
-    ApiV2EntitiesWholesale:
+    ApiSharedEntitiesMetaFields:
+      type: object
+      title: Shared
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+      additionalProperties: false
+    ApiV2EntitiesOrderDocument:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the wholesale id
+          description: the order document id
         order_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the associated order id
-        carrier_code:
-          type:
-          - string
-          - 'null'
-          description: the name of the carrier code used for order grouping and filtering
-        carrier_service:
-          type:
-          - string
-          - 'null'
-          description: the service of the carrier code used for order grouping and filtering
-        department:
-          type:
-          - string
-          - 'null'
-          description: the recipient department
-        department_description:
-          type:
-          - string
-          - 'null'
-          description: description of the recipient department
-        distribution_center:
-          type:
-          - string
-          - 'null'
-          description: the recipient distribution center
-        fob_code:
-          type:
-          - string
-          - 'null'
-          description: FOB code
-        gift_note:
-          type:
-          - string
-          - 'null'
-          description: the gift message that will need to show up on a packslip or gs1 label
-        location:
-          type:
-          - string
-          - 'null'
-          description: the recipient location
-        merchandise_type_code:
-          type:
-          - string
-          - 'null'
-          description: the order merchandise type code
-        partner:
-          type:
-          - string
-          - 'null'
-          description: the name of the trading partner for order grouping and filtering
-        po_number:
-          type:
-          - string
-          - 'null'
-          description: the purchase order number
-        sender:
-          type:
-          - string
-          - 'null'
-          description: the associated sender
-        vendor:
-          type:
-          - string
-          - 'null'
-          description: the associated vendor
-        vendor_number:
-          type:
-          - string
-          - 'null'
-          description: the vendor number
-        store:
-          type:
-          - string
-          - 'null'
-          description: the store number
-        replenishment:
-          type:
-          - string
-          - 'null'
-          description: the replenisment value
-        division:
-          type:
-          - string
-          - 'null'
-          description: the associated division
-        fob_location_qualifier:
-          type:
-          - string
-          - 'null'
-          description: the fob location qualifier
-        fob_location_description:
-          type:
-          - string
-          - 'null'
-          description: the fob location description
-        customer_account_number:
-          type:
-          - string
-          - 'null'
-          description: the account number of the customer
-        sort_code:
-          type:
-          - string
-          - 'null'
-          description: the code used for sorting
-        group:
-          type:
-          - string
-          - 'null'
-          description: the group of the wholesale
-        seller_name:
-          type:
-          - string
-          - 'null'
-          description: the name of the seller
-        reference:
-          type:
-          - string
-          - 'null'
-          description: the general reference for the wholesale
-        start_date:
-          type:
-          - string
-          - 'null'
-          format: date
-          description: the earliest possible arrival time for the shipment
-        cancel_date:
-          type:
-          - string
-          - 'null'
-          format: date
-          description: the latest possible arrival time for the shipment
-        created_at:
-          type: string
-          format: date-time
-          description: the wholesale creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the wholesale last update date and time
-      additionalProperties: false
-    ApiV2EntitiesPackingRule:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the rule id
-        type:
-          type:
-          - string
-          - 'null'
-          description: the type of rule
+          description: the order document order id
         customer_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the customer_id of the rule
-        warehouse_id:
+          description: the order document customer id
+        url:
+          type: string
+          description: the order document file url
+        document_type:
           type:
-          - integer
+          - string
           - 'null'
-          format: int32
-          description: the rule warehouse id
-        while_supplies_last:
-          type:
-          - boolean
-          - 'null'
-          description: apply rule while Item to be added has inventory?
+          description: the order document type
         created_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          description: rule creation date
+          description: the order document creation date and time
         updated_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          description: rule last updated date
-        method:
-          type:
-          - string
-          - 'null'
-          description: method to apply to object
-        args:
-          type:
-          - string
-          - 'null'
-          description: arguments, as JSON hash
-        active:
-          type:
-          - boolean
-          - 'null'
-          description: is the rule currently active?
-        filter_set:
-          $ref: '#/components/schemas/ApiV2EntitiesFilterSet'
-        description:
-          type:
-          - string
-          - 'null'
-          description: title/description of rule
-        priority:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the priority of the rule
+          description: the order document last update date and time
       additionalProperties: false
-    ApiV2EntitiesWholesaleItem:
+    ApiV2EntitiesPackage:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the wholesale item id
-        order_item_id:
+          description: the package id
+        order_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the package order id
+        shipped_on:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the package shipped on date and time
+        ship_actual_cost:
+          type:
+          - string
+          - 'null'
+          description: the package shipping cost
+        actual_weight:
+          type:
+          - string
+          - 'null'
+          description: the package weight (in ounces)
+        actual_width:
+          type:
+          - string
+          - 'null'
+          description: the package width (in inches)
+        actual_height:
+          type:
+          - string
+          - 'null'
+          description: the package height (in inches)
+        actual_length:
+          type:
+          - string
+          - 'null'
+          description: the package length (in inches)
+        actual_dimensional_weight:
+          type:
+          - string
+          - 'null'
+          description: the package dimensional weight (in ounces)
+        tracking:
+          type:
+          - string
+          - 'null'
+          description: the package tracking number
+        tracking_link:
+          type: string
+          description: the package tracking link
+        order_item_ids:
+          type: array
+          items:
+            type: integer
+            format: int32
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the package creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the package last update date and time
+        ucc128:
+          type:
+          - string
+          - 'null'
+          description: the UCC128 carton label for the package
+        barcode_sscc18:
+          type:
+          - string
+          - 'null'
+          description: the SSCC18 package identifier
+        ship_actual_currency:
+          type:
+          - string
+          - 'null'
+          description: currency used for this package
+        manifest_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the package manifest id
+        batch_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the package batch id (staff only)
+        shipping_label_url:
+          type:
+          - string
+          - 'null'
+          description: the package shipping label url (staff only)
+        shipment_id:
+          type:
+          - string
+          - 'null'
+          description: the package easypost shipment id (staff only)
+        scan_form_url:
+          type:
+          - string
+          - 'null'
+          description: the package scan form url (staff only)
+        shipment_created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the package easypost shipment creation date and time (staff only)
+        shipment_updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the package easypost shipment last update date and time (staff only)
+        contents_label_printed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: when the contents label was last printed (staff only)
+        shipping_label_printed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: when the shipping label was last printed (staff only)
+        scanned_to_pallet_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: when the package was scanned to a pallet (staff only)
+        pallet_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the pallet id this package is on (staff only)
+      additionalProperties: false
+    ApiV2EntitiesOrderEvent:
+      type: object
+      title: V2
+      properties:
+        date:
+          type: string
+          format: date-time
+          description: the event date and time
+        description:
+          type: string
+          description: event description.
+        event_type:
+          type: string
+          description: the event type
+        saved_by:
+          type: string
+          description: saved by name (staff only)
+        saved_via:
+          type: string
+          description: saved by provider (staff only)
+        saved_by_id:
           type: integer
           format: int32
-          description: the associated order item id
-        line_no:
+          description: saved by id (staff only)
+      additionalProperties: false
+    ApiV2EntitiesOriginator:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the originator id
+        originated_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the object created by the originator
+        originated_type:
           type:
           - string
           - 'null'
-          description: the line number
-        item_alias:
+          description: the type of object created by the originator
+        shop_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator shop id
+        shop_domain:
+          type: string
+          description: the originator shop domain
+        provider:
           type:
           - string
           - 'null'
-          description: the item alias
-        item_color:
+          description: the originator provider (shopify, magento, bandcamp, etc)
+        original_id:
           type:
           - string
           - 'null'
-          description: the item color
-        item_size:
+          description: the originator original id (from the provider)
+        group_id:
           type:
           - string
           - 'null'
-          description: the item size
-        vendor_part_number:
+          description: the originator group id
+        misc:
           type:
           - string
           - 'null'
-          description: the vendor part number
-        buyer_part_number:
+          description: miscellaneous info for the originator
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the originator active?
+        integration_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator integration id
+        last_notified_at:
           type:
           - string
           - 'null'
-          description: the buyer part number
-        consumer_package_code:
+          format: date-time
+          description: the originator last notified date and time
+        last_notification_status:
           type:
           - string
           - 'null'
-          description: the consumer package code
-        outer_pack_value:
+          description: the originator last notification status
+        last_synced_at:
           type:
           - string
           - 'null'
-          description: the outer pack value
-        inner_pack_value:
+          format: date-time
+          description: the originator last synced date and time
+        distinct_originator_key:
           type:
           - string
           - 'null'
-          description: the inner pack value
-        size_description:
-          type:
-          - string
-          - 'null'
-          description: the size description
-        color_description:
-          type:
-          - string
-          - 'null'
-          description: the color description
-        upc:
-          type:
-          - string
-          - 'null'
-          description: the UPC
-        description:
-          type:
-          - string
-          - 'null'
-          description: the description
-        style:
-          type:
-          - string
-          - 'null'
-          description: the style
-        ean:
-          type:
-          - string
-          - 'null'
-          description: the EAN
-        alternate_item_number:
-          type:
-          - string
-          - 'null'
-          description: the alternate item number
-        alternate_barcode:
-          type:
-          - string
-          - 'null'
-          description: the alternate barcode
-        alternate_sku:
-          type:
-          - string
-          - 'null'
-          description: the alternate SKU
-        lot:
-          type:
-          - string
-          - 'null'
-          description: the lot
-        ih_category:
-          type:
-          - string
-          - 'null'
-          description: the IH category
+          description: the originator distinct key
         created_at:
           type: string
           format: date-time
-          description: the wholesale item creation date and time
+          description: the originator creation date and time
         updated_at:
           type: string
           format: date-time
-          description: the wholesale item last update date and time
+          description: the originator last update date and time
+        application_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the oauth application
       additionalProperties: false
     PutApiV2OrdersIdRequest:
       type: object
@@ -4251,479 +4143,252 @@ components:
                 address_type:
                   type: string
                   description: the address type of record
-    ApiV2EntitiesResult:
+    PostApiV2OrdersIdOrderItemsRequest:
+      type: object
+      properties:
+        item_id:
+          type: integer
+          format: int32
+          description: the order item item id
+        package_id:
+          type: integer
+          format: int32
+          description: the order item package id
+        quote_item_id:
+          type: integer
+          format: int32
+          description: the order item quote item id
+        sku:
+          type: string
+          description: the SKU of this item
+        description:
+          type: string
+          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+        quantity:
+          type: integer
+          format: int32
+          description: number of this item in Order
+        price:
+          type: string
+          description: price of this item
+        unshippable:
+          type: boolean
+          description: is this item unshippable?
+        available:
+          type: boolean
+          description: is this item available?
+        packed:
+          type: integer
+          format: int32
+          description: number of items packed
+        packaging:
+          type: boolean
+          description: is this item packaging?
+        wholesale_cost:
+          type: string
+          description: wholesale cost of the item
+        is_bundle:
+          type: boolean
+          description: is this item a bundle?
+        retail_fee:
+          type: string
+          description: retail fee of this item
+        promo:
+          type: boolean
+          description: is this item a promo?
+        returnable:
+          type: boolean
+          description: is this item returnable?
+        currency:
+          type: string
+          description: currency code for this item
+        wholesale_fee:
+          type: string
+          description: wholesale fee of this item
+        hazmat:
+          type: boolean
+          description: (deprecated) is the order item hazmat?
+        misc:
+          type: string
+          description: miscellaneous information about the order item
+        request_serial_number:
+          type: boolean
+          description: does the item require a serial number when shipping?
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        originator_attributes:
+          type: object
+          properties:
+            original_id:
+              type: string
+              description: the originator original id (from the provider)
+            group_id:
+              type: string
+              description: the originator group id
+            misc:
+              type: string
+              description: miscellaneous info for the originator
+        meta_fields:
+          type: object
+          description: Hash of key value pairs (must conform to available meta keys)
+          properties:
+            fields:
+              type: object
+              description: Hash of key/value pairs
+        wholesale_item_attributes:
+          type: object
+          properties:
+            order_item_id:
+              type: integer
+              format: int32
+              description: the associated order item id
+            line_no:
+              type: string
+              description: the line number
+            item_alias:
+              type: string
+              description: the item alias
+            item_color:
+              type: string
+              description: the item color
+            item_size:
+              type: string
+              description: the item size
+            vendor_part_number:
+              type: string
+              description: the vendor part number
+            buyer_part_number:
+              type: string
+              description: the buyer part number
+            consumer_package_code:
+              type: string
+              description: the consumer package code
+            outer_pack_value:
+              type: string
+              description: the outer pack value
+            inner_pack_value:
+              type: string
+              description: the inner pack value
+            size_description:
+              type: string
+              description: the size description
+            color_description:
+              type: string
+              description: the color description
+            upc:
+              type: string
+              description: the UPC
+            description:
+              type: string
+              description: the description
+            style:
+              type: string
+              description: the style
+            ean:
+              type: string
+              description: the EAN
+            alternate_item_number:
+              type: string
+              description: the alternate item number
+            alternate_barcode:
+              type: string
+              description: the alternate barcode
+            alternate_sku:
+              type: string
+              description: the alternate SKU
+            lot:
+              type: string
+              description: the lot
+            ih_category:
+              type: string
+              description: the IH category
+      required:
+      - item_id
+    ApiV2EntitiesPackingRule:
       type: object
       title: V2
       properties:
-        result:
+        id:
+          type: integer
+          format: int32
+          description: the rule id
+        type:
+          type:
+          - string
+          - 'null'
+          description: the type of rule
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the customer_id of the rule
+        warehouse_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the rule warehouse id
+        while_supplies_last:
+          type:
+          - boolean
+          - 'null'
+          description: apply rule while Item to be added has inventory?
+        created_at:
           type: string
-          description: the request result
+          format: date-time
+          description: rule creation date
+        updated_at:
+          type: string
+          format: date-time
+          description: rule last updated date
+        method:
+          type:
+          - string
+          - 'null'
+          description: method to apply to object
+        args:
+          type:
+          - string
+          - 'null'
+          description: arguments, as JSON hash
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the rule currently active?
+        filter_set:
+          $ref: '#/components/schemas/ApiV2EntitiesFilterSet'
+        description:
+          type:
+          - string
+          - 'null'
+          description: title/description of rule
+        priority:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the priority of the rule
       additionalProperties: false
-    PostApiV2OrdersBulkRequest:
+    PutApiV2OrdersIdMetaFieldsRequest:
       type: object
       properties:
-        resources:
-          type: array
-          description: An array of order objects to create in bulk
-          items:
-            type: object
-            properties:
-              shipping_method_id:
-                type: integer
-                format: int32
-                description: the order shipping method id
-              estimated_shipping_method_id:
-                type: integer
-                format: int32
-                description: the estimated order shipping method id, if set to cheapest rate
-              order_orig:
-                type: string
-                description: "the order original id (from the shop that sent whiplash the order)\n          Note: contains the global-e order id for any global-e order."
-              package_label_reference:
-                type: string
-                description: "User-defined reference for shipping labels on packages.\n          Note: this field has a limit of 35 chars."
-              level1_token:
-                type: string
-                description: the order level 1 token
-              level2_token:
-                type: string
-                description: the order level 2 token
-              skip_street_date:
-                type: boolean
-                description: skip street date for this order?
-              due_at:
-                type: string
-                format: date-time
-                description: the order due at date and time
-              meta_data:
-                type: string
-                description: meta data for this order as stringified JSON
-              customer_provided_label_carrier:
-                type: string
-                description: the carrier on the customer provided label (for tracking purposes)
-              purchase_order:
-                type: string
-                description: the purchase order this order
-              order_type:
-                type: string
-                enum:
-                - direct_to_consumer
-                - dropship
-                - retail
-                - transfer
-                - value_added_service
-                - wholesale
-                description: the order type
-              batch_priority:
-                type: boolean
-                description: the order batch priority
-              email:
-                type: string
-                description: the order shipping email
-              skip_address_verification:
-                type: boolean
-                description: skip order shipping address verification?
-              scac:
-                type: string
-                description: the orders Standard Carrier Alpha Code number
-              tms_id:
-                type: string
-                description: The Transport Management System ID for the order, if applicable
-              tms_required:
-                type: boolean
-                description: Does the order require a Transport Management System ID
-              shop_warehouse_ids:
-                type: array
-                items:
-                  type: integer
-                  format: int32
-                description: the order shop warehouse ids
-              shop_shipping_method_currency:
-                type: string
-                description: the order shop shipping method currency
-              shop_created_at:
-                type: string
-                format: date-time
-                description: the order shop creation date and time
-              shop_updated_at:
-                type: string
-                format: date-time
-                description: the order shop last update date and time
-              shop_shipping_method_text:
-                type: string
-                description: "the order shop shipping method text\n          ge_standard = order uses global-e standard shipping method\n          ge_express = order uses global-e express shipping method"
-              shop_shipping_method_price:
-                type: string
-                description: the order shop shipping method price
-              billing_company:
-                type: string
-                description: the order billing company
-              billing_address_1:
-                type: string
-                description: the order billing street address 1
-              billing_address_2:
-                type: string
-                description: the order billing street address 2
-              billing_address_3:
-                type: string
-                description: the order billing street address 3
-              billing_city:
-                type: string
-                description: the order billing city
-              billing_state:
-                type: string
-                description: the order billing state
-              billing_zip:
-                type: string
-                description: the order billing zip
-              billing_country:
-                type: string
-                description: the order billing country
-              billing_phone:
-                type: string
-                description: the order billing phone number
-              do_not_bill:
-                type: boolean
-                description: do not bill for the order? (staff only)
-              billing_name:
-                type: string
-                description: the order billing name
-              first_name:
-                type: string
-                description: the first name of the person the order is being shipped to
-              last_name:
-                type: string
-                description: the last name of the person the order is being shipped to
-              full_name:
-                type: string
-                description: the full name of the person the order is being shipped to
-              shipping_name:
-                type: string
-                description: the order shipping name
-              shipping_company:
-                type: string
-                description: the order shipping company
-              shipping_address_1:
-                type: string
-                description: the order shipping street address 1
-              shipping_address_2:
-                type: string
-                description: the order shipping street address 2
-              shipping_city:
-                type: string
-                description: the order shipping city
-              shipping_state:
-                type: string
-                description: the order shipping state
-              shipping_zip:
-                type: string
-                description: the order shipping zip
-              shipping_country:
-                type: string
-                description: the order shipping country
-              shipping_country_iso2:
-                type: string
-                description: the order shipping country iso2 (US, GB, CA, etc)
-              shipping_phone:
-                type: string
-                description: the order shipping phone number
-              requested_address:
-                type: string
-                description: the order requested address
-              residential:
-                type: boolean
-                description: is the order address residential?
-              require_signature:
-                type: boolean
-                description: does the order require a signature upon delivery?
-              require_adult_signature:
-                type: boolean
-                description: does the order require an adult signature upon delivery?
-              saturday_delivery:
-                type: boolean
-                description: require a carrier that delivers on Saturdays for this order?
-              gift:
-                type: boolean
-                description: is the order a gift?
-              insure:
-                type: boolean
-                description: is the order insured?
-              contains_alcohol:
-                type: boolean
-                description: does the order contain alcohol?
-              shipping_carrier_facility:
-                type: string
-                description: carrier facility access point for the address destination
-              shipping_hold_for_pickup:
-                type: boolean
-                description: pickup option for carrier facility on the address destination
-              ship_notes:
-                type: string
-                description: the order ship notes
-              ship_3rdparty_cost:
-                type: string
-                description: the order third party shipping cost
-              ship_3rdparty_account:
-                type: string
-                description: the order third party shipping account
-              ship_3rdparty_zip:
-                type: string
-                description: the order third party shipping zip
-              ship_3rdparty_country:
-                type: string
-                description: the order third party shipping country
-              payment_type:
-                type: string
-                enum:
-                - sender
-                - collect
-                - third_party
-                description: the order payment type
-              public_note:
-                type: string
-                description: the order public note
-              days_in_transit:
-                type: integer
-                format: int32
-                description: the order estimated days in transit (used for release planning)
-              days_in_transit_carrier_estimate:
-                type: integer
-                format: int32
-                description: the order estimated days in transit estimate from the carrier
-              req_insurance_value:
-                type: string
-                description: the order requested insurance value
-              customs_vat_number:
-                type: string
-                description: Value Added Tax identifcation number for the sender of the order
-              customs_eori_number:
-                type: string
-                description: Economic Operators Registration and Identification number for the sender of the order
-              customs_ioss_number:
-                type: string
-                description: Import One-Stop Shop number for the sender of the order
-              customs_receiver_tax_id:
-                type: string
-                description: RFC Tax id
-              carrier_account_id:
-                type: integer
-                format: int32
-                description: the carrier account id for this package, if it has shipped (staff only)
-              tracking:
-                type: array
-                items:
-                  type: string
-                description: the order tracking numbers
-              tracking_links:
-                type: array
-                items:
-                  type: string
-                description: the order tracking links
-              approximate_delivery_date:
-                type: string
-                format: date
-                description: the order approxiamte delivery date
-              global_e_ge_order:
-                type: boolean
-                description: is the order a global_e order?
-              return_name:
-                type: string
-                description: the order return name
-              return_company:
-                type: string
-                description: the order return company
-              return_address_1:
-                type: string
-                description: the order return street address 1
-              return_address_2:
-                type: string
-                description: the order return street address 2
-              return_city:
-                type: string
-                description: the order return city
-              return_state:
-                type: string
-                description: the order return state
-              return_country:
-                type: string
-                description: the order return country
-              return_zip:
-                type: string
-                description: the order return zip
-              return_phone:
-                type: string
-                description: the order return phone number
-              return_email:
-                type: string
-                description: the order return email
-              return_time_limit:
-                type: integer
-                format: int32
-                description: the order return time limit
-              is_workable:
-                type: boolean
-                description: is the order workable?
-              is_gestating:
-                type: boolean
-                description: is the order gestating?
-              permissions_limited:
-                type: boolean
-                description: Permission limited orders are not editable, but still may be processed/shipped
-              order_items:
-                type: string
-              incoterm:
-                type: string
-                enum:
-                - EXW
-                - FCA
-                - CPT
-                - CIP
-                - DAT
-                - DAP
-                - DDP
-                - FAS
-                - FOB
-                - CFR
-                - CIF
-                - DAF
-                - DES
-                - DEQ
-                - DDU
-                description: desired incoterm for the order
-              status:
-                type: integer
-                format: int32
-                enum:
-                - 30
-                - 35
-                description: Quote (35) or Shipped Externally (30)
-              order_items_attributes:
-                type: array
-                description: Order items attributes
-                items:
-                  type: object
-                  properties:
-                    quantity:
-                      type: integer
-                      format: int32
-                      description: number of this item in Order
-                    order_id:
-                      type: integer
-                      format: int32
-                      description: the order item order id
-                    customer_id:
-                      type: integer
-                      format: int32
-                      description: the order item customer id
-                    item_id:
-                      type: integer
-                      format: int32
-                      description: the order item item id
-                    sku:
-                      type: string
-                      description: the SKU of this item
-                    description:
-                      type: string
-                      description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
-                    price:
-                      type: string
-                      description: price of this item
-                    unshippable:
-                      type: boolean
-                      description: is this item unshippable?
-                    available:
-                      type: boolean
-                      description: is this item available?
-                    packed:
-                      type: integer
-                      format: int32
-                      description: number of items packed
-                    packaging:
-                      type: boolean
-                      description: is this item packaging?
-                    wholesale_cost:
-                      type: string
-                      description: wholesale cost of the item
-                    is_bundle:
-                      type: boolean
-                      description: is this item a bundle?
-                    retail_fee:
-                      type: string
-                      description: retail fee of this item
-                    promo:
-                      type: boolean
-                      description: is this item a promo?
-                    returnable:
-                      type: boolean
-                      description: is this item returnable?
-                    currency:
-                      type: string
-                      description: currency code for this item
-                    wholesale_fee:
-                      type: string
-                      description: wholesale fee of this item
-                    hazmat:
-                      type: boolean
-                      description: (deprecated) is the order item hazmat?
-                    misc:
-                      type: string
-                      description: miscellaneous information about the order item
-                    request_serial_number:
-                      type: boolean
-                      description: does the item require a serial number when shipping?
-                    case_quantity:
-                      type: integer
-                      format: int32
-                      description: How many of this item to a case?
-                    carton_quantity:
-                      type: integer
-                      format: int32
-                      description: How many CASES to a carton?
-                    goh:
-                      type: boolean
-                      description: Garment on hanger?
-                    originator_id:
-                      type: string
-                      description: The original id of the order item
-                    item_originator_id:
-                      type: string
-                      description: The original id of the item
-                    originator_attributes:
-                      type: object
-                      properties:
-                        original_id:
-                          type: string
-                          description: the originator original id (from the provider)
-                        group_id:
-                          type: string
-                          description: the originator group id
-                        misc:
-                          type: string
-                          description: miscellaneous info for the originator
-              originator_attributes:
-                type: object
-                properties:
-                  original_id:
-                    type: string
-                    description: the originator original id (from the provider)
-                  group_id:
-                    type: string
-                    description: the originator group id
-                  misc:
-                    type: string
-                    description: miscellaneous info for the originator
-              meta_fields:
-                type: object
-                description: Hash of key value pairs (must conform to available meta keys)
-                properties:
-                  fields:
-                    type: object
-                    description: Hash of key/value pairs
-                  association_fields:
-                    type: object
-                    description: Included meta fields for associations
-      required:
-      - resources
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
     ApiSharedEntitiesApiError:
       type: object
       title: Shared
@@ -4732,82 +4397,417 @@ components:
           type: string
           description: error message
       additionalProperties: false
-    ApiV2EntitiesShippingMethod:
+    ApiV2EntitiesWholesale:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the shipping method id
-        carrier:
+          description: the wholesale id
+        order_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the associated order id
+        carrier_code:
           type:
           - string
           - 'null'
-          description: the shipping method carrier (FedEx, UPS, etc)
-        service:
+          description: the name of the carrier code used for order grouping and filtering
+        carrier_service:
           type:
           - string
           - 'null'
-          description: the shipping method service (NextDayAir, Ground, etc)
+          description: the service of the carrier code used for order grouping and filtering
+        department:
+          type:
+          - string
+          - 'null'
+          description: the recipient department
+        department_description:
+          type:
+          - string
+          - 'null'
+          description: description of the recipient department
+        distribution_center:
+          type:
+          - string
+          - 'null'
+          description: the recipient distribution center
+        fob_code:
+          type:
+          - string
+          - 'null'
+          description: FOB code
+        gift_note:
+          type:
+          - string
+          - 'null'
+          description: the gift message that will need to show up on a packslip or gs1 label
+        location:
+          type:
+          - string
+          - 'null'
+          description: the recipient location
+        merchandise_type_code:
+          type:
+          - string
+          - 'null'
+          description: the order merchandise type code
+        partner:
+          type:
+          - string
+          - 'null'
+          description: the name of the trading partner for order grouping and filtering
+        po_number:
+          type:
+          - string
+          - 'null'
+          description: the purchase order number
+        sender:
+          type:
+          - string
+          - 'null'
+          description: the associated sender
+        vendor:
+          type:
+          - string
+          - 'null'
+          description: the associated vendor
+        vendor_number:
+          type:
+          - string
+          - 'null'
+          description: the vendor number
+        store:
+          type:
+          - string
+          - 'null'
+          description: the store number
+        replenishment:
+          type:
+          - string
+          - 'null'
+          description: the replenisment value
+        division:
+          type:
+          - string
+          - 'null'
+          description: the associated division
+        fob_location_qualifier:
+          type:
+          - string
+          - 'null'
+          description: the fob location qualifier
+        fob_location_description:
+          type:
+          - string
+          - 'null'
+          description: the fob location description
+        customer_account_number:
+          type:
+          - string
+          - 'null'
+          description: the account number of the customer
+        sort_code:
+          type:
+          - string
+          - 'null'
+          description: the code used for sorting
+        group:
+          type:
+          - string
+          - 'null'
+          description: the group of the wholesale
+        seller_name:
+          type:
+          - string
+          - 'null'
+          description: the name of the seller
+        reference:
+          type:
+          - string
+          - 'null'
+          description: the general reference for the wholesale
+        start_date:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: the earliest possible arrival time for the shipment
+        cancel_date:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: the latest possible arrival time for the shipment
+        created_at:
+          type: string
+          format: date-time
+          description: the wholesale creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the wholesale last update date and time
+      additionalProperties: false
+    ApiV2EntitiesOrderItem:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the order item id
+        order_id:
+          type: integer
+          format: int32
+          description: the order item order id
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item customer id
+        item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item item id
+        package_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item package id
+        quote_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the order item quote item id
+        sku:
+          type:
+          - string
+          - 'null'
+          description: the SKU of this item
         description:
           type:
           - string
           - 'null'
-          description: the shipping method service description (Next Day Air, Ground, etc)
-        name:
-          type: string
-          description: nicely formatted carrier and service
-        scac:
+          description: description for this order item. This will appear in packing slips. If not set, the description will be inherited from the parent Item.
+        quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: number of this item in Order
+        price:
           type:
           - string
           - 'null'
-          description: Standard Carrier Alpha Code
-        international:
+          description: price of this item
+        created_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the order item creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the order item last update date and time
+        unshippable:
           type:
           - boolean
           - 'null'
-          description: is the shipping method international?
-        active:
+          description: is this item unshippable?
+        available:
           type:
           - boolean
           - 'null'
-          description: is the shipping method active?
-        flat_rate:
+          description: is this item available?
+        packed:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: number of items packed
+        packaging:
           type:
           - boolean
           - 'null'
-          description: is the shipping method flat rate?
-        expedited:
+          description: is this item packaging?
+        wholesale_cost:
+          type:
+          - string
+          - 'null'
+          description: wholesale cost of the item
+        is_bundle:
           type:
           - boolean
           - 'null'
-          description: is the shipping method expedited?
-        trackable:
+          description: is this item a bundle?
+        retail_fee:
+          type:
+          - string
+          - 'null'
+          description: retail fee of this item
+        promo:
+          type:
+          - boolean
+          - 'null'
+          description: is this item a promo?
+        returnable:
+          type:
+          - boolean
+          - 'null'
+          description: is this item returnable?
+        currency:
+          type:
+          - string
+          - 'null'
+          description: currency code for this item
+        wholesale_fee:
+          type:
+          - string
+          - 'null'
+          description: wholesale fee of this item
+        hazmat:
           type: boolean
-          description: is the shipping method trackable?
-        origins:
-          type: array
-          items:
-            type: string
-        extended_description:
+          description: (deprecated) is the order item hazmat?
+        misc:
           type:
           - string
           - 'null'
-          description: the shipping method extended description
-        multi_parcel:
+          description: miscellaneous information about the order item
+        request_serial_number:
           type:
           - boolean
           - 'null'
-          description: does the shipping method support multi-parcel shipments?
+          description: does the item require a serial number when shipping?
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        originator:
+          $ref: '#/components/schemas/ApiV2EntitiesOriginator'
+        wholesale_item:
+          $ref: '#/components/schemas/ApiV2EntitiesWholesaleItem'
+      additionalProperties: false
+    ApiV2EntitiesCustomsInfo:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the customs info id
+        order_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the associated order id
+        customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the associated customer id
+        importer_of_record_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the associated importer of record id
+        send_electonic_trade_docs:
+          type:
+          - boolean
+          - 'null'
+          description: send ETD to carrier
+        signer:
+          type:
+          - string
+          - 'null'
+          description: e-signature for customs
+        au_vat_number:
+          type:
+          - string
+          - 'null'
+          description: AU VAT number
+        eu_vat_number:
+          type:
+          - string
+          - 'null'
+          description: EU VAT number
+        misc_vat_number:
+          type:
+          - string
+          - 'null'
+          description: non-EU/AU/UK VAT number
+        uk_vat_number:
+          type:
+          - string
+          - 'null'
+          description: UK VAT number
+        ioss_number:
+          type:
+          - string
+          - 'null'
+          description: IOSS number
+        eori_number:
+          type:
+          - string
+          - 'null'
+          description: EORI number
+        receiver_tax_id:
+          type:
+          - string
+          - 'null'
+          description: Tax id
         created_at:
           type: string
           format: date-time
-          description: the shipping method creation date and time
+          description: the customs creation date and time
         updated_at:
           type: string
           format: date-time
-          description: the shipping method last update date and time
+          description: the customs last update date and time
+      additionalProperties: false
+    PostApiV2OrdersIdOrderDocumentsRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          description: the order document file url
+        customer_id:
+          type: integer
+          format: int32
+          description: the order document customer id
+        document_type:
+          type: string
+          description: the order document type
+      required:
+      - url
+    ApiV2EntitiesResult:
+      type: object
+      title: V2
+      properties:
+        result:
+          type: string
+          description: the request result
       additionalProperties: false
   examples:
     api.v2.order.processing:

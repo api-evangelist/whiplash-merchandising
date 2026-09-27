@@ -72,7 +72,7 @@ tags_raw:
 - Supply Chain
 apis:
 - aid: whiplash-merchandising:whiplash-merchandising-bundle-items-api
-  name: Whiplash Merchandising bundle_items API
+  name: Whiplash Merchandising Bundle Items API
   description: >-
     Bundle Items are components that make up a bundle, defining the quantity and relationship of items
     within product bundles.
@@ -90,7 +90,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-consumer-returns-api
-  name: Whiplash Merchandising consumer_returns API
+  name: Whiplash Merchandising Consumer Returns API
   description: >-
     A ConsumerReturn represents goods coming back from an end consumer. It is a special form of Shipnotice,
     and is processed in much the same way.
@@ -108,7 +108,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-customers-api
-  name: Whiplash Merchandising customers API
+  name: Whiplash Merchandising Customers API
   description: >-
     Customers are Whiplash clients, not the End Consumer. Most Whiplash resources are owned by a Customer
     (or belong to resources that are).
@@ -126,7 +126,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-documents-api
-  name: Whiplash Merchandising documents API
+  name: Whiplash Merchandising Documents API
   description: >-
     Documents are imported files and exported reports. We store a record in your account of every file
     you import, as well as every report you've run, so they're easy to search and access.
@@ -144,7 +144,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-items-api
-  name: Whiplash Merchandising items API
+  name: Whiplash Merchandising Items API
   description: >-
     Items are probably the most fundamental entity in the Whiplash system. An item is simply a 'shippable
     unit'. So, it's not a Whiplash T-Shirt; it's a Small Whiplash T-Shirt, for instance.
@@ -166,7 +166,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-load-scacs-api
-  name: Whiplash Merchandising load_scacs API
+  name: Whiplash Merchandising Load Scacs API
   description: The load_scacs API from Whiplash Merchandising — 2 operation(s) for load_scacs.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -181,7 +181,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-notification-events-api
-  name: Whiplash Merchandising notification_events API
+  name: Whiplash Merchandising Notification Events API
   description: System event definitions for notifications.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -197,7 +197,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-notification-subscriptions-api
-  name: Whiplash Merchandising notification_subscriptions API
+  name: Whiplash Merchandising Notification Subscriptions API
   description: User notification preferences and subscriptions.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -213,7 +213,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-order-documents-api
-  name: Whiplash Merchandising order_documents API
+  name: Whiplash Merchandising Order Documents API
   description: Order-related documentation and paperwork.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -228,7 +228,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-order-items-api
-  name: Whiplash Merchandising order_items API
+  name: Whiplash Merchandising Order Items API
   description: An OrderItem represents an Item with a quantity in an Order.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -244,7 +244,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-order-totes-api
-  name: Whiplash Merchandising order_totes API
+  name: Whiplash Merchandising Order Totes API
   description: Order picking container management.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -259,7 +259,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-orders-api
-  name: Whiplash Merchandising orders API
+  name: Whiplash Merchandising Orders API
   description: >-
     Orders are end consumer requests for Items. An Order is comprised of OrderItems.
 
@@ -278,7 +278,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-originators-api
-  name: Whiplash Merchandising originators API
+  name: Whiplash Merchandising Originators API
   description: >-
     Originators are e-commerce, API, or ERP representations of an Item, Order, OrderItem, ConsumerReturn,
     Shipnotice, or ShipnoticeItem. They contain your system's ID and, optionally, details.
@@ -296,7 +296,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-packages-api
-  name: Whiplash Merchandising packages API
+  name: Whiplash Merchandising Packages API
   description: Shipment package details and tracking.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -312,7 +312,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-projects-api
-  name: Whiplash Merchandising projects API
+  name: Whiplash Merchandising Projects API
   description: Project management and organization.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -328,7 +328,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-scancodes-api
-  name: Whiplash Merchandising scancodes API
+  name: Whiplash Merchandising Scancodes API
   description: Barcode management and processing.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -342,7 +342,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-shipnotice-items-api
-  name: Whiplash Merchandising shipnotice_items API
+  name: Whiplash Merchandising Shipnotice Items API
   description: >-
     Similar to an OrderItem, ShipnoticeItem represents an Item with a quantity in a Shipnotice. quantity
     refers to the quantity expected to arrive, and the quantity actually received is quantity_good.
@@ -359,7 +359,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-shipnotices-api
-  name: Whiplash Merchandising shipnotices API
+  name: Whiplash Merchandising Shipnotices API
   description: >-
     A Shipnotice is the opposite of an order, and are notifications by the client of inventory that is
     expected to arrive at a warehouse.
@@ -379,7 +379,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-simulate-api
-  name: Whiplash Merchandising simulate API
+  name: Whiplash Merchandising Simulate API
   description: >-
     (Sandbox Only) Simulate Order and Ship Notice processing, since these are staff-only operations.
   humanURL: https://developers.getwhiplash.com
@@ -394,7 +394,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-templates-api
-  name: Whiplash Merchandising templates API
+  name: Whiplash Merchandising Templates API
   description: Templates allow you to customize packing slips, email confirmations, order inserts, etc.
   humanURL: https://developers.getwhiplash.com
   baseURL: https://www.getwhiplash.com/api/v2
@@ -410,7 +410,7 @@ apis:
   - type: APIReference
     url: https://developers.getwhiplash.com
 - aid: whiplash-merchandising:whiplash-merchandising-wholesale-items-api
-  name: Whiplash Merchandising wholesale_items API
+  name: Whiplash Merchandising Wholesale Items API
   description: >-
     The wholesale_items API from Whiplash Merchandising — 2 operation(s) for wholesale_items.
   humanURL: https://developers.getwhiplash.com

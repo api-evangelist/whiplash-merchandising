@@ -71,6 +71,19 @@ paths:
               $ref: '#/components/schemas/PostApiV2ScancodesRequest'
 components:
   schemas:
+    PostApiV2ScancodesRequest:
+      type: object
+      properties:
+        item_id:
+          type: integer
+          format: int32
+          description: the item_id
+        name:
+          type: string
+          description: the name for the scancode
+      required:
+      - item_id
+      - name
     ApiV2EntitiesScancode:
       type: object
       title: V2
@@ -123,19 +136,6 @@ components:
           - 'null'
           description: label format for the scancode
       additionalProperties: false
-    PostApiV2ScancodesRequest:
-      type: object
-      properties:
-        item_id:
-          type: integer
-          format: int32
-          description: the item_id
-        name:
-          type: string
-          description: the name for the scancode
-      required:
-      - item_id
-      - name
     ApiSharedEntitiesApiError:
       type: object
       title: Shared
