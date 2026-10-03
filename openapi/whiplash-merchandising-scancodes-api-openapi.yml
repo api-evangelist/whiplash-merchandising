@@ -84,6 +84,14 @@ components:
       required:
       - item_id
       - name
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesScancode:
       type: object
       title: V2
@@ -135,12 +143,4 @@ components:
           - string
           - 'null'
           description: label format for the scancode
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
       additionalProperties: false

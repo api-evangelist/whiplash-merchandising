@@ -234,6 +234,26 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    PutApiV2TemplatesIdRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template
+        content:
+          type: string
+          description: Content of the template
+        size:
+          type: string
+          description: the template size
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesTemplateType:
       type: object
       title: V2
@@ -283,14 +303,6 @@ components:
           type: string
           format: date-time
           description: the template last type update date and time
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
       additionalProperties: false
     ApiV2EntitiesTemplate:
       type: object
@@ -358,18 +370,6 @@ components:
         template_type:
           $ref: '#/components/schemas/ApiV2EntitiesTemplateType'
       additionalProperties: false
-    PutApiV2TemplatesIdRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the template
-        content:
-          type: string
-          description: Content of the template
-        size:
-          type: string
-          description: the template size
     PostApiV2TemplatesRequest:
       type: object
       properties:

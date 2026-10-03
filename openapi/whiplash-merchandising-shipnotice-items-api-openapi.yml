@@ -279,6 +279,14 @@ components:
         association_fields:
           type: object
           description: Included meta fields for associations
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesShipnoticeItem:
       type: object
       title: V2
@@ -402,51 +410,6 @@ components:
           type: string
           description: 'the location role into which the item is received. options: pickable (default), damaged, pending, backstock (staff only)'
       additionalProperties: false
-    ApiV2EntitiesLot:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the location id
-        number:
-          type:
-          - string
-          - 'null'
-          description: Lot number
-        expires_on:
-          type:
-          - string
-          - 'null'
-          format: date
-          description: When merchandise in the lot expires
-        shipnotice_item_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: Associated Ship Notice Item
-        created_at:
-          type: string
-          format: date-time
-          description: the lot creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the lot last update date and time
-      additionalProperties: false
-    ApiSharedEntitiesMetaFields:
-      type: object
-      title: Shared
-      properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
-      additionalProperties: false
     PutApiV2ShipnoticeItemsIdRequest:
       type: object
       properties:
@@ -473,14 +436,6 @@ components:
           type: number
           format: float
           description: Unit cost per item
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     ApiV2EntitiesItem:
       type: object
       title: V2
@@ -1087,6 +1042,17 @@ components:
           format: int32
           description: item quantity, inluding inbound items
       additionalProperties: false
+    ApiSharedEntitiesMetaFields:
+      type: object
+      title: Shared
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+      additionalProperties: false
     ApiV2EntitiesCount:
       type: object
       title: V2
@@ -1095,4 +1061,38 @@ components:
           type: integer
           format: int32
           description: the resource count
+      additionalProperties: false
+    ApiV2EntitiesLot:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the location id
+        number:
+          type:
+          - string
+          - 'null'
+          description: Lot number
+        expires_on:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: When merchandise in the lot expires
+        shipnotice_item_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Associated Ship Notice Item
+        created_at:
+          type: string
+          format: date-time
+          description: the lot creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the lot last update date and time
       additionalProperties: false
