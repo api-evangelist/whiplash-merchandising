@@ -215,6 +215,73 @@ components:
           type: string
           description: error message
       additionalProperties: false
+    PutApiV2WholesaleItemsIdRequest:
+      type: object
+      properties:
+        order_item_id:
+          type: integer
+          format: int32
+          description: the associated order item id
+        line_no:
+          type: string
+          description: the line number
+        item_alias:
+          type: string
+          description: the item alias
+        item_color:
+          type: string
+          description: the item color
+        item_size:
+          type: string
+          description: the item size
+        vendor_part_number:
+          type: string
+          description: the vendor part number
+        buyer_part_number:
+          type: string
+          description: the buyer part number
+        consumer_package_code:
+          type: string
+          description: the consumer package code
+        outer_pack_value:
+          type: string
+          description: the outer pack value
+        inner_pack_value:
+          type: string
+          description: the inner pack value
+        size_description:
+          type: string
+          description: the size description
+        color_description:
+          type: string
+          description: the color description
+        upc:
+          type: string
+          description: the UPC
+        description:
+          type: string
+          description: the description
+        style:
+          type: string
+          description: the style
+        ean:
+          type: string
+          description: the EAN
+        alternate_item_number:
+          type: string
+          description: the alternate item number
+        alternate_barcode:
+          type: string
+          description: the alternate barcode
+        alternate_sku:
+          type: string
+          description: the alternate SKU
+        lot:
+          type: string
+          description: the lot
+        ih_category:
+          type: string
+          description: the IH category
     ApiV2EntitiesWholesaleItem:
       type: object
       title: V2
@@ -336,70 +403,3 @@ components:
           format: date-time
           description: the wholesale item last update date and time
       additionalProperties: false
-    PutApiV2WholesaleItemsIdRequest:
-      type: object
-      properties:
-        order_item_id:
-          type: integer
-          format: int32
-          description: the associated order item id
-        line_no:
-          type: string
-          description: the line number
-        item_alias:
-          type: string
-          description: the item alias
-        item_color:
-          type: string
-          description: the item color
-        item_size:
-          type: string
-          description: the item size
-        vendor_part_number:
-          type: string
-          description: the vendor part number
-        buyer_part_number:
-          type: string
-          description: the buyer part number
-        consumer_package_code:
-          type: string
-          description: the consumer package code
-        outer_pack_value:
-          type: string
-          description: the outer pack value
-        inner_pack_value:
-          type: string
-          description: the inner pack value
-        size_description:
-          type: string
-          description: the size description
-        color_description:
-          type: string
-          description: the color description
-        upc:
-          type: string
-          description: the UPC
-        description:
-          type: string
-          description: the description
-        style:
-          type: string
-          description: the style
-        ean:
-          type: string
-          description: the EAN
-        alternate_item_number:
-          type: string
-          description: the alternate item number
-        alternate_barcode:
-          type: string
-          description: the alternate barcode
-        alternate_sku:
-          type: string
-          description: the alternate SKU
-        lot:
-          type: string
-          description: the lot
-        ih_category:
-          type: string
-          description: the IH category

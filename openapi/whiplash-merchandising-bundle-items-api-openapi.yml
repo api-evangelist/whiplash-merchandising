@@ -136,13 +136,6 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    PutApiV2BundleItemsIdRequest:
-      type: object
-      properties:
-        quantity:
-          type: integer
-          format: int32
-          description: the bundle item quantity
     ApiV2EntitiesBundleItem:
       type: object
       title: V2
@@ -206,3 +199,10 @@ components:
           type: string
           description: error message
       additionalProperties: false
+    PutApiV2BundleItemsIdRequest:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+          description: the bundle item quantity

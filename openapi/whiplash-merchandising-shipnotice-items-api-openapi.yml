@@ -270,23 +270,6 @@ paths:
               $ref: '#/components/schemas/PutApiV2ShipnoticeItemsIdMetaFieldsRequest'
 components:
   schemas:
-    PutApiV2ShipnoticeItemsIdMetaFieldsRequest:
-      type: object
-      properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     ApiV2EntitiesShipnoticeItem:
       type: object
       title: V2
@@ -409,6 +392,15 @@ components:
         location_role:
           type: string
           description: 'the location role into which the item is received. options: pickable (default), damaged, pending, backstock (staff only)'
+      additionalProperties: false
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
       additionalProperties: false
     PutApiV2ShipnoticeItemsIdRequest:
       type: object
@@ -1042,9 +1034,8 @@ components:
           format: int32
           description: item quantity, inluding inbound items
       additionalProperties: false
-    ApiSharedEntitiesMetaFields:
+    PutApiV2ShipnoticeItemsIdMetaFieldsRequest:
       type: object
-      title: Shared
       properties:
         fields:
           type: object
@@ -1052,15 +1043,13 @@ components:
         association_fields:
           type: object
           description: Included meta fields for associations
-      additionalProperties: false
-    ApiV2EntitiesCount:
+    ApiSharedEntitiesApiError:
       type: object
-      title: V2
+      title: Shared
       properties:
-        count:
-          type: integer
-          format: int32
-          description: the resource count
+        message:
+          type: string
+          description: error message
       additionalProperties: false
     ApiV2EntitiesLot:
       type: object
@@ -1095,4 +1084,15 @@ components:
           type: string
           format: date-time
           description: the lot last update date and time
+      additionalProperties: false
+    ApiSharedEntitiesMetaFields:
+      type: object
+      title: Shared
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
       additionalProperties: false

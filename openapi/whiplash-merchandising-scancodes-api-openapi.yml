@@ -71,6 +71,14 @@ paths:
               $ref: '#/components/schemas/PostApiV2ScancodesRequest'
 components:
   schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     PostApiV2ScancodesRequest:
       type: object
       properties:
@@ -84,14 +92,6 @@ components:
       required:
       - item_id
       - name
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
     ApiV2EntitiesScancode:
       type: object
       title: V2

@@ -133,6 +133,14 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesNotificationEvent:
       type: object
       title: V2
@@ -175,12 +183,4 @@ components:
           type: string
           format: date-time
           description: the notification event last update date and time
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
       additionalProperties: false

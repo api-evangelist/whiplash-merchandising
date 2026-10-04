@@ -104,6 +104,14 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesCount:
       type: object
       title: V2
@@ -112,12 +120,4 @@ components:
           type: integer
           format: int32
           description: the resource count
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
       additionalProperties: false

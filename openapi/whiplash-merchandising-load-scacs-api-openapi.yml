@@ -159,6 +159,14 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     ApiV2EntitiesCount:
       type: object
       title: V2
@@ -202,12 +210,4 @@ components:
           - 'null'
           format: int32
           description: the id of the customer associated with this load scac
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
       additionalProperties: false

@@ -1118,6 +1118,764 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
+    PutApiV2ItemsIdRequest:
+      type: object
+      properties:
+        sku:
+          type: string
+          description: the item SKU number
+        title:
+          type: string
+          description: the item title
+        description:
+          type: string
+          description: the item description
+        customer_id:
+          type: integer
+          format: int32
+          description: the id of the customer the item belongs to
+        weight:
+          type: string
+          description: the weight of the item (in pounds)
+        available:
+          type: boolean
+          description: is the item available?
+        image_originator_url:
+          type: string
+          description: the originator url for the item image
+        vendor:
+          type: string
+          description: the item vendor
+        scancode:
+          type: string
+          description: the item scancode
+        price:
+          type: string
+          description: the item price
+        media_mail:
+          type: boolean
+          description: is the item eligible for media mail?
+        packaging:
+          type: boolean
+          description: is the item packaging?
+        length:
+          type: string
+          description: the item length (in inches)
+        width:
+          type: string
+          description: the item width (in inches)
+        height:
+          type: string
+          description: the item height (in inches)
+        active:
+          type: boolean
+          description: is the item active?
+        wholesale_cost:
+          type: string
+          description: the wholesale cost of the item
+        is_bundle:
+          type: boolean
+          description: is the item a bundle?
+        packaging_type:
+          type: string
+          enum:
+          - WhiplashBag
+          - WhiplashBox
+          - WhiplashBubbleMailer
+          - WhiplashFill
+          - WhiplashFlat
+          - WhiplashTube
+          - WhiplashNoPackaging
+          - WhiplashPallet
+          - Card
+          - Letter
+          - Flat
+          - Parcel
+          - LargeParcel
+          - IrregularParcel
+          - FlatRateEnvelope
+          - FlatRateLegalEnvelope
+          - FlatRatePaddedEnvelope
+          - FlatRateGiftCardEnvelope
+          - FlatRateWindowEnvelope
+          - FlatRateCardboardEnvelope
+          - SmallFlatRateEnvelope
+          - SmallFlatRateBox
+          - MediumFlatRateBox
+          - LargeFlatRateBox
+          - RegionalRateBoxA
+          - RegionalRateBoxB
+          - RegionalRateBoxC
+          - LargeFlatRateBoardGameBox
+          - UPSLetter
+          - UPSExpressBox
+          - UPS25kgBox
+          - UPS10kgBox
+          - Tube
+          - Pak
+          - Pallet
+          - SmallExpressBox
+          - MediumExpressBox
+          - LargeExpressBox
+          - FedExEnvelope
+          - FedExBox
+          - FedExPak
+          - FedExTube
+          - FedEx10kgBox
+          - FedEx25kgBox
+          - BPM
+          - LargeLetter
+          - SmallParcel
+          - MediumParcel
+          description: the item packaging type
+        promo:
+          type: boolean
+          description: is the item a promo?
+        street_date:
+          type: string
+          format: date-time
+          description: the item street date
+        category:
+          type: string
+          description: the item category
+        include_inbound_in_published:
+          type: boolean
+          description: include inbound items in published?
+        returnable:
+          type: boolean
+          description: is the item returnable?
+        return_sku_match:
+          type: string
+          description: the item return SKU match
+        return_price_restricted:
+          type: boolean
+          description: is the item return price restricted?
+        request_serial_number:
+          type: boolean
+          description: does the item require a serial number when shipping?
+        currency:
+          type: string
+          description: the item currency
+        tariff_number:
+          type: string
+          description: the item harmonized tariff number (for international shipping)
+        notify_originator_inventory:
+          type: integer
+          format: int32
+          description: notify originator inventory?
+        nmfc_code:
+          type: string
+          description: the item  National Motor Freight Classification code,
+        nmfc_class:
+          type: string
+          description: the item National Motor Freight Classification class code
+        commodity_description:
+          type: string
+          description: the item commodity description
+        hazmat:
+          type: boolean
+          description: 'hazmat true/false flag in the UI is derived from the hazmat_type when only the type is provided\
+
+            error results when the hazmat flag set to false with a hazmat_type\
+
+            error results when the hazmat flag set to true without a hazmat_type\
+
+            (deprecated) is the item hazmat?'
+        misc:
+          type: string
+          description: miscellaneous information about the item
+        ean:
+          type: string
+          description: the EAN number for the item
+        lot_control:
+          type: boolean
+          description: does this item require lot control?
+        expiration_period:
+          type: integer
+          format: int32
+          description: items that are this many days from expiration will not be allowed to ship
+        ship_strategy:
+          type: integer
+          format: int32
+          description: 'which locations to pick first: Default, FIFO, FEFO'
+        velocity:
+          type: integer
+          format: int32
+          description: Average number of units expected to sell in a day
+        case_quantity:
+          type: integer
+          format: int32
+          description: How many of this item to a case?
+        carton_quantity:
+          type: integer
+          format: int32
+          description: How many CASES to a carton?
+        origin_country:
+          type: string
+          enum:
+          - AF
+          - AX
+          - AL
+          - DZ
+          - AS
+          - AD
+          - AO
+          - AI
+          - AQ
+          - AG
+          - AR
+          - AM
+          - AW
+          - AU
+          - AT
+          - AZ
+          - BS
+          - BH
+          - BD
+          - BB
+          - BY
+          - BE
+          - BZ
+          - BJ
+          - BM
+          - BT
+          - BO
+          - BQ
+          - BA
+          - BW
+          - BV
+          - BR
+          - IO
+          - BN
+          - BG
+          - BF
+          - BI
+          - KH
+          - CM
+          - CA
+          - CV
+          - KY
+          - CF
+          - TD
+          - CL
+          - CN
+          - CX
+          - CC
+          - CO
+          - KM
+          - CG
+          - CD
+          - CK
+          - CR
+          - CI
+          - HR
+          - CU
+          - CW
+          - CY
+          - CZ
+          - DK
+          - DJ
+          - DM
+          - DO
+          - EC
+          - EG
+          - SV
+          - GQ
+          - ER
+          - EE
+          - ET
+          - FK
+          - FO
+          - FJ
+          - FI
+          - FR
+          - GF
+          - PF
+          - TF
+          - GA
+          - GM
+          - GE
+          - DE
+          - GH
+          - GI
+          - GR
+          - GL
+          - GD
+          - GP
+          - GU
+          - GT
+          - GG
+          - GN
+          - GW
+          - GY
+          - HT
+          - HM
+          - VA
+          - HN
+          - HK
+          - HU
+          - IS
+          - IN
+          - ID
+          - IR
+          - IQ
+          - IE
+          - IM
+          - IL
+          - IT
+          - JM
+          - JP
+          - JE
+          - JO
+          - KZ
+          - KE
+          - KI
+          - KP
+          - KR
+          - XK
+          - KW
+          - KG
+          - LA
+          - LV
+          - LB
+          - LS
+          - LR
+          - LY
+          - LI
+          - LT
+          - LU
+          - MO
+          - MK
+          - MG
+          - MW
+          - MY
+          - MV
+          - ML
+          - MT
+          - MH
+          - MQ
+          - MR
+          - MU
+          - YT
+          - MX
+          - FM
+          - MD
+          - MC
+          - MN
+          - ME
+          - MS
+          - MA
+          - MZ
+          - MM
+          - NA
+          - NR
+          - NP
+          - NL
+          - NC
+          - NZ
+          - NI
+          - NE
+          - NG
+          - NU
+          - NF
+          - MP
+          - 'NO'
+          - PS
+          - OM
+          - PK
+          - PW
+          - PA
+          - PG
+          - PY
+          - PE
+          - PH
+          - PN
+          - PL
+          - PT
+          - PR
+          - QA
+          - RE
+          - RO
+          - RU
+          - RW
+          - BL
+          - SH
+          - KN
+          - LC
+          - MF
+          - PM
+          - VC
+          - WS
+          - SM
+          - ST
+          - SA
+          - SN
+          - RS
+          - SC
+          - SL
+          - SG
+          - SX
+          - SK
+          - SI
+          - SB
+          - SO
+          - ZA
+          - GS
+          - SS
+          - ES
+          - LK
+          - SD
+          - SR
+          - SJ
+          - SZ
+          - SE
+          - CH
+          - SY
+          - TW
+          - TJ
+          - TZ
+          - TH
+          - TL
+          - TG
+          - TK
+          - TO
+          - TT
+          - TN
+          - TR
+          - TM
+          - TC
+          - TV
+          - UG
+          - UA
+          - AE
+          - GB
+          - US
+          - UM
+          - UY
+          - UZ
+          - VU
+          - VE
+          - VN
+          - VG
+          - VI
+          - WF
+          - EH
+          - YE
+          - ZM
+          - ZW
+          description: The country of origin for this item (as an iso2 country code)
+        alcohol:
+          type: boolean
+          description: Does this order contain alcohol?
+        shippable_container:
+          type: boolean
+          description: Is this item a shippable container?
+        goh:
+          type: boolean
+          description: Garment on hanger?
+        label_format:
+          type: string
+          description: label format
+        replenishment_min:
+          type: string
+          description: Minimum number of days worth of stock to keep in forward pick locations
+        replenishment_target:
+          type: string
+          description: Target number of days stock to replenish forward pick locations
+        low_inventory_threshold:
+          type: integer
+          format: int32
+          description: the item quantity where this item would be considered having low inventory
+        hazmat_type:
+          type: string
+          enum:
+          - lithium
+          - ormd
+          - lighters
+          description: hazmat class
+    ApiV2EntitiesCount:
+      type: object
+      title: V2
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: the resource count
+      additionalProperties: false
+    ApiV2EntitiesOriginator:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the originator id
+        originated_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the object created by the originator
+        originated_type:
+          type:
+          - string
+          - 'null'
+          description: the type of object created by the originator
+        shop_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator shop id
+        shop_domain:
+          type: string
+          description: the originator shop domain
+        provider:
+          type:
+          - string
+          - 'null'
+          description: the originator provider (shopify, magento, bandcamp, etc)
+        original_id:
+          type:
+          - string
+          - 'null'
+          description: the originator original id (from the provider)
+        group_id:
+          type:
+          - string
+          - 'null'
+          description: the originator group id
+        misc:
+          type:
+          - string
+          - 'null'
+          description: miscellaneous info for the originator
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: is the originator active?
+        integration_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the originator integration id
+        last_notified_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last notified date and time
+        last_notification_status:
+          type:
+          - string
+          - 'null'
+          description: the originator last notification status
+        last_synced_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the originator last synced date and time
+        distinct_originator_key:
+          type:
+          - string
+          - 'null'
+          description: the originator distinct key
+        created_at:
+          type: string
+          format: date-time
+          description: the originator creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the originator last update date and time
+        application_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: the id of the oauth application
+      additionalProperties: false
+    ApiV2EntitiesResult:
+      type: object
+      title: V2
+      properties:
+        result:
+          type: string
+          description: the request result
+      additionalProperties: false
+    ApiV2EntitiesItemWarehouseQuantity:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: the warehouse id
+        name:
+          type: string
+          description: the warehouse name
+        timezone:
+          type: string
+          description: Warehouse timezone in friendly/legacy format (eg. "Eastern Time (US & Canada)")
+        timezone_raw:
+          type: string
+          description: Warehouse timezone in standard format (eg. "America/New_York")
+        partner_id:
+          type: integer
+          format: int32
+          description: 'Warehouse partner id '
+        shipping_address_1:
+          type: string
+          description: Warehouse address line 1
+        shipping_address_2:
+          type: string
+          description: Warehouse address line 2
+        shipping_city:
+          type: string
+          description: Warehouse city
+        shipping_state:
+          type: string
+          description: ' Warehouse state or province'
+        shipping_zip:
+          type: string
+          description: Warehouse postal code
+        shipping_country:
+          type: string
+          description: Warehouse country
+        shipping_country_iso2:
+          type: string
+          description: Warehouse country code
+        latitude:
+          type: string
+          description: Warehouse latitude
+        longitude:
+          type: string
+          description: Warehouse longitude
+        slug:
+          type: string
+          description: Warehouse slug
+        default_pick_strategy:
+          type: string
+          description: Paper or Robot scanning by default when batching? (staff only)
+        bin_total_count_max:
+          type: integer
+          format: int32
+          description: Maximum total items per bin (staff only)
+        bin_cubic_volume_max:
+          type: string
+          description: Maximum cubic volume per bin (staff only)
+        number_of_groups:
+          type: integer
+          format: int32
+          description: Number of slots/bins in carts--default maximum number of orders in a batch (staff only)
+        fedex_pickup_time:
+          type: string
+          description: Scheduled FedEx pickup time (staff only)
+        active:
+          type: boolean
+          description: Is the Warehouse active?  (partners only)
+        square_footage:
+          type: integer
+          format: int32
+          description: Warehouse square footage  (partners only)
+        created_at:
+          type: string
+          format: date-time
+          description: the warehouse creation date and time (partners only)
+        updated_at:
+          type: string
+          format: date-time
+          description: the warehouse last update date and time (partners only)
+        ups_shipper_number:
+          type: string
+          description: Warehouse UPS shipping number (partners only)
+        email:
+          type: string
+          description: the warehouse email address (partners only)
+        ups_carrier_facility:
+          type: string
+          description: Warehouse carrier facility (partners only)
+        currency:
+          type: string
+          description: Warehouse currency (partners only)
+        vat:
+          type: string
+          description: Warehouse VAT number (partners only)
+        domestic_return_labels:
+          type: boolean
+          description: Warehouse does domestic return labels?  (partners only)
+        international_return_labels:
+          type: boolean
+          description: Warehouse does intl return labels? (partners only)
+        accepting_new_customers:
+          type: boolean
+          description: Is this Warehouse accepting new customers? (partners only)
+        receiving_hours:
+          type: string
+          description: Warehouse receiving hours (partners only)
+        pickup_hours:
+          type: string
+          description: Warehouse pickup hours (partners only)
+        contact_name:
+          type: string
+          description: Warehouse contact name (partners only)
+        contact_phone:
+          type: string
+          description: Warehouse contact phone (partners only)
+        delivery_appointment_required:
+          type: boolean
+          description: Does this Warehouse have delivery appointment reminders?  (partners only)
+        label_format:
+          type: string
+          description: Warehouse label format (partners only)
+        shipping_label_format:
+          type: string
+          description: Warehouse shipping label format - EPL2 or ZPL (partners only)
+        loading_dock_quantity:
+          type: integer
+          format: int32
+          description: Loading Dock Quantity (partners only)
+        receiving_special_instructions:
+          type: string
+          description: Receiving special instructions (partners only)
+        single_item_batch_size:
+          type: string
+          description: Single Item Batch Size (partners only)
+        packaging_customer_id:
+          type: integer
+          format: int32
+          description: Packaging Customer ID (partners only)
+        notes:
+          type: string
+          description: Miscellaneous notes/info (partners only)
+        warehouse_features:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiV2EntitiesWarehouseFeature'
+        quantity:
+          type: integer
+          format: int32
+          description: item shelf quantity at speficied warehouse
+        projected_quantity:
+          type: integer
+          format: int32
+          description: item quantity at speficied warehouse, taking incoming orders into account
+        sellable_quantity:
+          type: integer
+          format: int32
+          description: item quantity at speficied warehouse, taking incoming orders, ship notices, and returns into account
+      additionalProperties: false
+    ApiSharedEntitiesApiError:
+      type: object
+      title: Shared
+      properties:
+        message:
+          type: string
+          description: error message
+      additionalProperties: false
     PostApiV2ItemsRequest:
       type: object
       properties:
@@ -1616,6 +2374,23 @@ components:
               description: Hash of key/value pairs
           required:
           - fields
+    PutApiV2ItemsIdMetaFieldsRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
+    PutApiV2ItemsIdCallActionRequest:
+      type: object
+      properties:
+        action:
+          type: string
+        args:
+          type: object
+          description: Method params
     ApiV2EntitiesWarehouseFeature:
       type: object
       title: V2
@@ -1649,26 +2424,284 @@ components:
           items:
             $ref: '#/components/schemas/ApiV2EntitiesWarehouse'
       additionalProperties: false
-    ApiSharedEntitiesMetaFields:
+    ApiV2EntitiesWarehouse:
       type: object
-      title: Shared
+      title: V2
       properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
+        id:
+          type: integer
+          format: int32
+          description: the warehouse id
+        name:
+          type:
+          - string
+          - 'null'
+          description: the warehouse name
+        timezone:
+          type:
+          - string
+          - 'null'
+          description: Warehouse timezone in friendly/legacy format (eg. "Eastern Time (US & Canada)")
+        timezone_raw:
+          type: string
+          description: Warehouse timezone in standard format (eg. "America/New_York")
+        partner_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: 'Warehouse partner id '
+        shipping_address_1:
+          type:
+          - string
+          - 'null'
+          description: Warehouse address line 1
+        shipping_address_2:
+          type:
+          - string
+          - 'null'
+          description: Warehouse address line 2
+        shipping_city:
+          type:
+          - string
+          - 'null'
+          description: Warehouse city
+        shipping_state:
+          type:
+          - string
+          - 'null'
+          description: ' Warehouse state or province'
+        shipping_zip:
+          type:
+          - string
+          - 'null'
+          description: Warehouse postal code
+        shipping_country:
+          type:
+          - string
+          - 'null'
+          description: Warehouse country
+        shipping_country_iso2:
+          type:
+          - string
+          - 'null'
+          description: Warehouse country code
+        latitude:
+          type:
+          - string
+          - 'null'
+          description: Warehouse latitude
+        longitude:
+          type:
+          - string
+          - 'null'
+          description: Warehouse longitude
+        slug:
+          type:
+          - string
+          - 'null'
+          description: Warehouse slug
+        default_pick_strategy:
+          type:
+          - string
+          - 'null'
+          description: Paper or Robot scanning by default when batching? (staff only)
+        bin_total_count_max:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Maximum total items per bin (staff only)
+        bin_cubic_volume_max:
+          type:
+          - string
+          - 'null'
+          description: Maximum cubic volume per bin (staff only)
+        number_of_groups:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Number of slots/bins in carts--default maximum number of orders in a batch (staff only)
+        fedex_pickup_time:
+          type: string
+          description: Scheduled FedEx pickup time (staff only)
+        active:
+          type:
+          - boolean
+          - 'null'
+          description: Is the Warehouse active?  (partners only)
+        square_footage:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Warehouse square footage  (partners only)
+        created_at:
+          type: string
+          format: date-time
+          description: the warehouse creation date and time (partners only)
+        updated_at:
+          type: string
+          format: date-time
+          description: the warehouse last update date and time (partners only)
+        ups_shipper_number:
+          type:
+          - string
+          - 'null'
+          description: Warehouse UPS shipping number (partners only)
+        email:
+          type:
+          - string
+          - 'null'
+          description: the warehouse email address (partners only)
+        ups_carrier_facility:
+          type:
+          - string
+          - 'null'
+          description: Warehouse carrier facility (partners only)
+        currency:
+          type:
+          - string
+          - 'null'
+          description: Warehouse currency (partners only)
+        vat:
+          type:
+          - string
+          - 'null'
+          description: Warehouse VAT number (partners only)
+        domestic_return_labels:
+          type:
+          - boolean
+          - 'null'
+          description: Warehouse does domestic return labels?  (partners only)
+        international_return_labels:
+          type:
+          - boolean
+          - 'null'
+          description: Warehouse does intl return labels? (partners only)
+        accepting_new_customers:
+          type:
+          - boolean
+          - 'null'
+          description: Is this Warehouse accepting new customers? (partners only)
+        receiving_hours:
+          type:
+          - string
+          - 'null'
+          description: Warehouse receiving hours (partners only)
+        pickup_hours:
+          type:
+          - string
+          - 'null'
+          description: Warehouse pickup hours (partners only)
+        contact_name:
+          type:
+          - string
+          - 'null'
+          description: Warehouse contact name (partners only)
+        contact_phone:
+          type:
+          - string
+          - 'null'
+          description: Warehouse contact phone (partners only)
+        delivery_appointment_required:
+          type:
+          - boolean
+          - 'null'
+          description: Does this Warehouse have delivery appointment reminders?  (partners only)
+        label_format:
+          type:
+          - string
+          - 'null'
+          description: Warehouse label format (partners only)
+        shipping_label_format:
+          type:
+          - string
+          - 'null'
+          description: Warehouse shipping label format - EPL2 or ZPL (partners only)
+        loading_dock_quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Loading Dock Quantity (partners only)
+        receiving_special_instructions:
+          type:
+          - string
+          - 'null'
+          description: Receiving special instructions (partners only)
+        single_item_batch_size:
+          type:
+          - string
+          - 'null'
+          description: Single Item Batch Size (partners only)
+        packaging_customer_id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: Packaging Customer ID (partners only)
+        notes:
+          type:
+          - string
+          - 'null'
+          description: Miscellaneous notes/info (partners only)
+        warehouse_features:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiV2EntitiesWarehouseFeature'
       additionalProperties: false
-    PutApiV2ItemsIdMetaFieldsRequest:
+    ApiV2EntitiesItemLocation:
       type: object
+      title: V2
       properties:
-        fields:
-          type: object
-          description: Hash of key/value pairs
-        association_fields:
-          type: object
-          description: Included meta fields for associations
+        id:
+          type: integer
+          format: int32
+          description: the location id
+        role:
+          type: string
+          description: pickable, backstock, etc
+          enum:
+          - pickable
+          - backstock
+          - damaged
+          - expired
+          - reserved
+          - pending
+          - external
+          - dropoff
+          - b_stock
+        name:
+          type: string
+          description: the location name
+        humanize_shelf_name:
+          type: string
+          description: Human readable version of the location name
+        quantity:
+          type: integer
+          format: int32
+          description: the quantity of the location
+        uncommitted:
+          type: integer
+          format: int32
+          description: the uncommitted quantity of the location
+        in_progress_transfers:
+          type: integer
+          format: int32
+          description: the number of in progress transfers
+        warehouse_name:
+          type: string
+          description: the warehouse name for the location
+        lot_number:
+          type: string
+          description: the lot number associated to the location
+        lot_expires_on:
+          type: string
+          format: date-time
+          description: the lot expiration date
+      additionalProperties: false
     ApiV2EntitiesBundleItem:
       type: object
       title: V2
@@ -2330,239 +3363,68 @@ components:
           format: int32
           description: item quantity, inluding inbound items
       additionalProperties: false
-    ApiV2EntitiesItemLocation:
+    ApiV2EntitiesScancode:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the location id
-        role:
-          type: string
-          description: pickable, backstock, etc
-          enum:
-          - pickable
-          - backstock
-          - damaged
-          - expired
-          - reserved
-          - pending
-          - external
-          - dropoff
-          - b_stock
-        name:
-          type: string
-          description: the location name
-        humanize_shelf_name:
-          type: string
-          description: Human readable version of the location name
-        quantity:
-          type: integer
-          format: int32
-          description: the quantity of the location
-        uncommitted:
-          type: integer
-          format: int32
-          description: the uncommitted quantity of the location
-        in_progress_transfers:
-          type: integer
-          format: int32
-          description: the number of in progress transfers
-        warehouse_name:
-          type: string
-          description: the warehouse name for the location
-        lot_number:
-          type: string
-          description: the lot number associated to the location
-        lot_expires_on:
-          type: string
-          format: date-time
-          description: the lot expiration date
-      additionalProperties: false
-    ApiV2EntitiesTransaction:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the transaction id
+          description: the scancode id
         item_id:
-          type: integer
-          format: int32
-          description: the transaction item id
-        order_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the transaction order id
-        shipnotice_id:
+          description: the item_id
+        primary:
+          type:
+          - boolean
+          - 'null'
+          description: is this the primary scancode?
+        customer_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: the transaction shipnotice id
-        user_id:
+          description: the customer_id
+        name:
           type:
-          - integer
+          - string
           - 'null'
-          format: int32
-          description: the transaction user id
-        rule_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the transaction rule id
-        description:
+          description: the name for the scancode
+        scancode:
           type: string
-          description: the transaction description
-        quantity:
-          type: integer
-          format: int32
-          description: the transaction balance - calculated
-        change:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the transaction change
-        created_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the transaction creation date and time
-        updated_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the transaction last update date and time
-        shipnotice_item_id:
-          type: integer
-          format: int32
-          description: associated shipnotice_item_id if transaction is created from a shipnotice
-      additionalProperties: false
-    ApiV2EntitiesOriginator:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the originator id
-        originated_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the id of the object created by the originator
-        originated_type:
-          type:
-          - string
-          - 'null'
-          description: the type of object created by the originator
-        shop_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the originator shop id
-        shop_domain:
-          type: string
-          description: the originator shop domain
-        provider:
-          type:
-          - string
-          - 'null'
-          description: the originator provider (shopify, magento, bandcamp, etc)
-        original_id:
-          type:
-          - string
-          - 'null'
-          description: the originator original id (from the provider)
-        group_id:
-          type:
-          - string
-          - 'null'
-          description: the originator group id
-        misc:
-          type:
-          - string
-          - 'null'
-          description: miscellaneous info for the originator
+          description: the name for the scancode (legacy)
         active:
           type:
           - boolean
           - 'null'
-          description: is the originator active?
-        integration_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the originator integration id
-        last_notified_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the originator last notified date and time
-        last_notification_status:
-          type:
-          - string
-          - 'null'
-          description: the originator last notification status
-        last_synced_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: the originator last synced date and time
-        distinct_originator_key:
-          type:
-          - string
-          - 'null'
-          description: the originator distinct key
+          description: is this scancode active?
         created_at:
           type: string
           format: date-time
-          description: the originator creation date and time
+          description: scancode creation date
         updated_at:
           type: string
           format: date-time
-          description: the originator last update date and time
-        application_id:
+          description: scancode last updated date
+        label_format:
           type:
-          - integer
+          - string
           - 'null'
-          format: int32
-          description: the id of the oauth application
+          description: label format for the scancode
       additionalProperties: false
-    PostApiV2ItemsIdBundleItemsRequest:
+    ApiSharedEntitiesMetaFields:
       type: object
+      title: Shared
       properties:
-        quantity:
-          type: integer
-          format: int32
-          description: the bundle item quantity
-        item_id:
-          type: integer
-          format: int32
-          description: the bundle item item id
-      required:
-      - quantity
-      - item_id
-    ApiV2EntitiesResult:
-      type: object
-      title: V2
-      properties:
-        result:
-          type: string
-          description: the request result
+        fields:
+          type: object
+          description: Hash of key/value pairs
+        association_fields:
+          type: object
+          description: Included meta fields for associations
       additionalProperties: false
     ApiV2EntitiesShipnoticeItem:
       type: object
@@ -2687,948 +3549,86 @@ components:
           type: string
           description: 'the location role into which the item is received. options: pickable (default), damaged, pending, backstock (staff only)'
       additionalProperties: false
-    PutApiV2ItemsIdCallActionRequest:
-      type: object
-      properties:
-        action:
-          type: string
-        args:
-          type: object
-          description: Method params
-    ApiV2EntitiesWarehouse:
+    ApiV2EntitiesTransaction:
       type: object
       title: V2
       properties:
         id:
           type: integer
           format: int32
-          description: the warehouse id
-        name:
-          type:
-          - string
-          - 'null'
-          description: the warehouse name
-        timezone:
-          type:
-          - string
-          - 'null'
-          description: Warehouse timezone in friendly/legacy format (eg. "Eastern Time (US & Canada)")
-        timezone_raw:
-          type: string
-          description: Warehouse timezone in standard format (eg. "America/New_York")
-        partner_id:
+          description: the transaction id
+        item_id:
+          type: integer
+          format: int32
+          description: the transaction item id
+        order_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: 'Warehouse partner id '
-        shipping_address_1:
-          type:
-          - string
-          - 'null'
-          description: Warehouse address line 1
-        shipping_address_2:
-          type:
-          - string
-          - 'null'
-          description: Warehouse address line 2
-        shipping_city:
-          type:
-          - string
-          - 'null'
-          description: Warehouse city
-        shipping_state:
-          type:
-          - string
-          - 'null'
-          description: ' Warehouse state or province'
-        shipping_zip:
-          type:
-          - string
-          - 'null'
-          description: Warehouse postal code
-        shipping_country:
-          type:
-          - string
-          - 'null'
-          description: Warehouse country
-        shipping_country_iso2:
-          type:
-          - string
-          - 'null'
-          description: Warehouse country code
-        latitude:
-          type:
-          - string
-          - 'null'
-          description: Warehouse latitude
-        longitude:
-          type:
-          - string
-          - 'null'
-          description: Warehouse longitude
-        slug:
-          type:
-          - string
-          - 'null'
-          description: Warehouse slug
-        default_pick_strategy:
-          type:
-          - string
-          - 'null'
-          description: Paper or Robot scanning by default when batching? (staff only)
-        bin_total_count_max:
+          description: the transaction order id
+        shipnotice_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: Maximum total items per bin (staff only)
-        bin_cubic_volume_max:
-          type:
-          - string
-          - 'null'
-          description: Maximum cubic volume per bin (staff only)
-        number_of_groups:
+          description: the transaction shipnotice id
+        user_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: Number of slots/bins in carts--default maximum number of orders in a batch (staff only)
-        fedex_pickup_time:
-          type: string
-          description: Scheduled FedEx pickup time (staff only)
-        active:
-          type:
-          - boolean
-          - 'null'
-          description: Is the Warehouse active?  (partners only)
-        square_footage:
+          description: the transaction user id
+        rule_id:
           type:
           - integer
           - 'null'
           format: int32
-          description: Warehouse square footage  (partners only)
-        created_at:
+          description: the transaction rule id
+        description:
           type: string
-          format: date-time
-          description: the warehouse creation date and time (partners only)
-        updated_at:
-          type: string
-          format: date-time
-          description: the warehouse last update date and time (partners only)
-        ups_shipper_number:
-          type:
-          - string
-          - 'null'
-          description: Warehouse UPS shipping number (partners only)
-        email:
-          type:
-          - string
-          - 'null'
-          description: the warehouse email address (partners only)
-        ups_carrier_facility:
-          type:
-          - string
-          - 'null'
-          description: Warehouse carrier facility (partners only)
-        currency:
-          type:
-          - string
-          - 'null'
-          description: Warehouse currency (partners only)
-        vat:
-          type:
-          - string
-          - 'null'
-          description: Warehouse VAT number (partners only)
-        domestic_return_labels:
-          type:
-          - boolean
-          - 'null'
-          description: Warehouse does domestic return labels?  (partners only)
-        international_return_labels:
-          type:
-          - boolean
-          - 'null'
-          description: Warehouse does intl return labels? (partners only)
-        accepting_new_customers:
-          type:
-          - boolean
-          - 'null'
-          description: Is this Warehouse accepting new customers? (partners only)
-        receiving_hours:
-          type:
-          - string
-          - 'null'
-          description: Warehouse receiving hours (partners only)
-        pickup_hours:
-          type:
-          - string
-          - 'null'
-          description: Warehouse pickup hours (partners only)
-        contact_name:
-          type:
-          - string
-          - 'null'
-          description: Warehouse contact name (partners only)
-        contact_phone:
-          type:
-          - string
-          - 'null'
-          description: Warehouse contact phone (partners only)
-        delivery_appointment_required:
-          type:
-          - boolean
-          - 'null'
-          description: Does this Warehouse have delivery appointment reminders?  (partners only)
-        label_format:
-          type:
-          - string
-          - 'null'
-          description: Warehouse label format (partners only)
-        shipping_label_format:
-          type:
-          - string
-          - 'null'
-          description: Warehouse shipping label format - EPL2 or ZPL (partners only)
-        loading_dock_quantity:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: Loading Dock Quantity (partners only)
-        receiving_special_instructions:
-          type:
-          - string
-          - 'null'
-          description: Receiving special instructions (partners only)
-        single_item_batch_size:
-          type:
-          - string
-          - 'null'
-          description: Single Item Batch Size (partners only)
-        packaging_customer_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: Packaging Customer ID (partners only)
-        notes:
-          type:
-          - string
-          - 'null'
-          description: Miscellaneous notes/info (partners only)
-        warehouse_features:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiV2EntitiesWarehouseFeature'
-      additionalProperties: false
-    ApiV2EntitiesItemWarehouseQuantity:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the warehouse id
-        name:
-          type: string
-          description: the warehouse name
-        timezone:
-          type: string
-          description: Warehouse timezone in friendly/legacy format (eg. "Eastern Time (US & Canada)")
-        timezone_raw:
-          type: string
-          description: Warehouse timezone in standard format (eg. "America/New_York")
-        partner_id:
-          type: integer
-          format: int32
-          description: 'Warehouse partner id '
-        shipping_address_1:
-          type: string
-          description: Warehouse address line 1
-        shipping_address_2:
-          type: string
-          description: Warehouse address line 2
-        shipping_city:
-          type: string
-          description: Warehouse city
-        shipping_state:
-          type: string
-          description: ' Warehouse state or province'
-        shipping_zip:
-          type: string
-          description: Warehouse postal code
-        shipping_country:
-          type: string
-          description: Warehouse country
-        shipping_country_iso2:
-          type: string
-          description: Warehouse country code
-        latitude:
-          type: string
-          description: Warehouse latitude
-        longitude:
-          type: string
-          description: Warehouse longitude
-        slug:
-          type: string
-          description: Warehouse slug
-        default_pick_strategy:
-          type: string
-          description: Paper or Robot scanning by default when batching? (staff only)
-        bin_total_count_max:
-          type: integer
-          format: int32
-          description: Maximum total items per bin (staff only)
-        bin_cubic_volume_max:
-          type: string
-          description: Maximum cubic volume per bin (staff only)
-        number_of_groups:
-          type: integer
-          format: int32
-          description: Number of slots/bins in carts--default maximum number of orders in a batch (staff only)
-        fedex_pickup_time:
-          type: string
-          description: Scheduled FedEx pickup time (staff only)
-        active:
-          type: boolean
-          description: Is the Warehouse active?  (partners only)
-        square_footage:
-          type: integer
-          format: int32
-          description: Warehouse square footage  (partners only)
-        created_at:
-          type: string
-          format: date-time
-          description: the warehouse creation date and time (partners only)
-        updated_at:
-          type: string
-          format: date-time
-          description: the warehouse last update date and time (partners only)
-        ups_shipper_number:
-          type: string
-          description: Warehouse UPS shipping number (partners only)
-        email:
-          type: string
-          description: the warehouse email address (partners only)
-        ups_carrier_facility:
-          type: string
-          description: Warehouse carrier facility (partners only)
-        currency:
-          type: string
-          description: Warehouse currency (partners only)
-        vat:
-          type: string
-          description: Warehouse VAT number (partners only)
-        domestic_return_labels:
-          type: boolean
-          description: Warehouse does domestic return labels?  (partners only)
-        international_return_labels:
-          type: boolean
-          description: Warehouse does intl return labels? (partners only)
-        accepting_new_customers:
-          type: boolean
-          description: Is this Warehouse accepting new customers? (partners only)
-        receiving_hours:
-          type: string
-          description: Warehouse receiving hours (partners only)
-        pickup_hours:
-          type: string
-          description: Warehouse pickup hours (partners only)
-        contact_name:
-          type: string
-          description: Warehouse contact name (partners only)
-        contact_phone:
-          type: string
-          description: Warehouse contact phone (partners only)
-        delivery_appointment_required:
-          type: boolean
-          description: Does this Warehouse have delivery appointment reminders?  (partners only)
-        label_format:
-          type: string
-          description: Warehouse label format (partners only)
-        shipping_label_format:
-          type: string
-          description: Warehouse shipping label format - EPL2 or ZPL (partners only)
-        loading_dock_quantity:
-          type: integer
-          format: int32
-          description: Loading Dock Quantity (partners only)
-        receiving_special_instructions:
-          type: string
-          description: Receiving special instructions (partners only)
-        single_item_batch_size:
-          type: string
-          description: Single Item Batch Size (partners only)
-        packaging_customer_id:
-          type: integer
-          format: int32
-          description: Packaging Customer ID (partners only)
-        notes:
-          type: string
-          description: Miscellaneous notes/info (partners only)
-        warehouse_features:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiV2EntitiesWarehouseFeature'
+          description: the transaction description
         quantity:
           type: integer
           format: int32
-          description: item shelf quantity at speficied warehouse
-        projected_quantity:
-          type: integer
-          format: int32
-          description: item quantity at speficied warehouse, taking incoming orders into account
-        sellable_quantity:
-          type: integer
-          format: int32
-          description: item quantity at speficied warehouse, taking incoming orders, ship notices, and returns into account
-      additionalProperties: false
-    ApiSharedEntitiesApiError:
-      type: object
-      title: Shared
-      properties:
-        message:
-          type: string
-          description: error message
-      additionalProperties: false
-    ApiV2EntitiesScancode:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: the scancode id
-        item_id:
+          description: the transaction balance - calculated
+        change:
           type:
           - integer
           - 'null'
           format: int32
-          description: the item_id
-        primary:
-          type:
-          - boolean
-          - 'null'
-          description: is this the primary scancode?
-        customer_id:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: the customer_id
-        name:
-          type:
-          - string
-          - 'null'
-          description: the name for the scancode
-        scancode:
-          type: string
-          description: the name for the scancode (legacy)
-        active:
-          type:
-          - boolean
-          - 'null'
-          description: is this scancode active?
+          description: the transaction change
         created_at:
-          type: string
-          format: date-time
-          description: scancode creation date
-        updated_at:
-          type: string
-          format: date-time
-          description: scancode last updated date
-        label_format:
           type:
           - string
           - 'null'
-          description: label format for the scancode
-      additionalProperties: false
-    ApiV2EntitiesCount:
-      type: object
-      title: V2
-      properties:
-        count:
-          type: integer
-          format: int32
-          description: the resource count
-      additionalProperties: false
-    PutApiV2ItemsIdRequest:
-      type: object
-      properties:
-        sku:
-          type: string
-          description: the item SKU number
-        title:
-          type: string
-          description: the item title
-        description:
-          type: string
-          description: the item description
-        customer_id:
-          type: integer
-          format: int32
-          description: the id of the customer the item belongs to
-        weight:
-          type: string
-          description: the weight of the item (in pounds)
-        available:
-          type: boolean
-          description: is the item available?
-        image_originator_url:
-          type: string
-          description: the originator url for the item image
-        vendor:
-          type: string
-          description: the item vendor
-        scancode:
-          type: string
-          description: the item scancode
-        price:
-          type: string
-          description: the item price
-        media_mail:
-          type: boolean
-          description: is the item eligible for media mail?
-        packaging:
-          type: boolean
-          description: is the item packaging?
-        length:
-          type: string
-          description: the item length (in inches)
-        width:
-          type: string
-          description: the item width (in inches)
-        height:
-          type: string
-          description: the item height (in inches)
-        active:
-          type: boolean
-          description: is the item active?
-        wholesale_cost:
-          type: string
-          description: the wholesale cost of the item
-        is_bundle:
-          type: boolean
-          description: is the item a bundle?
-        packaging_type:
-          type: string
-          enum:
-          - WhiplashBag
-          - WhiplashBox
-          - WhiplashBubbleMailer
-          - WhiplashFill
-          - WhiplashFlat
-          - WhiplashTube
-          - WhiplashNoPackaging
-          - WhiplashPallet
-          - Card
-          - Letter
-          - Flat
-          - Parcel
-          - LargeParcel
-          - IrregularParcel
-          - FlatRateEnvelope
-          - FlatRateLegalEnvelope
-          - FlatRatePaddedEnvelope
-          - FlatRateGiftCardEnvelope
-          - FlatRateWindowEnvelope
-          - FlatRateCardboardEnvelope
-          - SmallFlatRateEnvelope
-          - SmallFlatRateBox
-          - MediumFlatRateBox
-          - LargeFlatRateBox
-          - RegionalRateBoxA
-          - RegionalRateBoxB
-          - RegionalRateBoxC
-          - LargeFlatRateBoardGameBox
-          - UPSLetter
-          - UPSExpressBox
-          - UPS25kgBox
-          - UPS10kgBox
-          - Tube
-          - Pak
-          - Pallet
-          - SmallExpressBox
-          - MediumExpressBox
-          - LargeExpressBox
-          - FedExEnvelope
-          - FedExBox
-          - FedExPak
-          - FedExTube
-          - FedEx10kgBox
-          - FedEx25kgBox
-          - BPM
-          - LargeLetter
-          - SmallParcel
-          - MediumParcel
-          description: the item packaging type
-        promo:
-          type: boolean
-          description: is the item a promo?
-        street_date:
-          type: string
           format: date-time
-          description: the item street date
-        category:
-          type: string
-          description: the item category
-        include_inbound_in_published:
-          type: boolean
-          description: include inbound items in published?
-        returnable:
-          type: boolean
-          description: is the item returnable?
-        return_sku_match:
-          type: string
-          description: the item return SKU match
-        return_price_restricted:
-          type: boolean
-          description: is the item return price restricted?
-        request_serial_number:
-          type: boolean
-          description: does the item require a serial number when shipping?
-        currency:
-          type: string
-          description: the item currency
-        tariff_number:
-          type: string
-          description: the item harmonized tariff number (for international shipping)
-        notify_originator_inventory:
+          description: the transaction creation date and time
+        updated_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: the transaction last update date and time
+        shipnotice_item_id:
           type: integer
           format: int32
-          description: notify originator inventory?
-        nmfc_code:
-          type: string
-          description: the item  National Motor Freight Classification code,
-        nmfc_class:
-          type: string
-          description: the item National Motor Freight Classification class code
-        commodity_description:
-          type: string
-          description: the item commodity description
-        hazmat:
-          type: boolean
-          description: 'hazmat true/false flag in the UI is derived from the hazmat_type when only the type is provided\
-
-            error results when the hazmat flag set to false with a hazmat_type\
-
-            error results when the hazmat flag set to true without a hazmat_type\
-
-            (deprecated) is the item hazmat?'
-        misc:
-          type: string
-          description: miscellaneous information about the item
-        ean:
-          type: string
-          description: the EAN number for the item
-        lot_control:
-          type: boolean
-          description: does this item require lot control?
-        expiration_period:
+          description: associated shipnotice_item_id if transaction is created from a shipnotice
+      additionalProperties: false
+    PostApiV2ItemsIdBundleItemsRequest:
+      type: object
+      properties:
+        quantity:
           type: integer
           format: int32
-          description: items that are this many days from expiration will not be allowed to ship
-        ship_strategy:
+          description: the bundle item quantity
+        item_id:
           type: integer
           format: int32
-          description: 'which locations to pick first: Default, FIFO, FEFO'
-        velocity:
-          type: integer
-          format: int32
-          description: Average number of units expected to sell in a day
-        case_quantity:
-          type: integer
-          format: int32
-          description: How many of this item to a case?
-        carton_quantity:
-          type: integer
-          format: int32
-          description: How many CASES to a carton?
-        origin_country:
-          type: string
-          enum:
-          - AF
-          - AX
-          - AL
-          - DZ
-          - AS
-          - AD
-          - AO
-          - AI
-          - AQ
-          - AG
-          - AR
-          - AM
-          - AW
-          - AU
-          - AT
-          - AZ
-          - BS
-          - BH
-          - BD
-          - BB
-          - BY
-          - BE
-          - BZ
-          - BJ
-          - BM
-          - BT
-          - BO
-          - BQ
-          - BA
-          - BW
-          - BV
-          - BR
-          - IO
-          - BN
-          - BG
-          - BF
-          - BI
-          - KH
-          - CM
-          - CA
-          - CV
-          - KY
-          - CF
-          - TD
-          - CL
-          - CN
-          - CX
-          - CC
-          - CO
-          - KM
-          - CG
-          - CD
-          - CK
-          - CR
-          - CI
-          - HR
-          - CU
-          - CW
-          - CY
-          - CZ
-          - DK
-          - DJ
-          - DM
-          - DO
-          - EC
-          - EG
-          - SV
-          - GQ
-          - ER
-          - EE
-          - ET
-          - FK
-          - FO
-          - FJ
-          - FI
-          - FR
-          - GF
-          - PF
-          - TF
-          - GA
-          - GM
-          - GE
-          - DE
-          - GH
-          - GI
-          - GR
-          - GL
-          - GD
-          - GP
-          - GU
-          - GT
-          - GG
-          - GN
-          - GW
-          - GY
-          - HT
-          - HM
-          - VA
-          - HN
-          - HK
-          - HU
-          - IS
-          - IN
-          - ID
-          - IR
-          - IQ
-          - IE
-          - IM
-          - IL
-          - IT
-          - JM
-          - JP
-          - JE
-          - JO
-          - KZ
-          - KE
-          - KI
-          - KP
-          - KR
-          - XK
-          - KW
-          - KG
-          - LA
-          - LV
-          - LB
-          - LS
-          - LR
-          - LY
-          - LI
-          - LT
-          - LU
-          - MO
-          - MK
-          - MG
-          - MW
-          - MY
-          - MV
-          - ML
-          - MT
-          - MH
-          - MQ
-          - MR
-          - MU
-          - YT
-          - MX
-          - FM
-          - MD
-          - MC
-          - MN
-          - ME
-          - MS
-          - MA
-          - MZ
-          - MM
-          - NA
-          - NR
-          - NP
-          - NL
-          - NC
-          - NZ
-          - NI
-          - NE
-          - NG
-          - NU
-          - NF
-          - MP
-          - 'NO'
-          - PS
-          - OM
-          - PK
-          - PW
-          - PA
-          - PG
-          - PY
-          - PE
-          - PH
-          - PN
-          - PL
-          - PT
-          - PR
-          - QA
-          - RE
-          - RO
-          - RU
-          - RW
-          - BL
-          - SH
-          - KN
-          - LC
-          - MF
-          - PM
-          - VC
-          - WS
-          - SM
-          - ST
-          - SA
-          - SN
-          - RS
-          - SC
-          - SL
-          - SG
-          - SX
-          - SK
-          - SI
-          - SB
-          - SO
-          - ZA
-          - GS
-          - SS
-          - ES
-          - LK
-          - SD
-          - SR
-          - SJ
-          - SZ
-          - SE
-          - CH
-          - SY
-          - TW
-          - TJ
-          - TZ
-          - TH
-          - TL
-          - TG
-          - TK
-          - TO
-          - TT
-          - TN
-          - TR
-          - TM
-          - TC
-          - TV
-          - UG
-          - UA
-          - AE
-          - GB
-          - US
-          - UM
-          - UY
-          - UZ
-          - VU
-          - VE
-          - VN
-          - VG
-          - VI
-          - WF
-          - EH
-          - YE
-          - ZM
-          - ZW
-          description: The country of origin for this item (as an iso2 country code)
-        alcohol:
-          type: boolean
-          description: Does this order contain alcohol?
-        shippable_container:
-          type: boolean
-          description: Is this item a shippable container?
-        goh:
-          type: boolean
-          description: Garment on hanger?
-        label_format:
-          type: string
-          description: label format
-        replenishment_min:
-          type: string
-          description: Minimum number of days worth of stock to keep in forward pick locations
-        replenishment_target:
-          type: string
-          description: Target number of days stock to replenish forward pick locations
-        low_inventory_threshold:
-          type: integer
-          format: int32
-          description: the item quantity where this item would be considered having low inventory
-        hazmat_type:
-          type: string
-          enum:
-          - lithium
-          - ormd
-          - lighters
-          description: hazmat class
+          description: the bundle item item id
+      required:
+      - quantity
+      - item_id
     ApiV2EntitiesLot:
       type: object
       title: V2
@@ -3664,130 +3664,6 @@ components:
           description: the lot last update date and time
       additionalProperties: false
   examples:
-    api.v2.item.packaging:
-      summary: item.packaging[]
-      value:
-      - id: 1078
-        sku: IL42NVZSQP
-        title: Small Aluminum Clock
-        description: Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
-        full_description: Small Aluminum Clock, Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
-        created_at: '2026-03-13T11:39:21.000-04:00'
-        updated_at: '2026-03-13T11:39:21.000-04:00'
-        customer_id: 1077
-        quantity: 214
-        weight: '17.96'
-        available: true
-        image_originator_url: null
-        vendor: null
-        scancode: m3ulyf0q1c
-        price: '11.01'
-        media_mail: false
-        packaging: true
-        length: '8.0'
-        width: '1.0'
-        height: '2.0'
-        active: true
-        wholesale_cost: null
-        is_bundle: false
-        packaging_type: WhiplashBox
-        promo: false
-        street_date: null
-        category: null
-        include_inbound_in_published: false
-        returnable: null
-        return_sku_match: null
-        return_price_restricted: null
-        request_serial_number: null
-        currency: null
-        tariff_number: null
-        notify_originator_inventory: null
-        name: Small Aluminum Clock, Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
-        nmfc_code: null
-        nmfc_class: null
-        commodity_description: null
-        image_url: null
-        hazmat: false
-        hazmat_type: null
-        misc: null
-        ean: null
-        lot_control: false
-        expiration_period: null
-        ship_strategy: 1
-        velocity: 0
-        case_quantity: null
-        carton_quantity: null
-        origin_country: null
-        alcohol: false
-        shippable_container: false
-        goh: false
-        label_format: null
-        replenishment_min: null
-        replenishment_target: null
-        low_inventory_threshold: null
-        published_quantity: 214
-    api.v2.item.single:
-      summary: item.single[]
-      value:
-      - id: 1058
-        sku: QXK6TODG75
-        title: Aerodynamic Concrete Coat
-        description: Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
-        full_description: Aerodynamic Concrete Coat, Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
-        created_at: '2026-03-13T11:39:21.000-04:00'
-        updated_at: '2026-03-13T11:39:21.000-04:00'
-        customer_id: 1057
-        quantity: 171
-        weight: '82.44'
-        available: true
-        image_originator_url: null
-        vendor: null
-        scancode: qweemy3c9d
-        price: '30.22'
-        media_mail: false
-        packaging: false
-        length: '4.0'
-        width: '3.0'
-        height: '2.0'
-        active: true
-        wholesale_cost: null
-        is_bundle: false
-        packaging_type: null
-        promo: false
-        street_date: null
-        category: null
-        include_inbound_in_published: false
-        returnable: null
-        return_sku_match: null
-        return_price_restricted: null
-        request_serial_number: null
-        currency: null
-        tariff_number: null
-        notify_originator_inventory: null
-        name: Aerodynamic Concrete Coat, Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
-        nmfc_code: null
-        nmfc_class: null
-        commodity_description: null
-        image_url: null
-        hazmat: false
-        hazmat_type: null
-        misc: null
-        ean: null
-        lot_control: false
-        expiration_period: null
-        ship_strategy: 1
-        velocity: 0
-        case_quantity: null
-        carton_quantity: null
-        origin_country: null
-        alcohol: false
-        shippable_container: false
-        goh: false
-        label_format: null
-        replenishment_min: null
-        replenishment_target: null
-        low_inventory_threshold: null
-        published_quantity: 171
     api.v2.item.merch:
       summary: item.merch[]
       value:
@@ -4027,6 +3903,68 @@ components:
         replenishment_target: null
         low_inventory_threshold: null
         published_quantity: 140
+    api.v2.item.single:
+      summary: item.single[]
+      value:
+      - id: 1058
+        sku: QXK6TODG75
+        title: Aerodynamic Concrete Coat
+        description: Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
+        full_description: Aerodynamic Concrete Coat, Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
+        created_at: '2026-03-13T11:39:21.000-04:00'
+        updated_at: '2026-03-13T11:39:21.000-04:00'
+        customer_id: 1057
+        quantity: 171
+        weight: '82.44'
+        available: true
+        image_originator_url: null
+        vendor: null
+        scancode: qweemy3c9d
+        price: '30.22'
+        media_mail: false
+        packaging: false
+        length: '4.0'
+        width: '3.0'
+        height: '2.0'
+        active: true
+        wholesale_cost: null
+        is_bundle: false
+        packaging_type: null
+        promo: false
+        street_date: null
+        category: null
+        include_inbound_in_published: false
+        returnable: null
+        return_sku_match: null
+        return_price_restricted: null
+        request_serial_number: null
+        currency: null
+        tariff_number: null
+        notify_originator_inventory: null
+        name: Aerodynamic Concrete Coat, Omnis aut nisi dicta rerum ipsum odio unde cupiditate est.
+        nmfc_code: null
+        nmfc_class: null
+        commodity_description: null
+        image_url: null
+        hazmat: false
+        hazmat_type: null
+        misc: null
+        ean: null
+        lot_control: false
+        expiration_period: null
+        ship_strategy: 1
+        velocity: 0
+        case_quantity: null
+        carton_quantity: null
+        origin_country: null
+        alcohol: false
+        shippable_container: false
+        goh: false
+        label_format: null
+        replenishment_min: null
+        replenishment_target: null
+        low_inventory_threshold: null
+        published_quantity: 171
     api.v2.item.bundle:
       summary: item.bundle[]
       value:
@@ -4089,3 +4027,65 @@ components:
         replenishment_target: null
         low_inventory_threshold: null
         published_quantity: 0
+    api.v2.item.packaging:
+      summary: item.packaging[]
+      value:
+      - id: 1078
+        sku: IL42NVZSQP
+        title: Small Aluminum Clock
+        description: Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
+        full_description: Small Aluminum Clock, Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
+        created_at: '2026-03-13T11:39:21.000-04:00'
+        updated_at: '2026-03-13T11:39:21.000-04:00'
+        customer_id: 1077
+        quantity: 214
+        weight: '17.96'
+        available: true
+        image_originator_url: null
+        vendor: null
+        scancode: m3ulyf0q1c
+        price: '11.01'
+        media_mail: false
+        packaging: true
+        length: '8.0'
+        width: '1.0'
+        height: '2.0'
+        active: true
+        wholesale_cost: null
+        is_bundle: false
+        packaging_type: WhiplashBox
+        promo: false
+        street_date: null
+        category: null
+        include_inbound_in_published: false
+        returnable: null
+        return_sku_match: null
+        return_price_restricted: null
+        request_serial_number: null
+        currency: null
+        tariff_number: null
+        notify_originator_inventory: null
+        name: Small Aluminum Clock, Cupiditate enim repudiandae culpa aut et nesciunt est error nam.
+        nmfc_code: null
+        nmfc_class: null
+        commodity_description: null
+        image_url: null
+        hazmat: false
+        hazmat_type: null
+        misc: null
+        ean: null
+        lot_control: false
+        expiration_period: null
+        ship_strategy: 1
+        velocity: 0
+        case_quantity: null
+        carton_quantity: null
+        origin_country: null
+        alcohol: false
+        shippable_container: false
+        goh: false
+        label_format: null
+        replenishment_min: null
+        replenishment_target: null
+        low_inventory_threshold: null
+        published_quantity: 214
