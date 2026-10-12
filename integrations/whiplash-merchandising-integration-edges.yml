@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/whiplash-merchandising/integrations
+- https://n8n.io/integrations/whiplash-merchandising/
+- https://composio.dev/toolkits/whiplash-merchandising
+- https://monid.ai/tools/whiplash-merchandising
+checked:
+- https://composio.dev/toolkits/whiplash-merchandising
+- https://monid.ai/tools/whiplash-merchandising
+- https://n8n.io/integrations/whiplash-merchandising/
+- https://zapier.com/apps/whiplash-merchandising/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
