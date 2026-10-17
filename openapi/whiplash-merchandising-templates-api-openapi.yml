@@ -234,91 +234,6 @@ paths:
                 $ref: '#/components/schemas/ApiSharedEntitiesApiError'
 components:
   schemas:
-    ApiV2EntitiesTemplateType:
-      type: object
-      title: V2
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: id of the template type
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the template type
-        display_name:
-          type: string
-          description: Descriptive name of the template type
-        slug:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          description: url-friendly name
-        resource_type:
-          type:
-          - string
-          - 'null'
-          description: Which resource type these templates are associated with
-        format:
-          type:
-          - string
-          - 'null'
-          description: Mimetype / File extention
-        accessibility:
-          type:
-          - string
-          - 'null'
-          description: Who has what access
-        valid_sizes:
-          type: array
-          items:
-            type: string
-        created_at:
-          type: string
-          format: date-time
-          description: the template type creation date and time
-        updated_at:
-          type: string
-          format: date-time
-          description: the template last type update date and time
-      additionalProperties: false
-    PutApiV2TemplatesIdRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the template
-        content:
-          type: string
-          description: Content of the template
-        size:
-          type: string
-          description: the template size
-    PostApiV2TemplatesRequest:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the template
-        template_type_id:
-          type: integer
-          format: int32
-          description: ID of the template type
-        content:
-          type: string
-          description: Content of the template
-        size:
-          type: string
-          description: the template size
-        default:
-          type: boolean
-          description: Is the default template
-      required:
-      - name
-      - template_type_id
-      - content
     ApiSharedEntitiesApiError:
       type: object
       title: Shared
@@ -393,3 +308,88 @@ components:
         template_type:
           $ref: '#/components/schemas/ApiV2EntitiesTemplateType'
       additionalProperties: false
+    ApiV2EntitiesTemplateType:
+      type: object
+      title: V2
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id of the template type
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the template type
+        display_name:
+          type: string
+          description: Descriptive name of the template type
+        slug:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          description: url-friendly name
+        resource_type:
+          type:
+          - string
+          - 'null'
+          description: Which resource type these templates are associated with
+        format:
+          type:
+          - string
+          - 'null'
+          description: Mimetype / File extention
+        accessibility:
+          type:
+          - string
+          - 'null'
+          description: Who has what access
+        valid_sizes:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+          description: the template type creation date and time
+        updated_at:
+          type: string
+          format: date-time
+          description: the template last type update date and time
+      additionalProperties: false
+    PostApiV2TemplatesRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template
+        template_type_id:
+          type: integer
+          format: int32
+          description: ID of the template type
+        content:
+          type: string
+          description: Content of the template
+        size:
+          type: string
+          description: the template size
+        default:
+          type: boolean
+          description: Is the default template
+      required:
+      - name
+      - template_type_id
+      - content
+    PutApiV2TemplatesIdRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template
+        content:
+          type: string
+          description: Content of the template
+        size:
+          type: string
+          description: the template size
